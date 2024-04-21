@@ -31,7 +31,7 @@ const TeamMembers = () => {
           p={0}
           sx={{ listStyle: 'none' }}
         >
-          {data.map(({ img, name, status, badge }, key) => (
+          {data.map(({ img, name }, key) => (
             <React.Fragment key={key}>
               <Box component="li" py={1}>
                 <Grid container spacing={3} alignItems="center">
