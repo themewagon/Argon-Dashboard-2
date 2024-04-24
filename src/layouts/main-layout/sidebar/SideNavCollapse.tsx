@@ -62,7 +62,7 @@ const SideNavCollapse = ({
 
           <IconifyIcon
             sx={(theme) => ({
-              fontWeight: 700,
+              fontWeight: theme.typography.fontWeightBold,
               marginBottom: pxToRem(-1),
               transform: open ? 'rotate(0)' : 'rotate(-180deg)',
               transition: theme.transitions.create(['color', 'transform', 'opacity'], {
@@ -74,9 +74,8 @@ const SideNavCollapse = ({
                 display: noCollapse ? 'none !important' : 'block !important',
               },
             })}
-            display={noCollapse ? 'none !important' : 'block !important'}
             icon="ri:arrow-up-s-line"
-            fontSize="1rem"
+            fontSize={16}
           />
         </Box>
       </ListItem>

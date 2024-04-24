@@ -37,7 +37,7 @@ const CardSection = () => {
           title="today's money"
           count="$53,000"
           percentage={{ color: 'success', count: '+15%', text: 'than last month' }}
-          icon={{ gradient: 'warning', component: <StatisticsSaleIcon /> }}
+          icon={{ gradient: 'warning', component: StatisticsSaleIcon }}
         />
       </Grid>
     </Grid>

@@ -1,10 +1,12 @@
 import { createTheme, Shadows } from '@mui/material';
 import AppBarComponent from './components/AppBar';
 import AvatarComponent from './components/Avatar';
+import BadgeComponent from './components/Badge';
 import BreadcrumbsComponent from './components/Breadcrumbs';
 import { ButtonComponent } from './components/Button';
 import CardComponent from './components/Card';
 import CheckboxComponent from './components/Checkbox';
+import ChipComponent from './components/Chip';
 import CssBaseline from './components/CssBaseline';
 import DividerComponent from './components/Divider';
 import DrawerComponent from './components/Drawer';
@@ -18,6 +20,7 @@ import ListItemIconComponent from './components/list/ListItemIcon';
 import ListItemTextComponent from './components/list/ListItemText';
 import PaperComponent from './components/Paper';
 import SwitchComponent from './components/Switch';
+import DataGridComponent from './components/table/DataGrid';
 import TextFieldComponent from './components/TextField';
 import palette from './palette';
 import shadows from './shadows';
@@ -50,9 +53,11 @@ declare module '@mui/material/styles/createTypography' {
 export const theme = createTheme({
   palette,
   typography,
-  shadows: [...shadows, ...Array(20).fill('none')] as Shadows,
+  shadows: [...shadows] as Shadows,
   components: {
     MuiTextField: TextFieldComponent,
+    MuiBadge: BadgeComponent,
+    MuiChip: ChipComponent,
     MuiButton: ButtonComponent,
     MuiIconButton: IconButtonComponent,
     MuiSwitch: SwitchComponent,
@@ -71,6 +76,7 @@ export const theme = createTheme({
     MuiListItemButton: ListItemButtonComponent,
     MuiListItemIcon: ListItemIconComponent,
     MuiAppBar: AppBarComponent,
+    MuiDataGrid: DataGridComponent,
     MuiCssBaseline: CssBaseline,
   },
 });

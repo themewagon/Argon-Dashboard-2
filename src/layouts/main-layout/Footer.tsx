@@ -28,7 +28,7 @@ const Footer = () => {
       >
         <Typography variant="h6" fontWeight={400}>
           &copy; {new Date().getFullYear()}, made with
-          <IconifyIcon icon="ri:heart-fill" sx={{ color: 'text.secondary', mb: -0.1, mx: 0.5 }} />
+          <IconifyIcon icon="ri:heart-fill" sx={{ color: 'text.secondary', mb: -0.5, mx: 0.5 }} />
           By
           <Typography component="span" variant="h6" color="text.primary" px={1}>
             Creative Tim

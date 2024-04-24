@@ -22,7 +22,7 @@ interface RouteItem {
   key: string;
   route?: string;
   title?: string;
-  icon?: (props: SvgIconProps) => JSX.Element;
+  icon?: (props?: SvgIconProps) => JSX.Element;
   noCollapse?: boolean;
   collapse?: {
     name: string;

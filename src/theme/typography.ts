@@ -22,37 +22,37 @@ const typography: TypographyOptions = {
   h1: {
     fontSize: pxToRem(48),
     lineHeight: 1.25,
-    fontWeight: 'bolder',
+    fontWeight: 700,
   },
 
   h2: {
     fontSize: pxToRem(36),
     lineHeight: 1.3,
-    fontWeight: 'bolder',
+    fontWeight: 700,
   },
 
   h3: {
     fontSize: pxToRem(30),
     lineHeight: 1.375,
-    fontWeight: 'bolder',
+    fontWeight: 700,
   },
 
   h4: {
     fontSize: pxToRem(24),
     lineHeight: 1.375,
-    fontWeight: 'bolder',
+    fontWeight: 700,
   },
 
   h5: {
     fontSize: pxToRem(20),
     lineHeight: 1.375,
-    fontWeight: 'bolder',
+    fontWeight: 700,
   },
 
   h6: {
-    fontSize: pxToRem(14),
+    fontSize: pxToRem(16),
     lineHeight: 1.625,
-    fontWeight: 'bolder',
+    fontWeight: 600,
   },
 
   subtitle1: {
@@ -62,11 +62,11 @@ const typography: TypographyOptions = {
 
   subtitle2: {
     fontSize: pxToRem(16),
-    fontWeight: 'bold',
+    fontWeight: 700,
     lineHeight: 1.6,
   },
   caption: {
-    fontWeight: 'bold',
+    fontWeight: 700,
     fontSize: pxToRem(12),
   },
 
@@ -82,7 +82,7 @@ const typography: TypographyOptions = {
 
   button: {
     fontSize: pxToRem(14),
-    fontWeight: 'bolder',
+    fontWeight: 700,
     lineHeight: 1.5,
     textTransform: 'none',
   },

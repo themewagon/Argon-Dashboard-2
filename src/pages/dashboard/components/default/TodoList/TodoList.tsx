@@ -1,4 +1,4 @@
-import { Box, Card, Checkbox, Typography } from '@mui/material';
+import { Box, Card, Checkbox, Divider, Typography } from '@mui/material';
 import React from 'react';
 
 // Todo Data
@@ -36,9 +36,7 @@ const TodoList = () => {
                 py={1}
               >
                 <Box lineHeight={1}>
-                  <Typography variant="body2" fontWeight={'bold'}>
-                    {title}
-                  </Typography>
+                  <Typography variant="h6">{title}</Typography>
                   <Typography variant="caption" fontWeight={'regular'}>
                     {time}
                   </Typography>
@@ -46,11 +44,13 @@ const TodoList = () => {
                 <Checkbox defaultChecked={checked} />
               </Box>
               {key !== data.length - 1 && (
-                <Box
-                  component="hr"
+                <Divider
                   sx={({ palette: { grey } }) => ({
-                    borderTop: `1px solid ${grey[300]}`,
-                    borderBottom: 0,
+                    borderTop: 1,
+                    borderTopColor: grey[300],
+                    m: 0,
+                    p: 0,
+                    opacity: 0.5,
                   })}
                 />
               )}

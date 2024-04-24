@@ -1,6 +1,5 @@
 import { Box, Card, Grid, SvgIconProps, Typography } from '@mui/material';
 import linearGradient from 'theme/functions/linearGradient';
-import pxToRem from 'theme/functions/pxToRem';
 import { theme } from 'theme/theme';
 
 interface PercentageProps {
@@ -18,7 +17,7 @@ interface StatisticsCardProps {
 
 interface IconProps {
   gradient: keyof typeof theme.palette.gradients;
-  component: React.JSXElementConstructor<SvgIconProps> | JSX.Element;
+  component: React.JSXElementConstructor<SvgIconProps>;
 }
 const CustomStatisticsCard = ({ title, count, percentage, icon }: StatisticsCardProps) => {
   const { component: IconComponent } = icon;
@@ -44,9 +43,9 @@ const CustomStatisticsCard = ({ title, count, percentage, icon }: StatisticsCard
           </Grid>
           <Grid item xs={4}>
             <Box
-              width="3rem"
-              height="3rem"
-              borderRadius={pxToRem(160)}
+              width={48}
+              height={48}
+              borderRadius={160}
               display="flex"
               justifyContent="center"
               alignItems="center"
@@ -55,8 +54,8 @@ const CustomStatisticsCard = ({ title, count, percentage, icon }: StatisticsCard
                 background: `${linearGradient(theme.palette.gradients[icon.gradient].main, theme.palette.gradients[icon.gradient].state)}`,
               })}
             >
-              <Box fontSize="1.125rem" display="grid" sx={{ placeItems: 'center' }}>
-                {typeof IconComponent === 'function' ? <IconComponent /> : null}
+              <Box display="grid" sx={{ placeItems: 'center' }}>
+                <IconComponent />
               </Box>
             </Box>
           </Grid>

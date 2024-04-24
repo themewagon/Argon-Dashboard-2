@@ -55,8 +55,9 @@ const ProgressTracker = () => {
               </Box>
               {key !== data.length - 1 && (
                 <Divider
-                  sx={({ palette: { grey }, typography: { pxToRem } }) => ({
-                    borderTop: `${pxToRem(1)} solid ${grey[300]}`,
+                  sx={({ palette: { grey } }) => ({
+                    borderTop: 1,
+                    borderTopColor: grey[300],
                     m: 0,
                     p: 0,
                     opacity: 0.5,

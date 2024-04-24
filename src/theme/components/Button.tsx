@@ -58,6 +58,7 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
     sizeSmall: {
       padding: `${pxToRem(6)} ${pxToRem(10)}`,
       lineHeight: 1.286,
+      fontSize: pxToRem(12),
     },
     outlinedSizeLarge: {
       paddingTop: `${pxToRem(9)}`,
@@ -68,9 +69,8 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
       padding: `${pxToRem(10)} ${pxToRem(24)}`,
     },
     outlinedSizeSmall: {
-      fontSize: pxToRem(10),
-      paddingTop: `${pxToRem(9)}`,
-      paddingBottom: `${pxToRem(9)}`,
+      fontSize: pxToRem(12),
+      padding: `${pxToRem(8)} ${pxToRem(24)}`,
     },
 
     startIcon: {

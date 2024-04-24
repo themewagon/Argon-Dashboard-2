@@ -94,41 +94,34 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
             />
           </Box>
           <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            pr={1.2}
-            sx={({ breakpoints }) => ({
-              [breakpoints.up('md')]: {
-                display: 'none',
-              },
-            })}
+          // display="flex"
+          // justifyContent="space-between"
+          // alignItems="center"
+          // pr={1.2}
+          // sx={({ breakpoints }) => ({
+          //   [breakpoints.up('md')]: {
+          //     display: 'none',
+          //   },
+          // })}
           >
-            {/* <IconButton
+            <IconButton
               size="small"
-              sx={({ breakpoints, spacing }) => ({
+              sx={({ breakpoints }) => ({
                 display: 'flex',
                 justifyContent: 'space-between',
                 color: 'white.main',
-                border: 1,
+                border: 0,
                 p: 1,
                 alignItems: 'center',
                 [breakpoints.up('md')]: {
                   display: 'none',
                 },
               })}
-            ></IconButton> */}
-            <IconifyIcon icon="ant-design:search-outlined" />
+            >
+              <IconifyIcon icon="ant-design:search-outlined" />
+            </IconButton>
           </Box>
           <Box>
-            <Link href="/authentication/sign-in">
-              <IconButton>
-                <IconifyIcon icon="mdi:user" color="white.main" />
-                <Typography variant="button" fontWeight="medium" color="white.main">
-                  Sign-in
-                </Typography>
-              </IconButton>
-            </Link>
             <IconButton
               onClick={onDrawerToggle}
               sx={(theme) => ({
@@ -164,6 +157,14 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
                 color="white.main"
               />
             </IconButton>
+            <Link href="/authentication/sign-in">
+              <IconButton>
+                <IconifyIcon icon="mdi:user" color="white.main" />
+                <Typography variant="button" fontWeight="medium" color="white.main">
+                  Sign-in
+                </Typography>
+              </IconButton>
+            </Link>
           </Box>
         </CustomNavBox>
       </Toolbar>
