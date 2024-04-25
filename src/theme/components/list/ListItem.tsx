@@ -7,11 +7,12 @@ const ListItemComponent: Components<Omit<Theme, 'components'>>['MuiListItem'] = 
   },
 
   styleOverrides: {
-    root: {
+    root: ({ theme }) => ({
       paddingTop: 0,
       paddingBottom: 0,
       cursor: 'pointer',
-    },
+      borderRadius: theme.shape.borderRadius * 2,
+    }),
   },
 };
 

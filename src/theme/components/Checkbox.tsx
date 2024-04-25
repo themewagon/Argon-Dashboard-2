@@ -1,32 +1,40 @@
 import { Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
-import CheckBoxBlankIcon from 'components/icons/CheckBoxBlankIcon';
-import CheckBoxCheckedIcon from 'components/icons/CheckBoxCheckedIcon';
+import IconifyIcon from 'components/base/IconifyIcon';
 
 const CheckboxComponent: Components<Omit<Theme, 'components'>>['MuiCheckbox'] = {
   defaultProps: {
-    icon: <CheckBoxBlankIcon sx={{ color: 'neutral.contrastText' }} />,
-    checkedIcon: <CheckBoxCheckedIcon />,
+    icon: <IconifyIcon icon="carbon:checkbox" />,
+    checkedIcon: <IconifyIcon icon="carbon:checkbox-checked-filled" />,
     // indeterminateIcon: <CheckBoxIndeterminateIcon viewBox="0 0 16 16" />,
   },
   styleOverrides: {
     root: ({ theme }) => ({
       padding: 0,
       borderRadius: 0,
-      '.MuiSvgIcon-fontSizeMedium': {
-        fontSize: 20,
+      '&:hover': {
+        backgroundColor: theme.palette.transparent.main,
       },
-      '.MuiSvgIcon-fontSizeSmall': {
-        fontSize: 16,
+      '& svg': {
+        fill: theme.palette.transparent.main,
       },
-      '&.Mui-disabled': {
-        '.MuiSvgIcon-root': {
-          color: theme.palette.grey[100],
-        },
+      '&.Mui-disabled svg': {
+        color: theme.palette.grey[400],
       },
     }),
-    sizeSmall: { fontSize: 16 },
-    sizeMedium: { fontSize: 20 },
+
+    sizeSmall: {
+      '& svg': {
+        width: 20,
+        height: 20,
+      },
+    },
+    sizeMedium: {
+      '& svg': {
+        width: 25,
+        height: 25,
+      },
+    },
   },
 };
 

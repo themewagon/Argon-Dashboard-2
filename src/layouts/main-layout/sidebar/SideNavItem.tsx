@@ -19,7 +19,6 @@ const SideNavItem = ({ name, active, route }: ListItemProps) => {
           color: palette.text.secondary,
           pl: 3,
           my: 0.5,
-          borderRadius: `${pxToRem(6)}`,
           width: '100%',
           cursor: 'pointer',
           '&:hover, &:focus': {

@@ -50,28 +50,28 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
       borderRadius: theme.spacing(1),
       padding: theme.spacing(1, 3),
     }),
-    sizeLarge: {
+    sizeLarge: ({ theme }) => ({
       fontSize: pxToRem(16),
-      padding: `${pxToRem(10)} ${pxToRem(22)}`,
+      padding: theme.spacing(1.25, 2.75),
       lineHeight: 1.375,
-    },
-    sizeSmall: {
-      padding: `${pxToRem(6)} ${pxToRem(10)}`,
+    }),
+    sizeSmall: ({ theme }) => ({
+      padding: theme.spacing(0.75, 1.25),
       lineHeight: 1.286,
       fontSize: pxToRem(12),
-    },
+    }),
     outlinedSizeLarge: {
       paddingTop: `${pxToRem(9)}`,
       paddingBottom: `${pxToRem(9)}`,
     },
-    outlinedSizeMedium: {
+    outlinedSizeMedium: ({ theme }) => ({
       fontSize: pxToRem(12),
-      padding: `${pxToRem(10)} ${pxToRem(24)}`,
-    },
-    outlinedSizeSmall: {
+      padding: theme.spacing(1.25, 3),
+    }),
+    outlinedSizeSmall: ({ theme }) => ({
       fontSize: pxToRem(12),
-      padding: `${pxToRem(8)} ${pxToRem(24)}`,
-    },
+      padding: theme.spacing(1, 3),
+    }),
 
     startIcon: {
       '& > *:first-of-type': {

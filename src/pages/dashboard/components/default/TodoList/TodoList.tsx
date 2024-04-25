@@ -41,7 +41,8 @@ const TodoList = () => {
                     {time}
                   </Typography>
                 </Box>
-                <Checkbox defaultChecked={checked} />
+                <Checkbox defaultChecked={checked} color="primary" />
+                {/* <Checkbox color="secondary" defaultChecked={checked} /> */}
               </Box>
               {key !== data.length - 1 && (
                 <Divider

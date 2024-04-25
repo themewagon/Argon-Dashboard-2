@@ -1,6 +1,5 @@
 import { alpha, Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
-import pxToRem from 'theme/functions/pxToRem';
 
 const CardComponent: Components<Omit<Theme, 'components'>>['MuiCard'] = {
   defaultProps: {},
@@ -11,10 +10,10 @@ const CardComponent: Components<Omit<Theme, 'components'>>['MuiCard'] = {
       position: 'relative',
       minWidth: 0,
       wordWrap: 'break-word',
-      backgroundColor: theme.palette.white.main,
+      backgroundColor: theme.palette.common.white,
       backgroundClip: 'border-box',
-      border: `${theme.spacing(0)} solid ${alpha(theme.palette.black.main, 0.125)}`,
-      borderRadius: pxToRem(16),
+      border: `${theme.spacing(0)} solid ${alpha(theme.palette.common.black, 0.125)}`,
+      borderRadius: theme.shape.borderRadius * 2,
       boxShadow: theme.shadows[2],
     }),
   },

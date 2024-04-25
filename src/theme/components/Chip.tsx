@@ -1,25 +1,24 @@
 import { Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
-import pxToRem from 'theme/functions/pxToRem';
 
 const ChipComponent: Components<Omit<Theme, 'components'>>['MuiChip'] = {
   defaultProps: {},
   styleOverrides: {
     root: ({ theme }) => ({
       height: 'auto',
-      padding: `${pxToRem(4)} ${pxToRem(8)}`,
+      padding: theme.spacing(0.5, 1),
       fontSize: '0.65rem',
       fontWeight: theme.typography.fontWeightBold,
       textTransform: 'uppercase',
       lineHeight: 1,
       whiteSpace: 'nowrap',
       verticalAlign: 'baseline',
-      borderRadius: pxToRem(4),
+      borderRadius: theme.shape.borderRadius,
       position: 'relative',
-      '& .MuiChip-label': {
-        padding: 0,
-      },
     }),
+    label: {
+      padding: 0,
+    },
   },
 };
 

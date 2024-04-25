@@ -112,8 +112,8 @@ const ImageSlider = () => {
                 key={slide.id}
                 display="inline-block"
                 sx={(theme) => ({
-                  width: '100%',
-                  height: '490px',
+                  width: 1,
+                  height: 490,
                   opacity: index === currentImageSlide ? 1 : 0.7,
                   transform: index === currentImageSlide ? `scale(1)` : `scale(0.1)`,
                   transition: theme.transitions.create(['opacity', 'transform'], {
