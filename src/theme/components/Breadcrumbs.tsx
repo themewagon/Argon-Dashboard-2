@@ -6,11 +6,13 @@ const BreadcrumbsComponent: Components<Omit<Theme, 'components'>>['MuiBreadcrumb
     li: {
       lineHeight: 0,
     },
-
     separator: ({ theme }) => ({
       fontSize: theme.typography.pxToRem(14),
-      color: theme.palette.white.main,
+      color: theme.palette.common.white,
     }),
+    ol: {
+      alignItems: 'flex-start',
+    },
   },
 };
 

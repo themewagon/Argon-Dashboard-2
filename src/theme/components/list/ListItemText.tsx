@@ -5,8 +5,7 @@ const ListItemTextComponent: Components<Omit<Theme, 'components'>>['MuiListItemT
   defaultProps: {},
   styleOverrides: {
     root: ({ theme }) => ({
-      marginTop: 0,
-      marginBottom: 0,
+      my: 0,
       color: 'inherit',
 
       [theme.breakpoints.up('xl')]: {
@@ -18,8 +17,8 @@ const ListItemTextComponent: Components<Omit<Theme, 'components'>>['MuiListItemT
       },
 
       '& span': {
-        color: 'inherit',
         fontSize: theme.typography.pxToRem(14),
+        lineHeight: 1.4,
       },
     }),
   },

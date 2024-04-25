@@ -23,10 +23,10 @@ const AppBarComponent: Components<Omit<Theme, 'components'>>['MuiAppBar'] = {
         }),
       },
       '& > .MuiAppBar-root': {
-        paddingTop: pxToRem(8),
-        paddingBottom: pxToRem(8),
-        paddingRight: pxToRem(8),
-        paddingLeft: pxToRem(16),
+        paddingTop: theme.spacing(1),
+        paddingBottom: theme.spacing(1),
+        paddingRight: theme.spacing(1),
+        paddingLeft: theme.spacing(2),
       },
 
       '& > .MuiToolbar-root': {
@@ -36,7 +36,7 @@ const AppBarComponent: Components<Omit<Theme, 'components'>>['MuiAppBar'] = {
         padding: 0,
         [theme.breakpoints.up('sm')]: {
           minHeight: 'auto',
-          padding: `${pxToRem(4)} ${pxToRem(16)}`,
+          padding: theme.spacing(0.5, 2),
         },
       },
     }),

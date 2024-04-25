@@ -2,6 +2,7 @@ import { Box, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import React from 'react';
 import pxToRem from 'theme/functions/pxToRem';
 
+//! This Component Currently Not In Use
 interface ListItemProps {
   name: string;
   icon: React.JSX.Element;

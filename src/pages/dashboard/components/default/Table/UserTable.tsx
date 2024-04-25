@@ -1,20 +1,19 @@
 import { Box, Chip, LinearProgress } from '@mui/material';
 import {
   DataGrid,
-  DEFAULT_GRID_AUTOSIZE_OPTIONS,
   GridApi,
   GridColDef,
   GridRenderCellParams,
-  GridRowModel,
   GridSlots,
   useGridApiRef,
 } from '@mui/x-data-grid';
 import { useEffect, useState } from 'react';
 import AuthorCell, { AuthorData } from './AuthorCell';
+import CustomFooter from './CustomFooter';
 import { userTableData } from './Data';
 import FunctionCell, { FunctionRole } from './FunctionCell';
 
-interface RowData {
+export interface RowData {
   id: number;
   author: AuthorData;
   function: FunctionRole;
@@ -33,34 +32,43 @@ const UserTable = () => {
       field: 'author',
       headerName: 'Author',
       cellClassName: 'name-column--cell',
-      width: 395,
-      //   type: 'string',
-      renderCell: (params: GridRenderCellParams<RowData>) => <AuthorCell value={params.value} />,
+      minWidth: 300,
+      valueGetter: (params: AuthorData) => params.name,
+      renderCell: (params: GridRenderCellParams<RowData>) => (
+        <AuthorCell value={params?.row?.author} />
+      ),
     },
     {
       field: 'function',
       headerName: 'Function',
       flex: 1,
-      minWidth: 100,
+      minWidth: 150,
       align: 'left',
-      renderCell: (params: GridRenderCellParams<RowData>) => <FunctionCell value={params.value} />,
+      valueGetter: (params: FunctionRole) => params.title,
+      renderCell: (params: GridRenderCellParams<RowData>) => (
+        <FunctionCell value={params?.row?.function} />
+      ),
     },
     {
       field: 'status',
       headerName: 'Technology',
       type: 'boolean',
       flex: 1,
+      minWidth: 150,
       align: 'left',
-      minWidth: 100,
       renderCell: ({ row }: { row: RowData }) => {
         const status = row.status ? 'Online' : 'Offline';
         const badge = row.status ? 'success' : 'error';
-        return <Chip label={status} sx={{ bgcolor: `${badge}.light`, color: `${badge}.dark` }} />;
+        return (
+          <Box display="flex" justifyContent="start" textAlign="start">
+            <Chip label={status} sx={{ bgcolor: `${badge}.light`, color: `${badge}.dark` }} />
+          </Box>
+        );
       },
     },
-    { field: 'employed', headerName: 'Employed' },
+    { field: 'employed', headerName: 'Employed', flex: 1, align: 'left', minWidth: 120 },
 
-    { field: 'action', headerName: '', flex: 1, align: 'center' },
+    { field: 'action', headerName: '', flex: 1, align: 'center', sortable: false },
   ] as const;
 
   useEffect(() => {
@@ -74,11 +82,12 @@ const UserTable = () => {
       clearInterval(timeoutId);
     };
   }, [userTableData, apiRef]);
+
   return (
     <Box
       sx={({ palette }) => ({
         '& .name-column--cell': {
-          color: palette.black.dark,
+          color: palette.common.black,
         },
       })}
     >
@@ -93,38 +102,26 @@ const UserTable = () => {
           });
         }}
         loading={isLoading}
-        slots={{
-          loadingOverlay: LinearProgress as GridSlots['loadingOverlay'],
-        }}
         apiRef={apiRef}
         hideFooterSelectedRowCount
         disableColumnResize
         disableColumnMenu
         disableColumnSelector
         disableRowSelectionOnClick
-        autoPageSize
+        // autoPageSize
         autoHeight
-        sortModel={[
-          {
-            field: 'author.name',
-            sort: 'asc',
-          },
-          {
-            field: 'function.title',
-            sort: 'asc',
-          },
-        ]}
         autosizeOptions={{
           includeOutliers: true,
           includeHeaders: true,
-          outliersFactor: 1.5,
-          expand: DEFAULT_GRID_AUTOSIZE_OPTIONS.expand,
+          outliersFactor: 1,
+          expand: true,
         }}
-        initialState={{
-          pagination: { paginationModel: { pageSize: 5 } },
+        slots={{
+          loadingOverlay: LinearProgress as GridSlots['loadingOverlay'],
+          pagination: CustomFooter,
         }}
+        initialState={{ pagination: { paginationModel: { page: 1, pageSize: 5 } } }}
         pageSizeOptions={[5, 10, 25]}
-        getRowId={(row: GridRowModel) => row.id}
       />
     </Box>
   );

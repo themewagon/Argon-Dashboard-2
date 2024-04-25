@@ -15,17 +15,17 @@ const SideNavItem = ({ name, active, route }: ListItemProps) => {
   return (
     <>
       <ListItem
-        sx={{
+        sx={({ palette }) => ({
+          color: palette.text.secondary,
           pl: 3,
-          mt: 0.375,
-          mb: 0.3,
+          my: 0.5,
           borderRadius: `${pxToRem(6)}`,
           width: '100%',
           cursor: 'pointer',
           '&:hover, &:focus': {
             backgroundColor: grey[50],
           },
-        }}
+        })}
       >
         <ListItemButton
           component={NavLink}
@@ -33,7 +33,7 @@ const SideNavItem = ({ name, active, route }: ListItemProps) => {
           sx={(theme) => ({
             '& span': {
               fontWeight: active ? 600 : 400,
-              color: !active ? theme.palette.grey[600] : 'inherit',
+              color: active ? theme.palette.grey[900] : theme.palette.grey[600],
             },
             '&::before': {
               //   content: `"${name[0]}"`,

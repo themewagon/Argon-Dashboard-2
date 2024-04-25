@@ -1,4 +1,4 @@
-import { Box, Card, Grid, SvgIconProps, Typography } from '@mui/material';
+import { Box, Card, Grid, Stack, SvgIconProps, Typography } from '@mui/material';
 import linearGradient from 'theme/functions/linearGradient';
 import { theme } from 'theme/theme';
 
@@ -28,12 +28,7 @@ const CustomStatisticsCard = ({ title, count, percentage, icon }: StatisticsCard
         <Grid container>
           <Grid item xs={8}>
             <Box ml={0} lineHeight={1}>
-              <Typography
-                variant="button"
-                textTransform="uppercase"
-                fontWeight="medium"
-                color="text.secondary"
-              >
+              <Typography variant="button" textTransform="uppercase" color="text.secondary">
                 {title}
               </Typography>
               <Typography variant="h5" fontWeight="bold" mb={1}>
@@ -42,22 +37,20 @@ const CustomStatisticsCard = ({ title, count, percentage, icon }: StatisticsCard
             </Box>
           </Grid>
           <Grid item xs={4}>
-            <Box
-              width={48}
-              height={48}
-              borderRadius={160}
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              ml="auto"
-              sx={(theme) => ({
-                background: `${linearGradient(theme.palette.gradients[icon.gradient].main, theme.palette.gradients[icon.gradient].state)}`,
-              })}
-            >
-              <Box display="grid" sx={{ placeItems: 'center' }}>
+            <Stack direction="row" justifyContent="flex-end" alignItems="center" ml="auto">
+              <Box
+                width={48}
+                height={48}
+                borderRadius={160}
+                display="grid"
+                sx={(theme) => ({
+                  placeItems: 'center',
+                  background: `${linearGradient(theme.palette.gradients[icon.gradient].main, theme.palette.gradients[icon.gradient].state)}`,
+                })}
+              >
                 <IconComponent />
               </Box>
-            </Box>
+            </Stack>
           </Grid>
         </Grid>
         <Typography

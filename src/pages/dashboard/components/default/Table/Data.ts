@@ -26,7 +26,7 @@ export const userTableData = [
     function: { title: 'User', designation: 'developer' },
     status: true,
     employed: '22/12/2017',
-    action: 'Edit/Delete',
+    action: 'Edit',
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ export const userTableData = [
     function: { title: 'Administrator', designation: 'developer' },
     status: true,
     employed: '22/12/2017',
-    action: 'Edit/Delete',
+    action: 'Edit',
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export const userTableData = [
     function: { title: 'User', designation: 'developer' },
     status: true,
     employed: '22/12/2017',
-    action: 'Edit/Delete',
+    action: 'Edit',
   },
   {
     id: 6,
@@ -50,7 +50,7 @@ export const userTableData = [
     function: { title: 'Manager', designation: 'developer' },
     status: true,
     employed: '22/12/2017',
-    action: 'Edit/Delete',
+    action: 'Edit',
   },
   {
     id: 7,
@@ -58,7 +58,7 @@ export const userTableData = [
     function: { title: 'User', designation: 'developer' },
     status: true,
     employed: '22/12/2017',
-    action: 'Edit/Delete',
+    action: 'Edit',
   },
   {
     id: 8,
@@ -66,7 +66,7 @@ export const userTableData = [
     function: { title: 'User', designation: 'developer' },
     status: true,
     employed: '22/12/2017',
-    action: 'Edit/Delete',
+    action: 'Edit',
   },
   {
     id: 9,
@@ -74,6 +74,6 @@ export const userTableData = [
     function: { title: 'Administrator', designation: 'developer' },
     status: true,
     employed: '22/12/2017',
-    action: 'Edit/Delete',
+    action: 'Edit',
   },
 ];

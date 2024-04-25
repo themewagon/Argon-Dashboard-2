@@ -1,7 +1,6 @@
 import { Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
 import pxToRem from 'theme/functions/pxToRem';
-import { theme } from 'theme/theme';
 
 const ListItemButtonComponent: Components<Omit<Theme, 'components'>>['MuiListItemButton'] = {
   defaultProps: {
@@ -9,11 +8,11 @@ const ListItemButtonComponent: Components<Omit<Theme, 'components'>>['MuiListIte
     disableRipple: true,
   },
   styleOverrides: {
-    root: () => ({
+    root: ({ theme }) => ({
       display: 'flex',
       alignItems: 'center',
       width: '100%',
-      padding: `${pxToRem(12)} ${pxToRem(16)}`,
+      padding: theme.spacing(1.5, 2),
       marginLeft: pxToRem(18),
       position: 'relative',
       userSelect: 'none',

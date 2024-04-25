@@ -7,7 +7,7 @@ const CustomBreadcrumbs = ({ route, title }: { route: string[]; title: string })
     <Box mr={{ xs: 0, xl: 8 }}>
       <Breadcrumbs aria-label="breadcrumb">
         <Link to="/">
-          <Typography component="span" variant="body2" color={'white'}>
+          <Typography variant="body2">
             <SvgIcon
               viewBox="0 0 14 14"
               sx={{
@@ -41,9 +41,8 @@ const CustomBreadcrumbs = ({ route, title }: { route: string[]; title: string })
         {routes.map((el) => (
           <Link to={`/${el}`} key={el}>
             <Typography
-              component="span"
               variant="button"
-              fontWeight="regular"
+              fontWeight={400}
               textTransform="capitalize"
               color={'white.main'}
             >

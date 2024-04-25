@@ -28,10 +28,14 @@ const DataGridComponent: DataGridComponents<Omit<Theme, 'components'>>['MuiDataG
         borderTopRightRadius: theme.spacing(2),
         borderTopLeftRadius: theme.spacing(2),
       },
+      '& .MuiDataGrid-columnSeparator': {
+        display: 'none',
+      },
     }),
     cell: ({ theme }) => ({
       padding: theme.spacing(1),
       paddingLeft: theme.spacing(3),
+      paddingRight: theme.spacing(3),
       outline: 'none',
       color: theme.palette.text.secondary,
       fontSize: theme.typography.pxToRem(12),
@@ -48,7 +52,7 @@ const DataGridComponent: DataGridComponents<Omit<Theme, 'components'>>['MuiDataG
     }),
 
     columnHeader: ({ theme }) => ({
-      backgroundColor: theme.palette.white.main,
+      backgroundColor: theme.palette.common.white,
       fontSize: theme.typography.pxToRem(10),
       '&.MuiDataGrid-columnHeader': {
         paddingLeft: theme.spacing(3),
@@ -62,9 +66,6 @@ const DataGridComponent: DataGridComponents<Omit<Theme, 'components'>>['MuiDataG
     columnHeaderTitleContainer: {
       justifyContent: 'start !important',
     },
-    // row: {
-    //   height: '65px !important',
-    // },
   },
 };
 

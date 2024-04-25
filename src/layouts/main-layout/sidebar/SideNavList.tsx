@@ -7,7 +7,7 @@ function SidenavList({ children }: { children: ReactNode }): JSX.Element {
   return (
     <List
       sx={{
-        px: 2,
+        px: 1,
         my: 0.3,
       }}
     >

@@ -9,7 +9,7 @@ const ListItemIconComponent: Components<Omit<Theme, 'components'>>['MuiListItemI
       color: 'inherit',
       minWidth: pxToRem(32),
       minHeight: pxToRem(32),
-      borderRadius: pxToRem(8),
+      borderRadius: theme.shape.borderRadius * 2,
       display: 'grid',
       placeItems: 'center',
       transition: theme.transitions.create('margin', {

@@ -1,8 +1,6 @@
 import { Box, Collapse, ListItem, ListItemIcon, ListItemText, SvgIconProps } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import { ReactNode } from 'react';
-import { grey } from 'theme/colors';
-import pxToRem from 'theme/functions/pxToRem';
 
 interface SidenavCollapseProps {
   icon?: React.ComponentType<SvgIconProps>;
@@ -25,16 +23,18 @@ const SideNavCollapse = ({
 }: SidenavCollapseProps) => {
   return (
     <>
-      <ListItem component="li" onClick={onClick}>
+      <ListItem onClick={onClick}>
         <Box
           sx={(theme) => ({
             width: '100%',
-            background: active ? theme.palette['grey'][100] : 'transparent.main',
+            bgcolor: active ? theme.palette['grey'][100] : 'transparent.main',
             display: 'flex',
             alignItems: 'center',
-            padding: `${pxToRem(8)} ${pxToRem(16)}`,
-            margin: `${pxToRem(1.5)} ${pxToRem(16)}`,
-            borderRadius: `${pxToRem(8)}`,
+            px: 2,
+            py: 1,
+            mx: 1,
+            gap: 1,
+            borderRadius: 2,
             userSelect: 'none',
             whiteSpace: 'nowrap',
             [theme.breakpoints.up('xl')]: {
@@ -44,7 +44,7 @@ const SideNavCollapse = ({
               }),
             },
             '&:hover, &:focus': {
-              backgroundColor: grey[200],
+              bgcolor: theme.palette.grey[200],
             },
           })}
         >
@@ -52,9 +52,7 @@ const SideNavCollapse = ({
           <ListItemText
             primary={name}
             sx={() => ({
-              marginLeft: pxToRem(10),
               '& span': {
-                fontSize: pxToRem(14),
                 fontWeight: active ? 600 : 400,
               },
             })}
@@ -63,18 +61,17 @@ const SideNavCollapse = ({
           <IconifyIcon
             sx={(theme) => ({
               fontWeight: theme.typography.fontWeightBold,
-              marginBottom: pxToRem(-1),
               transform: open ? 'rotate(0)' : 'rotate(-180deg)',
               transition: theme.transitions.create(['color', 'transform', 'opacity'], {
                 easing: theme.transitions.easing.easeInOut,
                 duration: theme.transitions.duration.shorter,
               }),
-
+              color: theme.palette.text.secondary,
               [theme.breakpoints.up('xl')]: {
                 display: noCollapse ? 'none !important' : 'block !important',
               },
             })}
-            icon="ri:arrow-up-s-line"
+            icon="fa:angle-up"
             fontSize={16}
           />
         </Box>

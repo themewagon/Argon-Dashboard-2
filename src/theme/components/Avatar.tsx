@@ -6,14 +6,14 @@ const AvatarComponent: Components<Omit<Theme, 'components'>>['MuiAvatar'] = {
     variant: 'rounded',
   },
   styleOverrides: {
-    root: ({ ownerState, theme }) => ({
-      ...(ownerState.variant === 'rounded' && {
-        borderRadius: theme.shape.borderRadius * 3,
-      }),
+    root: ({ theme }) => ({
       backgroundColor: theme.palette.transparent.main,
       boxShadow: theme.shadows[0],
       width: theme.spacing(6),
       height: theme.spacing(6),
+    }),
+    rounded: ({ theme }) => ({
+      borderRadius: theme.shape.borderRadius * 3,
     }),
   },
 };

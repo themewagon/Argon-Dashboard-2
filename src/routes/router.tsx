@@ -35,58 +35,57 @@ export const routes = [
         index: true,
         element: <Navigate to="dashboard/default" />,
       },
+      {
+        path: 'dashboard',
+        element: (
+          <MainLayout>
+            <React.Suspense fallback={<PageLoader />}>
+              <Outlet />
+            </React.Suspense>
+          </MainLayout>
+        ),
+        children: [
+          {
+            index: true,
+            element: <Navigate to="default" />,
+          },
+          {
+            path: 'default',
+            element: <Default />,
+          },
+          {
+            path: 'landing',
+            element: <LandingPage />,
+          },
+          {
+            path: 'automotive',
+            element: <AutomotivePage />,
+          },
+          {
+            path: 'smart-home',
+            element: <SmartHomePage />,
+          },
+          {
+            path: 'virtual-reality',
+            element: <VirtualRealityPage />,
+          },
+          {
+            path: 'CRM',
+            element: <CRMPage />,
+          },
+        ],
+      },
+      {
+        path: 'authentication/sign-in',
+        element: <LoginPage />,
+      },
+      {
+        path: 'authentication/sign-up',
+        element: <SignUpPage />,
+      },
     ],
   },
-  {
-    path: 'dashboard',
-    element: (
-      <MainLayout>
-        <React.Suspense fallback={<PageLoader />}>
-          <Outlet />
-        </React.Suspense>
-      </MainLayout>
-    ),
 
-    children: [
-      {
-        index: true,
-        element: <Navigate to="default" />,
-      },
-      {
-        path: 'default',
-        element: <Default />,
-      },
-      {
-        path: 'landing',
-        element: <LandingPage />,
-      },
-      {
-        path: 'automotive',
-        element: <AutomotivePage />,
-      },
-      {
-        path: 'smart-home',
-        element: <SmartHomePage />,
-      },
-      {
-        path: 'virtual-reality',
-        element: <VirtualRealityPage />,
-      },
-      {
-        path: 'CRM',
-        element: <CRMPage />,
-      },
-    ],
-  },
-  {
-    path: 'authentication/sign-in',
-    element: <LoginPage />,
-  },
-  {
-    path: 'authentication/sign-up',
-    element: <SignUpPage />,
-  },
-  //   { path: 'authentication/sign-up', element: <RegisterPage /> },
   //   { path: 'authentication/forgot-password', element: <ForgotPassword /> },
   //   { path: '*', element: <NotFound /> },
 ];

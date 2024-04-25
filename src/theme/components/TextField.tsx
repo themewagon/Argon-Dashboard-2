@@ -31,10 +31,6 @@ const TextFieldComponent: Components<Omit<Theme, 'components'>>['MuiTextField'] 
           fontSize: theme.typography.pxToRem(14),
           height: theme.typography.pxToRem(22),
           width: 'max-content !important',
-          //   '&::placeholder': {
-          //     textOverflow: 'ellipsis !important',
-          //     color: 'red',
-          //   },
         },
         '& .MuiFilledInput-root': {
           background: '#fff !important',
@@ -69,18 +65,6 @@ const TextFieldComponent: Components<Omit<Theme, 'components'>>['MuiTextField'] 
       }),
     }),
   },
-  //   variants: [
-  //     {
-  //       props: { size: 'large' },
-  //       style: ({ theme }) => ({
-  //         '& .MuiFilledInput-input': {
-  //           padding: theme.spacing(2.5),
-  //           fontSize: theme.typography.pxToRem(16),
-  //           height: '18px',
-  //         },
-  //       }),
-  //     },
-  //   ],
 };
 
 export default TextFieldComponent;
