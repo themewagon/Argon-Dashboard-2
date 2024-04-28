@@ -1,5 +1,8 @@
 import { Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
+import 'simplebar-react/dist/simplebar.min.css';
+import scrollbar from 'theme/styles/scrollbar';
+import simplebar from 'theme/styles/simplebar';
 
 const CssBaseline: Components<Omit<Theme, 'components'>>['MuiCssBaseline'] = {
   defaultProps: {},
@@ -29,11 +32,10 @@ const CssBaseline: Components<Omit<Theme, 'components'>>['MuiCssBaseline'] = {
     },
     body: {
       fontVariantLigatures: 'none',
-
-      //   ...scrollbar(theme),
+      ...scrollbar(theme),
     },
-    // ...simplebar(theme),
     // ...echart(),
+    ...simplebar(theme),
   }),
 };
 

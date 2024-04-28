@@ -1,6 +1,5 @@
 import { Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
-import pxToRem from 'theme/functions/pxToRem';
 
 const PaperComponent: Components<Omit<Theme, 'components'>>['MuiPaper'] = {
   defaultProps: {},
@@ -11,7 +10,9 @@ const PaperComponent: Components<Omit<Theme, 'components'>>['MuiPaper'] = {
       margin: 0,
       padding: 0,
     },
-    rounded: { borderRadius: pxToRem(16) },
+    rounded: ({ theme }) => ({
+      borderRadius: theme.shape.borderRadius * 4,
+    }),
   },
 };
 

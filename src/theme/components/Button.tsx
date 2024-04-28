@@ -43,6 +43,9 @@ declare module '@mui/material/Button' {
 // });
 
 export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton'] = {
+  defaultProps: {
+    // disableElevation: true,
+  },
   styleOverrides: {
     root: ({ theme }) => ({
       fontSize: pxToRem(12),
@@ -72,6 +75,12 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
       fontSize: pxToRem(12),
       padding: theme.spacing(1, 3),
     }),
+    containedPrimary: ({ theme }) => ({
+      backgroundColor: theme.palette.text.primary,
+    }),
+    containedSizeSmall: ({ theme }) => ({
+      padding: theme.spacing(0.75, 2),
+    }),
 
     startIcon: {
       '& > *:first-of-type': {
@@ -94,8 +103,5 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
     //     backgroundColor: theme.palette.neutral.lighter,
     //   },
     // }),
-  },
-  defaultProps: {
-    // disableElevation: true,
   },
 };

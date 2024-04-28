@@ -11,12 +11,9 @@ const SwitchComponent: Components<Omit<Theme, 'components'>>['MuiSwitch'] = {
 
       '& > .MuiSwitch-switchBase:first-of-type': { left: 3, top: 1 },
       '& .MuiSwitch-track': {
-        borderRadius: 36 / 2,
+        borderRadius: 18,
         backgroundColor: '#E9E9EA',
         opacity: 1,
-        // transition: theme.transitions.create(['background-color'], {
-        //   duration: 500,
-        // }),
       },
     },
     switchBase: {

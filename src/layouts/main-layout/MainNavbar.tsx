@@ -77,7 +77,7 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
         </CustomNavBox>
         <CustomNavBox>
           <Box
-            pr={1.2}
+            pr={2}
             sx={({ breakpoints }) => ({
               display: 'none',
 
@@ -87,9 +87,12 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
             })}
           >
             <TextField
+              variant="filled"
               placeholder="Type here..."
               InputProps={{
-                startAdornment: <IconifyIcon icon="material-symbols:search-rounded" />,
+                startAdornment: (
+                  <IconifyIcon icon="material-symbols:search-rounded" fontSize={16} />
+                ),
               }}
             />
           </Box>
@@ -109,7 +112,7 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
               sx={({ breakpoints }) => ({
                 display: 'flex',
                 justifyContent: 'space-between',
-                color: 'white.main',
+                color: 'common.white',
                 border: 0,
                 p: 1,
                 alignItems: 'center',
@@ -147,20 +150,25 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
               </SvgIcon>
             </IconButton>{' '}
             <IconButton>
-              <IconifyIcon icon="material-symbols:settings-rounded" color="white.main" />
+              <IconifyIcon
+                icon="material-symbols:settings-rounded"
+                color="common.white"
+                fontSize={16}
+              />
             </IconButton>
             <IconButton>
               <IconifyIcon
                 aria-controls="notification-menu"
                 aria-haspopup="true"
                 icon="mdi:bell"
-                color="white.main"
+                color="common.white"
+                fontSize={16}
               />
             </IconButton>
             <Link href="/authentication/sign-in">
               <IconButton>
-                <IconifyIcon icon="mdi:user" color="white.main" />
-                <Typography variant="button" fontWeight="medium" color="white.main">
+                <IconifyIcon icon="mdi:user" color="common.white" fontSize={16} />
+                <Typography variant="button" fontWeight="medium" color="common.white">
                   Sign-in
                 </Typography>
               </IconButton>

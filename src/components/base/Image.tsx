@@ -1,8 +1,11 @@
-import { Box, BoxProps } from '@mui/material';
+import { Box } from '@mui/material';
+import { BoxProps, SxProps } from '@mui/system';
+import { ImgHTMLAttributes } from 'react';
 
 interface ImageProps extends BoxProps {
-  src: string;
+  src: ImgHTMLAttributes<HTMLImageElement>['src'];
   alt: string;
+  sx?: SxProps;
 }
 
 const Image = ({ src, alt, ...rest }: ImageProps) => {

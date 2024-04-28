@@ -44,7 +44,7 @@ const CustomBreadcrumbs = ({ route, title }: { route: string[]; title: string })
               variant="button"
               fontWeight={400}
               textTransform="capitalize"
-              color={'white.main'}
+              color={'common.white'}
             >
               {el}
             </Typography>

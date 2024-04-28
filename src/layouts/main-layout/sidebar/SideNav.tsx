@@ -2,6 +2,8 @@ import { Box, Divider, Drawer, Link, List, Typography } from '@mui/material';
 
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import SimpleBar from 'simplebar-react';
+import 'simplebar-react/dist/simplebar.min.css';
 import SideNavCollapse from './SideNavCollapse';
 import SideNavFooter from './SideNavFooter';
 import SideNavItem from './SideNavItem';
@@ -23,7 +25,6 @@ const SideNavSection = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: Si
   const collapseName = pathname.split('/').slice(1)[0];
   useEffect(() => {
     setOpenCollapse(collapseName);
-    // setOpenNestedCollapse(itemParentName);
   }, []);
 
   //    Function to handle toggling of openCollapse state
@@ -96,22 +97,30 @@ const SideNavSection = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: Si
   return (
     <>
       <Drawer variant="permanent" sx={{ display: { xs: 'none', xl: 'block' } }}>
-        <Box pt={3} pb={1} px={4} textAlign="center">
-          <Link href="/" display="flex" alignItems="center">
-            <Box component="img" src={'/Argon-Logo.svg'} alt="Argon Logo" width="2rem" mr={0.25} />
-            <Box width={'100%'}>
-              <Typography variant="button" fontWeight="bold">
-                Argon Dashboard 2 PRO
-              </Typography>
-            </Box>
-          </Link>
-        </Box>
-        <Divider />
-        <List>{renderRoutes}</List>
+        <SimpleBar autoHide={false} style={{ maxHeight: '1000px' }}>
+          <Box pt={3} pb={1} px={4} textAlign="center">
+            <Link href="/" display="flex" alignItems="center">
+              <Box
+                component="img"
+                src={'/Argon-Logo.svg'}
+                alt="Argon Logo"
+                width="2rem"
+                mr={0.25}
+              />
+              <Box width={'100%'}>
+                <Typography variant="button" fontWeight="bold">
+                  Argon Dashboard 2 PRO
+                </Typography>
+              </Box>
+            </Link>
+          </Box>
+          <Divider />
+          <List>{renderRoutes}</List>
 
-        <Box pt={1} mt="auto" mb={2} mx={2}>
-          <SideNavFooter />
-        </Box>
+          <Box pt={1} mt="auto" mb={2} mx={2}>
+            <SideNavFooter />
+          </Box>
+        </SimpleBar>
       </Drawer>
       <Drawer
         variant="temporary"

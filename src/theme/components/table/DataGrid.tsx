@@ -12,7 +12,7 @@ const DataGridComponent: DataGridComponents<Omit<Theme, 'components'>>['MuiDataG
       borderTopLeftRadius: theme.spacing(2),
       boxShadow: theme.shadows[1],
       border: 0,
-      backgroundColor: theme.palette.white.main,
+      backgroundColor: theme.palette.common.white,
 
       '&.MuiDataGrid-root .MuiDataGrid-columnHeader:focus-within': {
         outline: 'none !important',

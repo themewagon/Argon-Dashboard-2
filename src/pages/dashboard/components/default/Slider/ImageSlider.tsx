@@ -3,8 +3,10 @@ import slides2 from 'assets/images/img-1.jpg';
 import slides1 from 'assets/images/img-2.jpg';
 import slides3 from 'assets/images/img-3.jpg';
 import IconifyIcon from 'components/base/IconifyIcon';
+import Image from 'components/base/Image';
 import CameraIcon from 'components/icons/CameraIcon';
 import { useState } from 'react';
+import pxToRem from 'theme/functions/pxToRem';
 
 const data = [
   {
@@ -56,7 +58,7 @@ const ImageSlider = () => {
         position: 'relative',
         display: 'block',
         overflow: 'hidden',
-        bgcolor: 'black.main',
+        bgcolor: 'common.black',
       }}
     >
       <Box
@@ -76,7 +78,7 @@ const ImageSlider = () => {
         >
           <IconifyIcon
             icon="material-symbols:navigate-before"
-            color="white.main"
+            color="common.white"
             fontSize="1.5rem"
           />
         </IconButton>
@@ -86,17 +88,24 @@ const ImageSlider = () => {
             cursor: 'pointer',
           }}
         >
-          <IconifyIcon icon="material-symbols:navigate-next" color="white.main" fontSize="1.5rem" />
+          <IconifyIcon
+            icon="material-symbols:navigate-next"
+            color="common.white"
+            fontSize="1.5rem"
+          />
         </IconButton>
       </Box>
       <Box
         sx={{
           position: 'relative',
-          width: '100%',
+          width: 1,
           overflow: 'hidden',
         }}
       >
-        <Box overflow="hidden" sx={{ margin: `0 auto`, maxWidth: 'fit-content', height: '490px' }}>
+        <Box
+          overflow="hidden"
+          sx={{ my: 0, mx: 'auto', maxWidth: 'fit-content', height: pxToRem(490) }}
+        >
           <Box
             whiteSpace="nowrap"
             sx={(theme) => ({
@@ -122,10 +131,11 @@ const ImageSlider = () => {
                   }),
                 })}
               >
-                <img
+                {/* //! will update image component */}
+                <Image
                   src={slide.img}
                   alt="image slide"
-                  style={{
+                  sx={{
                     objectFit: 'cover',
                     height: '100%',
                     width: '100%',
@@ -141,12 +151,12 @@ const ImageSlider = () => {
             display="flex"
             justifyContent="center"
             alignItems="center"
-            width="32px"
-            height="32px"
-            borderRadius="4px"
+            width={32}
+            height={32}
+            borderRadius={1}
             textAlign="center"
             mb={2}
-            bgcolor="white.main"
+            bgcolor="common.white"
             fontSize="0.5rem"
           >
             <Typography variant="subtitle2" color="dark" lineHeight={0}>
@@ -154,12 +164,12 @@ const ImageSlider = () => {
             </Typography>
           </Box>
           <Grow in={true} timeout={800}>
-            <Typography variant="h5" color="white.main" mb={0.5}>
+            <Typography variant="h5" color="common.white" mb={0.5}>
               {data[currentImageSlide].title}
             </Typography>
           </Grow>
           <Grow in={true} timeout={800}>
-            <Typography variant="body2" color="white.main">
+            <Typography variant="body2" color="common.white">
               {data[currentImageSlide].subtitle}
             </Typography>
           </Grow>

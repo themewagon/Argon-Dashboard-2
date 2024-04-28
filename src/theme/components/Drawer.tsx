@@ -14,8 +14,8 @@ const DrawerComponent: Components<Omit<Theme, 'components'>>['MuiDrawer'] = {
       width: pxToRem(290),
       backgroundColor: theme.palette.neutral.contrastText,
       height: `calc(100vh - ${pxToRem(32)})`,
-      margin: `${pxToRem(16)} 0 ${pxToRem(16)} ${pxToRem(16)}`,
-      borderRadius: `${pxToRem(16)}`,
+      margin: theme.spacing(2, 0, 2, 2),
+      borderRadius: theme.shape.borderRadius * 4,
       border: 'none',
     }),
     // opens from the left

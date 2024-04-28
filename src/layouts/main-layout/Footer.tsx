@@ -1,4 +1,4 @@
-import { Box, Link, Typography } from '@mui/material';
+import { Box, Link, Stack, Typography } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 
 // links
@@ -10,16 +10,15 @@ const data = [
 ];
 const Footer = () => {
   return (
-    <Box
-      width="100%"
-      display="flex"
-      flexDirection={{ xs: 'column', lg: 'row' }}
+    <Stack
+      direction={{ xs: 'column', lg: 'row' }}
       justifyContent="space-between"
       alignItems="center"
       px={1.5}
+      spacing={0}
     >
-      <Box
-        display="flex"
+      <Stack
+        direction="row"
         justifyContent="center"
         alignItems="center"
         flexWrap="wrap"
@@ -35,7 +34,7 @@ const Footer = () => {
           </Typography>
           for a better web
         </Typography>
-      </Box>
+      </Stack>
       <Box
         component="ul"
         sx={({ breakpoints }) => ({
@@ -63,7 +62,7 @@ const Footer = () => {
           </Box>
         ))}
       </Box>
-    </Box>
+    </Stack>
   );
 };
 

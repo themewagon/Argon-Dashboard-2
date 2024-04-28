@@ -10,6 +10,8 @@ import ChipComponent from './components/Chip';
 import CssBaseline from './components/CssBaseline';
 import DividerComponent from './components/Divider';
 import DrawerComponent from './components/Drawer';
+import FilledInputComponent from './components/form/FilledInput';
+import InputBaseComponent from './components/form/InputBase';
 import IconButtonComponent from './components/IconButton';
 import LinearProgressComponent from './components/LinearProgress';
 import LinkComponent from './components/Link';
@@ -21,7 +23,6 @@ import ListItemTextComponent from './components/list/ListItemText';
 import PaperComponent from './components/Paper';
 import SwitchComponent from './components/Switch';
 import DataGridComponent from './components/table/DataGrid';
-import TextFieldComponent from './components/TextField';
 import palette from './palette';
 import shadows from './shadows';
 import typography from './typography';
@@ -55,7 +56,9 @@ export const theme = createTheme({
   typography,
   shadows: [...shadows] as Shadows,
   components: {
-    MuiTextField: TextFieldComponent,
+    // MuiTextField: TextFieldComponent,
+    MuiInputBase: InputBaseComponent,
+    MuiFilledInput: FilledInputComponent,
     MuiBadge: BadgeComponent,
     MuiChip: ChipComponent,
     MuiButton: ButtonComponent,

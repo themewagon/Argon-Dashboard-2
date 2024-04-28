@@ -11,7 +11,7 @@ const data = [
 
 const TodoList = () => {
   return (
-    <Card sx={{ height: '100%', overflow: 'hidden', color: 'dark.main' }}>
+    <Card sx={{ height: 1, overflow: 'hidden', color: 'dark.main' }}>
       <Box p={3}>
         <Typography variant="h5" textTransform="capitalize" fontWeight="medium">
           To Do List

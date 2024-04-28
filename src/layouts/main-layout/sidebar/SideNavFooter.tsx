@@ -29,11 +29,7 @@ const SideNavFooter = () => {
           href="https://www.creative-tim.com/learning-lab/material-ui/overview/argon-dashboard/"
           target="_blank"
         >
-          <Button
-            variant="contained"
-            size="small"
-            sx={{ mb: 1, bgcolor: 'text.primary', px: '1rem' }}
-          >
+          <Button variant="contained" size="small" sx={{ mb: 1 }}>
             Documentation
           </Button>
         </Link>
