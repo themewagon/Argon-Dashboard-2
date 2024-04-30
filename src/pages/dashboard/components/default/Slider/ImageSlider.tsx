@@ -1,4 +1,4 @@
-import { Box, Card, Grow, IconButton, Typography } from '@mui/material';
+import { Box, Card, Grow, IconButton, Stack, Typography } from '@mui/material';
 import slides2 from 'assets/images/img-1.jpg';
 import slides1 from 'assets/images/img-2.jpg';
 import slides3 from 'assets/images/img-3.jpg';
@@ -61,14 +61,16 @@ const ImageSlider = () => {
         bgcolor: 'common.black',
       }}
     >
-      <Box
-        display="flex"
+      <Stack
+        direction="row"
         alignItems="center"
-        gap={2}
-        position="absolute"
-        top={42}
-        right={42}
-        zIndex={5}
+        sx={{
+          gap: 2,
+          position: 'absolute',
+          top: 42,
+          right: 42,
+          zIndex: 5,
+        }}
       >
         <IconButton
           onClick={prev}
@@ -94,7 +96,7 @@ const ImageSlider = () => {
             fontSize="1.5rem"
           />
         </IconButton>
-      </Box>
+      </Stack>
       <Box
         sx={{
           position: 'relative',
@@ -103,24 +105,29 @@ const ImageSlider = () => {
         }}
       >
         <Box
-          overflow="hidden"
-          sx={{ my: 0, mx: 'auto', maxWidth: 'fit-content', height: pxToRem(490) }}
+          sx={{
+            my: 0,
+            mx: 'auto',
+            maxWidth: 'fit-content',
+            height: pxToRem(490),
+            overflow: 'hidden',
+          }}
         >
           <Box
-            whiteSpace="nowrap"
             sx={(theme) => ({
               transition: theme.transitions.create(['transform'], {
                 duration: 800,
                 easing: theme.transitions.easing.easeInOut,
               }),
+              whiteSpace: 'nowrap',
             })}
             style={{ transform: `translateX(${-currentImageSlide * 100}%)` }}
           >
             {data.map((slide, index) => (
               <Box
                 key={slide.id}
-                display="inline-block"
                 sx={(theme) => ({
+                  display: 'inline-block',
                   width: 1,
                   height: 490,
                   opacity: index === currentImageSlide ? 1 : 0.7,
@@ -147,22 +154,24 @@ const ImageSlider = () => {
           </Box>
         </Box>
         <Box position="absolute" bottom={26} ml={6} py={2.5} textAlign="left" width="80%">
-          <Box
-            display="flex"
+          <Stack
+            direction="row"
             justifyContent="center"
             alignItems="center"
-            width={32}
-            height={32}
-            borderRadius={1}
-            textAlign="center"
-            mb={2}
-            bgcolor="common.white"
-            fontSize="0.5rem"
+            sx={{
+              width: 32,
+              height: 32,
+              borderRadius: 1,
+              textAlign: 'center',
+              mb: 2,
+              bgcolor: 'common.white',
+              fontSize: '0.5rem',
+            }}
           >
             <Typography variant="subtitle2" color="dark" lineHeight={0}>
               <CameraIcon />
             </Typography>
-          </Box>
+          </Stack>
           <Grow in={true} timeout={800}>
             <Typography variant="h5" color="common.white" mb={0.5}>
               {data[currentImageSlide].title}

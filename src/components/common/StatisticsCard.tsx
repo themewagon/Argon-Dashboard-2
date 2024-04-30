@@ -39,11 +39,11 @@ const CustomStatisticsCard = ({ title, count, percentage, icon }: StatisticsCard
           <Grid item xs={4}>
             <Stack direction="row" justifyContent="flex-end" alignItems="center" ml="auto">
               <Box
-                width={48}
-                height={48}
-                borderRadius={160}
-                display="grid"
                 sx={(theme) => ({
+                  display: 'grid',
+                  width: 48,
+                  height: 48,
+                  borderRadius: 160,
                   placeItems: 'center',
                   background: `${linearGradient(theme.palette.gradients[icon.gradient].main, theme.palette.gradients[icon.gradient].state)}`,
                 })}
@@ -53,18 +53,14 @@ const CustomStatisticsCard = ({ title, count, percentage, icon }: StatisticsCard
             </Stack>
           </Grid>
         </Grid>
-        <Typography
-          display="flex"
-          alignItems="center"
-          variant="button"
-          fontWeight="bold"
-          color={`${percentage.color}.main`}
-        >
-          {percentage.count}
+        <Stack direction="row" alignItems="center">
+          <Typography variant="button" fontWeight="bold" color={`${percentage.color}.main`}>
+            {percentage.count}
+          </Typography>
           <Typography variant="body2" ml={1} color="text.secondary">
             {percentage.text}
           </Typography>
-        </Typography>
+        </Stack>
       </Box>
     </Card>
   );

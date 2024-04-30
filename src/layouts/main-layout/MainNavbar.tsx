@@ -51,7 +51,7 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
           >
             <Box component="img" src={'/Logo-White.png'} alt="Argon Logo" width="2rem" mr={0.25} />
           </Link>
-          <Box
+          {/* <Box
             sx={(theme) => ({
               display: 'none !important',
               cursor: 'pointer',
@@ -73,7 +73,7 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
               <path d="M0 8H20.5896" stroke="white" stroke-width="2" />
               <path d="M0 13H20.5896" stroke="white" stroke-width="2" />
             </SvgIcon>
-          </Box>
+          </Box> */}
         </CustomNavBox>
         <CustomNavBox>
           <Box
@@ -96,17 +96,7 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
               }}
             />
           </Box>
-          <Box
-          // display="flex"
-          // justifyContent="space-between"
-          // alignItems="center"
-          // pr={1.2}
-          // sx={({ breakpoints }) => ({
-          //   [breakpoints.up('md')]: {
-          //     display: 'none',
-          //   },
-          // })}
-          >
+          <Box>
             <IconButton
               size="small"
               sx={({ breakpoints }) => ({

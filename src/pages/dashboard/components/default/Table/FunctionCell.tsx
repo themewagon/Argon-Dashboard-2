@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 
 export interface FunctionRole {
   title: string;
@@ -12,16 +12,16 @@ const FunctionCell = ({ value }: FunctionRoleProps) => {
   const { title, designation } = value;
 
   return (
-    <Box display="flex" alignItems="center">
-      <Box display="flex" flexDirection="column">
+    <Stack direction="row" alignItems="center">
+      <Stack direction="column">
         <Typography variant="button" fontWeight="medium" color="text.primary">
           {title}
         </Typography>
         <Typography variant="caption" color="text.secondary" fontWeight={400}>
           {designation}
         </Typography>
-      </Box>
-    </Box>
+      </Stack>
+    </Stack>
   );
 };
 

@@ -15,7 +15,7 @@ const CheckboxComponent: Components<Omit<Theme, 'components'>>['MuiCheckbox'] = 
       '&:hover': {
         backgroundColor: theme.palette.transparent.main,
       },
-      '& svg': {
+      '& .iconify': {
         fill: theme.palette.transparent.main,
       },
       '&.Mui-disabled svg': {
@@ -24,13 +24,13 @@ const CheckboxComponent: Components<Omit<Theme, 'components'>>['MuiCheckbox'] = 
     }),
 
     sizeSmall: {
-      '& svg': {
+      '& .iconify': {
         width: 20,
         height: 20,
       },
     },
     sizeMedium: {
-      '& svg': {
+      '& .iconify': {
         width: 25,
         height: 25,
       },

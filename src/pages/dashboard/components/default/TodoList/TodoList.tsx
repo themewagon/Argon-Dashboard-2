@@ -1,4 +1,4 @@
-import { Box, Card, Checkbox, Divider, Typography } from '@mui/material';
+import { Box, Card, Checkbox, Divider, Stack, Typography } from '@mui/material';
 import React from 'react';
 
 // Todo Data
@@ -12,38 +12,30 @@ const data = [
 const TodoList = () => {
   return (
     <Card sx={{ height: 1, overflow: 'hidden', color: 'dark.main' }}>
-      <Box p={3}>
+      <Box sx={{ p: 3, pb: 1 }}>
         <Typography variant="h5" textTransform="capitalize" fontWeight="medium">
           To Do List
         </Typography>
       </Box>
-      <Box pb={3} px={3} my="auto">
-        <Box
-          component="ul"
-          display="flex"
-          flexDirection="column"
-          m={0}
-          p={0}
-          sx={{ listStyle: 'none' }}
-        >
+      <Box sx={{ pb: 3, px: 3, my: 'auto' }}>
+        <Stack component="ul" sx={{ listStyle: 'none', display: 'flex', m: 0, p: 0 }}>
           {data.map(({ title, time, checked }, key) => (
             <React.Fragment key={key}>
-              <Box
+              <Stack
                 component="li"
-                display="flex"
+                direction="row"
                 justifyContent="space-between"
                 alignItems="center"
-                py={1}
+                sx={{ py: 1 }}
               >
-                <Box lineHeight={1}>
+                <Box sx={{ lineHeight: 1 }}>
                   <Typography variant="h6">{title}</Typography>
                   <Typography variant="caption" fontWeight={'regular'}>
                     {time}
                   </Typography>
                 </Box>
-                <Checkbox defaultChecked={checked} color="primary" />
-                {/* <Checkbox color="secondary" defaultChecked={checked} /> */}
-              </Box>
+                <Checkbox size="small" defaultChecked={checked} color="primary" />
+              </Stack>
               {key !== data.length - 1 && (
                 <Divider
                   sx={({ palette: { grey } }) => ({
@@ -57,7 +49,7 @@ const TodoList = () => {
               )}
             </React.Fragment>
           ))}
-        </Box>
+        </Stack>
       </Box>
     </Card>
   );

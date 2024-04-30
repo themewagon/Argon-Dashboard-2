@@ -1,5 +1,5 @@
 // Images
-import { Avatar, Box, Card, Divider, LinearProgress, Typography } from '@mui/material';
+import { Avatar, Box, Card, Divider, LinearProgress, Stack, Typography } from '@mui/material';
 import img1 from 'assets/images/logo-jira.svg';
 import img4 from 'assets/images/logo-slack.svg';
 import img3 from 'assets/images/logo-spotify.svg';
@@ -15,44 +15,35 @@ const data = [
 ];
 const ProgressTracker = () => {
   return (
-    <Card sx={{ height: '100%', overflow: 'hidden' }}>
+    <Card sx={{ height: 1, overflow: 'hidden' }}>
       <Box p={3}>
         <Typography variant="h5" textTransform="capitalize" fontWeight="medium">
           Progress Track
         </Typography>
       </Box>
-      <Box pb={3} px={3}>
-        <Box
-          component="ul"
-          display="flex"
-          flexDirection="column"
-          m={0}
-          p={0}
-          sx={{ listStyle: 'none' }}
-        >
+      <Box sx={{ pb: 3, px: 3 }}>
+        <Stack component="ul" sx={{ listStyle: 'none', m: 0, p: 0 }}>
           {data.map(({ img, name, progress, color }, key) => (
             <React.Fragment key={key}>
-              <Box component="li" py={1}>
-                <Box display="flex" alignItems="center" width="100%">
-                  <Avatar src={img} alt={name} />
-                  <Box width="100%" ml={3}>
-                    <Typography variant="h6" mb={1}>
-                      {name}
-                    </Typography>
-                    <LinearProgress
-                      variant="determinate"
-                      value={progress}
-                      sx={{
-                        '& .MuiLinearProgress-bar': {
-                          backgroundColor: `${color}.main`,
-                          width: `${progress}%`,
-                          color: `text.secondary`,
-                        },
-                      }}
-                    />
-                  </Box>
-                </Box>
-              </Box>
+              <Stack component="li" direction="row" alignItems="center" sx={{ py: 1, width: 1 }}>
+                <Avatar src={img} alt={name} />
+                <Stack sx={{ width: 1, ml: 3 }}>
+                  <Typography variant="h6" mb={1}>
+                    {name}
+                  </Typography>
+                  <LinearProgress
+                    variant="determinate"
+                    value={progress}
+                    sx={{
+                      '& .MuiLinearProgress-bar': {
+                        backgroundColor: `${color}.main`,
+                        width: `${progress}%`,
+                        color: `text.secondary`,
+                      },
+                    }}
+                  />
+                </Stack>
+              </Stack>
               {key !== data.length - 1 && (
                 <Divider
                   sx={({ palette: { grey } }) => ({
@@ -66,7 +57,7 @@ const ProgressTracker = () => {
               )}
             </React.Fragment>
           ))}
-        </Box>
+        </Stack>
       </Box>
     </Card>
   );

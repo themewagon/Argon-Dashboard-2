@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CustomBreadcrumbs = ({ route, title }: { route: string[]; title: string }) => {
   const routes = route.slice(0, -1);
   return (
-    <Box mr={{ xs: 0, xl: 8 }}>
+    <Box sx={{ mr: { xs: 0, xl: 8 } }}>
       <Breadcrumbs aria-label="breadcrumb">
         <Link to="/">
           <Typography variant="body2">

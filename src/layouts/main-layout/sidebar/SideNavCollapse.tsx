@@ -1,4 +1,4 @@
-import { Box, Collapse, ListItem, ListItemIcon, ListItemText, SvgIconProps } from '@mui/material';
+import { Collapse, ListItem, ListItemIcon, ListItemText, Stack, SvgIconProps } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import { ReactNode } from 'react';
 
@@ -24,12 +24,12 @@ const SideNavCollapse = ({
   return (
     <>
       <ListItem onClick={onClick}>
-        <Box
+        <Stack
+          direction="row"
+          alignItems="center"
           sx={(theme) => ({
             width: '100%',
             bgcolor: active ? theme.palette['grey'][100] : 'transparent.main',
-            display: 'flex',
-            alignItems: 'center',
             px: 2,
             py: 1,
             mx: 1,
@@ -74,7 +74,7 @@ const SideNavCollapse = ({
             icon="fa:angle-up"
             fontSize={16}
           />
-        </Box>
+        </Stack>
       </ListItem>
       {children && (
         <Collapse in={Boolean(open)} unmountOnExit>

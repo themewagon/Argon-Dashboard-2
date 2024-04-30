@@ -1,5 +1,6 @@
-import { Box, Divider, Drawer, Link, List, Typography } from '@mui/material';
+import { Box, ButtonBase, Divider, Drawer, Link, List, Stack, Typography } from '@mui/material';
 
+import Image from 'components/base/Image';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import SimpleBar from 'simplebar-react';
@@ -96,23 +97,19 @@ const SideNavSection = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: Si
 
   return (
     <>
-      <Drawer variant="permanent" sx={{ display: { xs: 'none', xl: 'block' } }}>
-        <SimpleBar autoHide={false} style={{ maxHeight: '1000px' }}>
+      <Drawer variant="permanent" sx={{ display: { xs: 'none', md: 'block' } }}>
+        <SimpleBar autoHide={false} style={{ maxHeight: `calc(100vh - 32px)` }}>
           <Box pt={3} pb={1} px={4} textAlign="center">
-            <Link href="/" display="flex" alignItems="center">
-              <Box
-                component="img"
-                src={'/Argon-Logo.svg'}
-                alt="Argon Logo"
-                width="2rem"
-                mr={0.25}
-              />
-              <Box width={'100%'}>
-                <Typography variant="button" fontWeight="bold">
-                  Argon Dashboard 2 PRO
-                </Typography>
-              </Box>
-            </Link>
+            <ButtonBase component={Link} href="/">
+              <Stack alignItems="center" flexDirection="row" gap={1}>
+                <Image src={'/Argon-Logo.svg'} alt="Argon Logo" width="2rem" mr={0.25} />
+                <Box width={1}>
+                  <Typography variant="button" fontWeight="bold">
+                    Argon Dashboard 2 PRO
+                  </Typography>
+                </Box>
+              </Stack>
+            </ButtonBase>
           </Box>
           <Divider />
           <List>{renderRoutes}</List>
@@ -130,17 +127,19 @@ const SideNavSection = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: Si
         ModalProps={{
           keepMounted: true, // Better open performance on mobile.
         }}
-        sx={{ display: { xs: 'block', xl: 'none' } }}
+        sx={{ display: { xs: 'block', md: 'none' } }}
       >
         <Box pt={3} pb={1} px={4} textAlign="center">
-          <Link href="/" display="flex" alignItems="center">
-            <Box component="img" src={'/Argon-Logo.svg'} alt="Argon Logo" width="2rem" mr={0.25} />
-            <Box width={'100%'}>
-              <Typography component="h6" variant="button" fontWeight="bold">
-                Argon Dashboard 2 PRO
-              </Typography>
-            </Box>
-          </Link>
+          <ButtonBase component={Link} href="/">
+            <Stack alignItems="center" flexDirection="row" gap={1}>
+              <Image src={'/Argon-Logo.svg'} alt="Argon Logo" width="2rem" mr={0.25} />
+              <Box width={1}>
+                <Typography variant="button" fontWeight="bold">
+                  Argon Dashboard 2 PRO
+                </Typography>
+              </Box>
+            </Stack>
+          </ButtonBase>
         </Box>
         <Divider />
         <List>{renderRoutes}</List>

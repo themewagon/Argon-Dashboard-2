@@ -24,7 +24,7 @@ const MainLayout = ({ children }: PropsWithChildren) => {
   };
 
   return (
-    <Box position="relative" overflow="hidden" sx={{ height: 1 }}>
+    <Box sx={{ height: 1, position: 'relative', overflow: 'hidden' }}>
       <SideNavSection
         onDrawerClose={handleDrawerClose}
         onDrawerTransitionEnd={handleDrawerTransitionEnd}
@@ -33,7 +33,7 @@ const MainLayout = ({ children }: PropsWithChildren) => {
       <Box
         sx={({ breakpoints, transitions, typography }) => ({
           p: 3,
-          [breakpoints.up('xl')]: {
+          [breakpoints.up('md')]: {
             marginLeft: typography.pxToRem(308),
             transition: transitions.create(['margin-left', 'margin-right'], {
               easing: transitions.easing.easeInOut,
@@ -43,13 +43,15 @@ const MainLayout = ({ children }: PropsWithChildren) => {
         })}
       >
         <Box
-          bgcolor="primary.main"
-          height="300px"
-          width="100vw"
-          position="absolute"
-          top={0}
-          left={0}
-          zIndex={-1}
+          sx={({ palette, typography }) => ({
+            bgcolor: palette.primary.main,
+            height: typography.pxToRem(300),
+            width: '100vw',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            zIndex: -1,
+          })}
         ></Box>
         <MainNavbar onDrawerToggle={handleDrawerToggle} />
         {children}

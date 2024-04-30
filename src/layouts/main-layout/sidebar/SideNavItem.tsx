@@ -1,8 +1,6 @@
-import { ListItem, ListItemButton, ListItemText } from '@mui/material';
+import { Link, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import { ReactNode } from 'react';
-import { NavLink } from 'react-router-dom';
 import { grey } from 'theme/colors';
-import pxToRem from 'theme/functions/pxToRem';
 interface ListItemProps {
   name: string;
   active?: boolean | string;
@@ -17,7 +15,6 @@ const SideNavItem = ({ name, active, route }: ListItemProps) => {
       <ListItem
         sx={({ palette }) => ({
           color: palette.text.secondary,
-          pl: 3,
           my: 0.5,
           width: '100%',
           cursor: 'pointer',
@@ -27,30 +24,23 @@ const SideNavItem = ({ name, active, route }: ListItemProps) => {
         })}
       >
         <ListItemButton
-          component={NavLink}
-          to={route}
+          component={Link}
+          href={route}
           sx={(theme) => ({
             '& span': {
               fontWeight: active ? 600 : 400,
               color: active ? theme.palette.grey[900] : theme.palette.grey[600],
             },
-            '&::before': {
-              //   content: `"${name[0]}"`,
-              content: `''`,
-              width: '100%',
-              height: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              position: 'absolute',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              left: pxToRem(-200),
-              opacity: 1,
-              borderRadius: '50%',
-            },
+            paddingLeft: theme.spacing(4),
+            marginLeft: 0,
           })}
         >
-          <ListItemText primary={name} />
+          <ListItemText
+            primary={name}
+            sx={({ spacing }) => ({
+              pl: spacing(3.25),
+            })}
+          />
         </ListItemButton>
       </ListItem>
     </>

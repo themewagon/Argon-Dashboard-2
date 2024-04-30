@@ -1,4 +1,4 @@
-import { Box, Chip, LinearProgress } from '@mui/material';
+import { Box, Chip, LinearProgress, Stack } from '@mui/material';
 import {
   DataGrid,
   GridApi,
@@ -60,9 +60,9 @@ const UserTable = () => {
         const status = row.status ? 'Online' : 'Offline';
         const badge = row.status ? 'success' : 'error';
         return (
-          <Box display="flex" justifyContent="start" textAlign="start">
+          <Stack direction="row" justifyContent="start" textAlign="start">
             <Chip label={status} sx={{ bgcolor: `${badge}.light`, color: `${badge}.dark` }} />
-          </Box>
+          </Stack>
         );
       },
     },

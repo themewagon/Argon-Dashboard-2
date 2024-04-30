@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Typography } from '@mui/material';
+import { Box, Grid, Paper, Stack, Typography } from '@mui/material';
 import CardSection from 'components/sections/statistics/CardSection';
 import ProgressTracker from '../components/default/ProgressTracker/ProgressTracker';
 import ImageSlider from '../components/default/Slider/ImageSlider';
@@ -19,9 +19,11 @@ const Default = () => {
                 <Typography variant="h6">Sales Overview</Typography>
               </Box>
 
-              <Box mb={2}>
-                <Box display="flex" alignItems="center">
-                  <Box fontSize={'1.5rem'} color="success" mb={0.3} mr={0.5} lineHeight={0}>
+              <>
+                <Stack direction="row" alignItems="center" mb={2}>
+                  <Box
+                    sx={{ fontSize: '1.5rem', color: 'success', mb: 0.3, mr: 0.5, lineHeight: 0 }}
+                  >
                     Icon
                   </Box>
                   <Typography variant="button" color="text" fontWeight="medium">
@@ -30,8 +32,8 @@ const Default = () => {
                       in 2022
                     </Typography>
                   </Typography>
-                </Box>
-              </Box>
+                </Stack>
+              </>
             </Box>
           </Paper>
         </Grid>

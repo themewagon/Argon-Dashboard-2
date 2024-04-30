@@ -1,5 +1,5 @@
 // Team member Images
-import { Avatar, Box, Button, Card, Chip, Divider, Grid, Typography } from '@mui/material';
+import { Avatar, Box, Button, Card, Chip, Divider, Grid, Stack, Typography } from '@mui/material';
 import person1 from 'assets/images/team/team-1.jpg';
 import person2 from 'assets/images/team/team-2.jpg';
 import person3 from 'assets/images/team/team-3.jpg';
@@ -23,23 +23,16 @@ const data: TeamMember[] = [
 const TeamMembers = () => {
   return (
     <Card sx={{ height: 1, overflow: 'hidden', color: 'dark.main' }}>
-      <Box p={3}>
+      <Box sx={{ p: 3 }}>
         <Typography variant="h5" textTransform="capitalize" fontWeight="medium">
           Team Members
         </Typography>
       </Box>
-      <Box pb={3} px={3}>
-        <Box
-          component="ul"
-          display="flex"
-          flexDirection="column"
-          m={0}
-          p={0}
-          sx={{ listStyle: 'none' }}
-        >
+      <Box sx={{ pb: 3, px: 3 }}>
+        <Stack component="ul" direction="column" sx={{ listStyle: 'none', m: 0, p: 0 }}>
           {data.map(({ img, name, badge }, key) => (
             <React.Fragment key={key}>
-              <Box component="li" py={1}>
+              <Box component="li" sx={{ py: 1 }}>
                 <Grid container spacing={3} alignItems="center">
                   <Grid item alignItems="center">
                     <Avatar src={img} alt={name} />
@@ -73,7 +66,7 @@ const TeamMembers = () => {
               )}
             </React.Fragment>
           ))}
-        </Box>
+        </Stack>
       </Box>
     </Card>
   );

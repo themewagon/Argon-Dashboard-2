@@ -16,7 +16,7 @@ const CssBaseline: Components<Omit<Theme, 'components'>>['MuiCssBaseline'] = {
     },
     'a, a:link, a:visited': {
       textDecoration: 'none !important',
-      color: `${theme.palette.text.primary}`,
+      //   color: `${theme.palette.text.primary}`,
     },
     'a.link, .link, a.link:link, .link:link, a.link:visited, .link:visited': {
       color: `${theme.palette.dark.main} !important`,

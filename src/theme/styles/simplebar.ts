@@ -10,9 +10,12 @@ const simplebar = (theme: Theme) => ({
           borderStyle: 'solid',
           borderColor: theme.palette.common.white,
           width: `60%`,
-          maxHeight: 200,
-          margin: theme.spacing(2, 'auto'),
-          backgroundColor: theme.palette.grey[300],
+          //   maxHeight: '100vh',
+          //   margin: theme.spacing(2, 'auto'),
+          backgroundColor: theme.palette.grey[400],
+          '&:hover': {
+            backgroundColor: theme.palette.grey[800],
+          },
         },
 
         '&.simplebar-visible': {
