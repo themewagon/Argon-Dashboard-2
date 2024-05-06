@@ -15,7 +15,7 @@ const InputBaseComponent: Components<Omit<Theme, 'components'>>['MuiInputBase'] 
     }),
     input: ({ theme }) => ({
       width: '100%',
-      minWidth: pxToRem(200),
+      //   minWidth: pxToRem(200),
       height: pxToRem(22),
       paddingTop: 0,
       paddingRight: 0,

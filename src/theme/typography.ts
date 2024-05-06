@@ -71,7 +71,8 @@ const typography: TypographyOptions = {
   },
 
   body1: {
-    fontSize: pxToRem(20),
+    fontSize: pxToRem(18),
+    fontWeight: 700,
     lineHeight: 1.625,
   },
 

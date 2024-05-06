@@ -31,15 +31,16 @@ const MainLayout = ({ children }: PropsWithChildren) => {
         mobileOpen={mobileOpen}
       />
       <Box
-        sx={({ breakpoints, transitions, typography }) => ({
+        sx={({ typography, transitions }) => ({
           p: 3,
-          [breakpoints.up('md')]: {
-            marginLeft: typography.pxToRem(308),
-            transition: transitions.create(['margin-left', 'margin-right'], {
-              easing: transitions.easing.easeInOut,
-              duration: transitions.duration.standard,
-            }),
+          ml: {
+            xs: 0,
+            md: typography.pxToRem(308),
           },
+          transition: transitions.create(['margin-left', 'margin-right'], {
+            easing: transitions.easing.easeInOut,
+            duration: transitions.duration.standard,
+          }),
         })}
       >
         <Box

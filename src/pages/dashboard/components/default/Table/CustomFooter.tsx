@@ -1,6 +1,5 @@
 import { Pagination, PaginationItem, Typography } from '@mui/material';
 import {
-  GridFooterContainer,
   gridPageCountSelector,
   gridPageSelector,
   useGridApiContext,
@@ -12,7 +11,7 @@ const CustomFooter = () => {
   const page = useGridSelector(apiRef, gridPageSelector);
   const pageCount = useGridSelector(apiRef, gridPageCountSelector);
   return (
-    <GridFooterContainer>
+    <>
       <Pagination
         color="primary"
         count={pageCount}
@@ -23,12 +22,12 @@ const CustomFooter = () => {
             {...item}
             slots={{
               previous: () => (
-                <Typography fontWeight={400} variant="caption">
+                <Typography fontWeight={400} variant="caption" textAlign="center">
                   Previous
                 </Typography>
               ),
               next: () => (
-                <Typography fontWeight={400} variant="caption" pr={2}>
+                <Typography fontWeight={400} variant="caption" sx={{ pr: 0 }}>
                   Next
                 </Typography>
               ),
@@ -36,7 +35,7 @@ const CustomFooter = () => {
           />
         )}
       />
-    </GridFooterContainer>
+    </>
   );
 };
 

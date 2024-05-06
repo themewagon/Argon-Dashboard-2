@@ -9,13 +9,14 @@ const data = [
   { href: '/license', title: 'License ', key: 'license' },
 ];
 const Footer = () => {
+  //   const { up } = useBreakpoints();
+  //   const upLg = up('lg');
   return (
     <Stack
       direction={{ xs: 'column', lg: 'row' }}
       justifyContent="space-between"
       alignItems="center"
-      px={1.5}
-      spacing={0}
+      sx={{ px: 1.5, spacing: 0 }}
     >
       <>
         <Typography variant="h6" fontWeight={400} textAlign="center" px={1.5}>
@@ -34,16 +35,12 @@ const Footer = () => {
         alignItems="center"
         justifyContent="center"
         component="ul"
-        sx={({ breakpoints }) => ({
+        sx={{
           listStyle: 'none',
-          mt: 3,
+          mt: { xs: 3, lg: 0 },
           mb: 0,
           p: 0,
-
-          [breakpoints.up('lg')]: {
-            mt: 0,
-          },
-        })}
+        }}
       >
         {data?.map((link) => (
           <ButtonBase

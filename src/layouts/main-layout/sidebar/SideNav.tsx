@@ -98,7 +98,7 @@ const SideNavSection = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: Si
   return (
     <>
       <Drawer variant="permanent" sx={{ display: { xs: 'none', md: 'block' } }}>
-        <SimpleBar autoHide={false} style={{ maxHeight: `calc(100vh - 32px)` }}>
+        <SimpleBar autoHide={true} style={{ maxHeight: `calc(100vh - 32px)` }}>
           <Box pt={3} pb={1} px={4} textAlign="center">
             <ButtonBase component={Link} href="/">
               <Stack alignItems="center" flexDirection="row" gap={1}>

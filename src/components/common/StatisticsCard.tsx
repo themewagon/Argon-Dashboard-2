@@ -43,7 +43,7 @@ const CustomStatisticsCard = ({ title, count, percentage, icon }: StatisticsCard
                   display: 'grid',
                   width: 48,
                   height: 48,
-                  borderRadius: 160,
+                  borderRadius: theme.shape.borderRadius * 40,
                   placeItems: 'center',
                   background: `${linearGradient(theme.palette.gradients[icon.gradient].main, theme.palette.gradients[icon.gradient].state)}`,
                 })}

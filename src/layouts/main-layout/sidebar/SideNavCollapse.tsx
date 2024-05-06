@@ -34,7 +34,7 @@ const SideNavCollapse = ({
             py: 1,
             mx: 1,
             gap: 1,
-            borderRadius: 2,
+            borderRadius: theme.shape.borderRadius * 0.5,
             userSelect: 'none',
             whiteSpace: 'nowrap',
             [theme.breakpoints.up('xl')]: {

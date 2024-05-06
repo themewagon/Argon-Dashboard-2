@@ -4,15 +4,15 @@ import { Components } from '@mui/material/styles/components';
 const FilledInputComponent: Components<Omit<Theme, 'components'>>['MuiFilledInput'] = {
   defaultProps: {},
   styleOverrides: {
-    root: {
-      borderRadius: 8,
+    root: ({ theme }) => ({
+      borderRadius: theme.shape.borderRadius * 2,
       '& fieldset': {
         border: 'none',
       },
       '&:before, &:after': {
         display: 'none',
       },
-    },
+    }),
     input: {
       paddingTop: 0,
       paddingRight: 0,

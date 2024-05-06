@@ -9,7 +9,7 @@ const simplebar = (theme: Theme) => ({
           border: 1,
           borderStyle: 'solid',
           borderColor: theme.palette.common.white,
-          width: `60%`,
+          width: '50%',
           //   maxHeight: '100vh',
           //   margin: theme.spacing(2, 'auto'),
           backgroundColor: theme.palette.grey[400],

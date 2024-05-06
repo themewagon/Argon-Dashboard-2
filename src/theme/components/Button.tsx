@@ -50,7 +50,7 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
     root: ({ theme }) => ({
       fontSize: pxToRem(12),
       fontWeight: 700,
-      borderRadius: theme.spacing(1),
+      borderRadius: theme.shape.borderRadius * 0.5,
       padding: theme.spacing(1, 3),
     }),
     sizeLarge: ({ theme }) => ({

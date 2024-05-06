@@ -1,4 +1,4 @@
-import { Box, Chip, LinearProgress, Stack } from '@mui/material';
+import { Chip, LinearProgress, Stack } from '@mui/material';
 import {
   DataGrid,
   GridApi,
@@ -31,7 +31,6 @@ const UserTable = () => {
     {
       field: 'author',
       headerName: 'Author',
-      cellClassName: 'name-column--cell',
       minWidth: 300,
       valueGetter: (params: AuthorData) => params.name,
       renderCell: (params: GridRenderCellParams<RowData>) => (
@@ -66,7 +65,13 @@ const UserTable = () => {
         );
       },
     },
-    { field: 'employed', headerName: 'Employed', flex: 1, align: 'left', minWidth: 120 },
+    {
+      field: 'employed',
+      headerName: 'Employed',
+      flex: 1,
+      align: 'left',
+      minWidth: 120,
+    },
 
     { field: 'action', headerName: '', flex: 1, align: 'center', sortable: false },
   ] as const;
@@ -84,23 +89,17 @@ const UserTable = () => {
   }, [userTableData, apiRef]);
 
   return (
-    <Box
-      sx={({ palette }) => ({
-        '& .name-column--cell': {
-          color: palette.common.black,
-        },
-      })}
-    >
+    <>
       <DataGrid
-        density="comfortable"
+        getRowHeight={() => 65}
         columns={columns}
         rows={rows}
-        onResize={() => {
-          apiRef.current.autosizeColumns({
-            includeOutliers: true,
-            expand: true,
-          });
-        }}
+        // onResize={() => {
+        //   apiRef.current.autosizeColumns({
+        //     includeOutliers: true,
+        //     expand: true,
+        //   });
+        // }}
         loading={isLoading}
         apiRef={apiRef}
         hideFooterSelectedRowCount
@@ -108,22 +107,37 @@ const UserTable = () => {
         disableColumnMenu
         disableColumnSelector
         disableRowSelectionOnClick
+        rowSelection={false}
         // autoPageSize
-        autoHeight
-        autosizeOptions={{
-          includeOutliers: true,
-          includeHeaders: true,
-          outliersFactor: 1,
-          expand: true,
-        }}
+        // autoHeight
+        // autosizeOptions={{
+        //   includeOutliers: true,
+        //   includeHeaders: true,
+        //   outliersFactor: 1,
+        //   expand: true,
+        // }}
         slots={{
           loadingOverlay: LinearProgress as GridSlots['loadingOverlay'],
           pagination: CustomFooter,
         }}
         initialState={{ pagination: { paginationModel: { page: 1, pageSize: 5 } } }}
         pageSizeOptions={[5, 10, 25]}
+        sx={{
+          '& .MuiDataGrid-virtualScroller::-webkit-scrollbar': {
+            width: '0.4em',
+          },
+          '& .MuiDataGrid-virtualScroller::-webkit-scrollbar-track': {
+            background: '#f1f1f1',
+          },
+          '& .MuiDataGrid-virtualScroller::-webkit-scrollbar-thumb': {
+            backgroundColor: '#888',
+          },
+          '& .MuiDataGrid-virtualScroller::-webkit-scrollbar-thumb:hover': {
+            background: '#555',
+          },
+        }}
       />
-    </Box>
+    </>
   );
 };
 

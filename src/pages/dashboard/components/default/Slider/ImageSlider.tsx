@@ -158,15 +158,14 @@ const ImageSlider = () => {
             direction="row"
             justifyContent="center"
             alignItems="center"
-            sx={{
-              width: 32,
-              height: 32,
+            sx={({ spacing }) => ({
+              width: spacing(4),
+              height: spacing(4),
               borderRadius: 1,
               textAlign: 'center',
               mb: 2,
               bgcolor: 'common.white',
-              fontSize: '0.5rem',
-            }}
+            })}
           >
             <Typography variant="subtitle2" color="dark" lineHeight={0}>
               <CameraIcon />

@@ -12,7 +12,7 @@ export interface AuthorCellProps {
 const AuthorCell = ({ value }: AuthorCellProps) => {
   const { image, name, email } = value;
   return (
-    <Stack direction="row" alignItems="center" px={1} py={0.5}>
+    <Stack direction="row" alignItems="center">
       <Box mr={2}>
         <Avatar src={image} alt={name} variant="rounded" sx={{ width: 36, height: 36 }} />
       </Box>
