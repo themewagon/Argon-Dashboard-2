@@ -6,9 +6,10 @@
   <a href="public/Logo-White.png">
     <img src="public/Logo-White.png" alt="Logo" width="50" height="50">
   </a>
-
+<br />
+<br />
 <!-- TABLE OF CONTENTS -->
-<details>
+<details  align="left">
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -32,7 +33,8 @@
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
-
+<br />
+<br />
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
