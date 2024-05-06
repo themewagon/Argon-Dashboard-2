@@ -2,9 +2,9 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="left">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src=" public/Logo-White.png" alt="Logo" width="80" height="80">
+<div align="center">
+  <a href="public/Logo-White.png">
+    <img src="public/Logo-White.png" alt="Logo" width="50" height="50">
   </a>
 
 <!-- TABLE OF CONTENTS -->
@@ -37,7 +37,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](public/homepage.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -114,7 +114,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: argon-db.png
+[product-screenshot]: public/argon-db.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
