@@ -7,13 +7,13 @@ const AvatarComponent: Components<Omit<Theme, 'components'>>['MuiAvatar'] = {
   },
   styleOverrides: {
     root: ({ theme }) => ({
-      backgroundColor: theme.palette.transparent.main,
       boxShadow: theme.shadows[0],
-      width: theme.spacing(6),
-      height: theme.spacing(6),
+      width: theme.spacing(5),
+      height: theme.spacing(5),
     }),
     rounded: ({ theme }) => ({
-      borderRadius: theme.shape.borderRadius * 3,
+      borderRadius: theme.shape.borderRadius * 5,
+      backgroundColor: theme.palette.background.paper,
     }),
   },
 };

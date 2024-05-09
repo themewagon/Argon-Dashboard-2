@@ -12,45 +12,16 @@ declare module '@mui/material/Button' {
   interface IconButtonPropsColorOverrides {
     neutral: true;
   }
-
-  //   interface ButtonClasses {
-  //     outlinedNeutral: true;
-  //   }
-
-  //   interface ButtonOwnProps {
-  //     shape?: 'square' | 'rounded';
-  //   }
 }
-
-// const shapes = ['rounded', 'square'];
-// const sizes: {
-//   [key: string]: number;
-// } = { small: 30, medium: 36, large: 42 };
-
-// const btnShapeVariants: ComponentsVariants['MuiButton'] = [];
-
-// shapes.forEach((shape) => {
-//   Object.keys(sizes).forEach((size) => {
-//     btnShapeVariants.push({
-//       props: { shape: shape as ButtonProps['shape'], size: size as ButtonProps['size'] },
-//       style: {
-//         height: sizes[size],
-//         minWidth: sizes[size],
-//         borderRadius: shape === 'circle' ? '50%' : shape === 'rounded' ? '24px' : undefined,
-//       },
-//     });
-//   });
-// });
 
 export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton'] = {
   defaultProps: {
-    // disableElevation: true,
+    disableElevation: true,
   },
   styleOverrides: {
     root: ({ theme }) => ({
-      fontSize: pxToRem(12),
-      fontWeight: 700,
-      borderRadius: theme.shape.borderRadius * 0.5,
+      ...theme.typography.button,
+      borderRadius: theme.shape.borderRadius,
       padding: theme.spacing(1, 3),
     }),
     sizeLarge: ({ theme }) => ({
@@ -60,9 +31,14 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
     }),
     sizeSmall: ({ theme }) => ({
       padding: theme.spacing(0.75, 1.25),
-      lineHeight: 1.286,
-      fontSize: pxToRem(12),
+      lineHeight: 1.25,
+      fontSize: pxToRem(14),
     }),
+    outlined: {
+      backgroundColor: 'primary.light',
+      padding: 100,
+      //   color: 'primary.main',
+    },
     outlinedSizeLarge: {
       paddingTop: `${pxToRem(9)}`,
       paddingBottom: `${pxToRem(9)}`,
@@ -72,12 +48,14 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
       padding: theme.spacing(1.25, 3),
     }),
     outlinedSizeSmall: ({ theme }) => ({
-      fontSize: pxToRem(12),
-      padding: theme.spacing(1, 3),
+      backgroundColor: theme.palette.primary.light,
+      fontSize: pxToRem(14),
+      padding: theme.spacing(1, 4),
+      '&:hover': {
+        backgroundColor: theme.palette.primary.light,
+      },
     }),
-    containedPrimary: ({ theme }) => ({
-      backgroundColor: theme.palette.text.primary,
-    }),
+
     containedSizeSmall: ({ theme }) => ({
       padding: theme.spacing(0.75, 2),
     }),

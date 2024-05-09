@@ -4,7 +4,10 @@ import { Components } from '@mui/material/styles/components';
 const ListComponent: Components<Omit<Theme, 'components'>>['MuiList'] = {
   defaultProps: {},
   styleOverrides: {
-    padding: { paddingTop: 0, paddingBottom: 0 },
+    padding: ({ theme }) => ({
+      paddingTop: 0,
+      paddingBottom: theme.spacing(1),
+    }),
   },
 };
 

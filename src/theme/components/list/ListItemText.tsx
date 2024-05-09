@@ -5,7 +5,6 @@ const ListItemTextComponent: Components<Omit<Theme, 'components'>>['MuiListItemT
   defaultProps: {},
   styleOverrides: {
     root: ({ theme }) => ({
-      my: 0,
       color: 'inherit',
 
       [theme.breakpoints.up('xl')]: {

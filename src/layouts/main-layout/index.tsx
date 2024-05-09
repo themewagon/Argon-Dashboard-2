@@ -1,13 +1,14 @@
-import { Box } from '@mui/material';
-import { PropsWithChildren, useState } from 'react';
+import { Box, Container } from '@mui/material';
+import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import Footer from './Footer';
 import MainNavbar from './MainNavbar';
-import SideNavSection from './sidebar/SideNav';
+import Sidebar from './sidebar/Sidbar';
 
-const MainLayout = ({ children }: PropsWithChildren) => {
+const MainLayout = () => {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [isClosing, setIsClosing] = useState<boolean>(false);
-
+  console.log(mobileOpen);
   const handleDrawerClose = () => {
     setIsClosing(true);
     setMobileOpen(false);
@@ -24,38 +25,47 @@ const MainLayout = ({ children }: PropsWithChildren) => {
   };
 
   return (
-    <Box sx={{ height: 1, position: 'relative', overflow: 'hidden' }}>
-      <SideNavSection
+    <Box sx={{ height: 1, position: 'relative', display: 'flex', minHeight: '100vh', width: 1 }}>
+      {/* <SideNavSection
+        onDrawerClose={handleDrawerClose}
+        onDrawerTransitionEnd={handleDrawerTransitionEnd}
+        mobileOpen={mobileOpen}
+      /> */}
+      <Sidebar
         onDrawerClose={handleDrawerClose}
         onDrawerTransitionEnd={handleDrawerTransitionEnd}
         mobileOpen={mobileOpen}
       />
+
       <Box
-        sx={({ typography, transitions }) => ({
-          p: 3,
-          ml: {
-            xs: 0,
-            md: typography.pxToRem(308),
-          },
+        sx={({ transitions }) => ({
+          display: 'flex',
+          flexGrow: 1,
+          pb: '60px',
+          flexDirection: 'column',
+          width: 1,
+
+          //   ml: {
+          //     xs: 0,
+          //     md: typography.pxToRem(308),
+          //   },
           transition: transitions.create(['margin-left', 'margin-right'], {
             easing: transitions.easing.easeInOut,
             duration: transitions.duration.standard,
           }),
         })}
       >
-        <Box
-          sx={({ palette, typography }) => ({
-            bgcolor: palette.primary.main,
-            height: typography.pxToRem(300),
-            width: '100vw',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            zIndex: -1,
-          })}
-        ></Box>
         <MainNavbar onDrawerToggle={handleDrawerToggle} />
-        {children}
+        <Container
+          sx={{
+            maxWidth: '100%!important',
+          }}
+        >
+          <Box sx={{ minHeight: 'calc(100vh - 170px)' }}>
+            <Outlet />
+          </Box>
+        </Container>
+
         <Footer />
       </Box>
     </Box>

@@ -1,170 +1,100 @@
 import {
   AppBar,
+  Avatar,
+  Badge,
   Box,
+  ButtonBase,
   IconButton,
-  Link,
-  SvgIcon,
+  InputAdornment,
+  Stack,
   TextField,
   Toolbar,
   Typography,
 } from '@mui/material';
+import AvatarImage from 'assets/images/avatar.svg';
 import IconifyIcon from 'components/base/IconifyIcon';
-import CustomBreadcrumbs from 'components/common/Breadcrumbs';
-import CustomNavBox from 'components/common/NavBox';
-import { useLocation } from 'react-router-dom';
-
+import NotificationIcon from 'components/icons/NotificationIcon';
 interface MainNavbarProps {
   onDrawerToggle: () => void;
 }
+
+function notificationsLabel(count: number) {
+  if (count === 0) {
+    return 'no notifications';
+  }
+  if (count > 99) {
+    return 'more than 99 notifications';
+  }
+  return `${count} notifications`;
+}
+
 const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
-  const route = useLocation().pathname.split('/').slice(1);
-
   return (
-    <AppBar position="sticky" color="transparent">
-      <Toolbar
-        sx={(theme) => ({
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          justifyContent: 'space-between',
-          pt: 0.5,
-          pb: 0.5,
-          [theme.breakpoints.up('md')]: {
-            flexDirection: 'row',
-            alignItems: 'center',
-            paddingTop: '0',
-            paddingBottom: '0',
-          },
-        })}
-      >
-        <CustomNavBox mb={{ xs: 1, md: 0 }}>
-          <CustomBreadcrumbs route={route} title={route[route.length - 1]} />
-          <Link
-            href="/"
-            sx={(theme) => ({
-              display: 'block !important',
-              cursor: 'pointer',
-
-              [theme.breakpoints.up('md')]: {
-                display: 'none !important',
-              },
+    <AppBar position="sticky">
+      <Toolbar>
+        <IconButton color="inherit" aria-label="menu" onClick={onDrawerToggle}>
+          <IconifyIcon icon="oi:menu" color="primary.main" />
+        </IconButton>
+        <TextField
+          placeholder="Search..."
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <IconifyIcon icon="majesticons:search-line" />
+              </InputAdornment>
+            ),
+          }}
+          variant="outlined"
+        />
+        <Box flexGrow={1} />
+        <Stack spacing={1} direction="row" alignItems="center">
+          <IconButton
+            aria-label={notificationsLabel(100)}
+            size="large"
+            color="inherit"
+            sx={({ palette }) => ({
+              color: palette.grey['500'],
             })}
           >
-            <Box component="img" src={'/Logo-White.png'} alt="Argon Logo" width="2rem" mr={0.25} />
-          </Link>
-          {/* <Box
-            sx={(theme) => ({
-              display: 'none !important',
-              cursor: 'pointer',
-
-              [theme.breakpoints.up('xl')]: {
-                display: 'inline-block !important',
-              },
+            <IconifyIcon icon="mdi:message-text-outline" fontSize="1.5rem" />
+          </IconButton>
+          <IconButton
+            aria-label={notificationsLabel(100)}
+            size="large"
+            color="inherit"
+            // onClick={() => onDrawerToggle()}
+            sx={({ palette }) => ({
+              color: palette.grey['500'],
+              //   ...(a && {
+              //     bgcolor: 'primary.main',
+              //   }),
             })}
           >
-            <SvgIcon
-              viewBox="0 0 21 16"
-              fill="none"
-              sx={{
-                height: 16,
-                width: 21,
-              }}
-            >
-              <path d="M0 3H20.5896" stroke="white" stroke-width="2" />
-              <path d="M0 8H20.5896" stroke="white" stroke-width="2" />
-              <path d="M0 13H20.5896" stroke="white" stroke-width="2" />
-            </SvgIcon>
-          </Box> */}
-        </CustomNavBox>
-        <CustomNavBox>
-          <Box
-            pr={2}
-            sx={({ breakpoints }) => ({
-              display: 'none',
-
-              [breakpoints.up('md')]: {
-                display: 'block',
-              },
-            })}
-          >
-            <TextField
-              variant="filled"
-              placeholder="Type here..."
-              InputProps={{
-                startAdornment: (
-                  <IconifyIcon icon="material-symbols:search-rounded" fontSize={16} />
-                ),
-              }}
-            />
-          </Box>
-          <Box>
-            <IconButton
-              size="small"
-              sx={({ breakpoints }) => ({
-                display: 'flex',
-                justifyContent: 'space-between',
-                color: 'common.white',
-                border: 0,
-                p: 1,
-                alignItems: 'center',
-                [breakpoints.up('md')]: {
-                  display: 'none',
-                },
+            <Badge color="primary" badgeContent={5}>
+              <NotificationIcon />
+            </Badge>
+          </IconButton>
+          <ButtonBase disableRipple={true}>
+            <Stack
+              spacing={1.5}
+              direction="row"
+              alignItems="center"
+              sx={({ spacing }) => ({
+                ml: spacing(3.5),
               })}
             >
-              <IconifyIcon icon="ant-design:search-outlined" />
-            </IconButton>
-          </Box>
-          <Box>
-            <IconButton
-              onClick={onDrawerToggle}
-              sx={(theme) => ({
-                display: 'inline-block',
-                lineHeight: 0,
-                cursor: 'pointer',
-                [theme.breakpoints.up('xl')]: {
-                  display: 'none',
-                },
-              })}
-            >
-              <SvgIcon
-                viewBox="0 0 21 16"
-                fill="none"
-                sx={{
-                  height: 16,
-                  width: 21,
-                }}
-              >
-                <path d="M5.14746 3H20.5897" stroke="white" stroke-width="2" />
-                <path d="M0 8H20.5896" stroke="white" />
-                <path d="M5.14746 13H20.5897" stroke="white" stroke-width="2" />
-              </SvgIcon>
-            </IconButton>{' '}
-            <IconButton>
-              <IconifyIcon
-                icon="material-symbols:settings-rounded"
-                color="common.white"
-                fontSize={16}
+              <Avatar
+                alt="avatar"
+                src={AvatarImage}
+                sx={({ spacing }) => ({
+                  ml: spacing(3),
+                })}
               />
-            </IconButton>
-            <IconButton>
-              <IconifyIcon
-                aria-controls="notification-menu"
-                aria-haspopup="true"
-                icon="mdi:bell"
-                color="common.white"
-                fontSize={16}
-              />
-            </IconButton>
-            <Link href="/authentication/sign-in">
-              <IconButton>
-                <IconifyIcon icon="mdi:user" color="common.white" fontSize={16} />
-                <Typography variant="button" fontWeight="medium" color="common.white">
-                  Sign-in
-                </Typography>
-              </IconButton>
-            </Link>
-          </Box>
-        </CustomNavBox>
+              <Typography variant="button">X’eriya Ponald</Typography>
+              <IconifyIcon icon="iconamoon:arrow-down-2-light" width={24} height={24} />
+            </Stack>
+          </ButtonBase>
+        </Stack>
       </Toolbar>
     </AppBar>
   );

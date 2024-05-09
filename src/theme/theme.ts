@@ -10,8 +10,12 @@ import ChipComponent from './components/Chip';
 import CssBaseline from './components/CssBaseline';
 import DividerComponent from './components/Divider';
 import DrawerComponent from './components/Drawer';
-import FilledInputComponent from './components/form/FilledInput';
+import InputComponent from './components/form/Input';
+import InputAdornmentComponent from './components/form/InputAdornment';
 import InputBaseComponent from './components/form/InputBase';
+import InputLabelComponent from './components/form/InputLabel';
+import OutlinedInputComponent from './components/form/OutlinedInput';
+import TextFieldComponent from './components/form/TextField';
 import IconButtonComponent from './components/IconButton';
 import LinearProgressComponent from './components/LinearProgress';
 import LinkComponent from './components/Link';
@@ -20,9 +24,12 @@ import ListItemComponent from './components/list/ListItem';
 import ListItemButtonComponent from './components/list/ListItemButton';
 import ListItemIconComponent from './components/list/ListItemIcon';
 import ListItemTextComponent from './components/list/ListItemText';
+import ListSubheaderComponent from './components/list/ListSubheader';
 import PaperComponent from './components/Paper';
+import SvgIconComponent from './components/SvgIcon';
 import SwitchComponent from './components/Switch';
 import DataGridComponent from './components/table/DataGrid';
+import ToolbarComponent from './components/Toolbar';
 import palette from './palette';
 import shadows from './shadows';
 import typography from './typography';
@@ -56,9 +63,15 @@ export const theme = createTheme({
   typography,
   shadows: [...shadows] as Shadows,
   components: {
-    // MuiTextField: TextFieldComponent,
+    MuiToolbar: ToolbarComponent,
+    MuiInput: InputComponent,
+    MuiTextField: TextFieldComponent,
     MuiInputBase: InputBaseComponent,
-    MuiFilledInput: FilledInputComponent,
+    MuiInputLabel: InputLabelComponent,
+    MuiOutlinedInput: OutlinedInputComponent,
+    // MuiFilledInput: FilledInputComponent,
+    MuiInputAdornment: InputAdornmentComponent,
+    MuiSvgIcon: SvgIconComponent,
     MuiBadge: BadgeComponent,
     MuiChip: ChipComponent,
     MuiButton: ButtonComponent,
@@ -78,6 +91,7 @@ export const theme = createTheme({
     MuiListItemText: ListItemTextComponent,
     MuiListItemButton: ListItemButtonComponent,
     MuiListItemIcon: ListItemIconComponent,
+    MuiListSubheader: ListSubheaderComponent,
     MuiAppBar: AppBarComponent,
     MuiDataGrid: DataGridComponent,
     MuiCssBaseline: CssBaseline,

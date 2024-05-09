@@ -9,10 +9,9 @@ const simplebar = (theme: Theme) => ({
           border: 1,
           borderStyle: 'solid',
           borderColor: theme.palette.common.white,
-          width: '50%',
-          //   maxHeight: '100vh',
+          maxHeight: '100vh',
           //   margin: theme.spacing(2, 'auto'),
-          backgroundColor: theme.palette.grey[400],
+          background: `${theme.palette.grey[300]}`,
           '&:hover': {
             backgroundColor: theme.palette.grey[800],
           },
@@ -21,6 +20,7 @@ const simplebar = (theme: Theme) => ({
         '&.simplebar-visible': {
           '&:before': {
             opacity: 1,
+            padding: 0,
           },
         },
       },

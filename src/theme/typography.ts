@@ -5,9 +5,12 @@ declare module '@mui/material/styles/createTypography' {
   interface TypographyOptions {
     fontWeightLighter?: number;
   }
+  interface TypographyOptions {
+    fontWeightExtraBold?: number;
+  }
 
   interface Typography {
-    fontWeightLighter: number;
+    fontWeightExtraBold: number;
   }
 }
 
@@ -19,6 +22,7 @@ const typography: TypographyOptions = {
   fontWeightRegular: 400,
   fontWeightMedium: 600,
   fontWeightBold: 700,
+  fontWeightExtraBold: 800,
   h1: {
     fontSize: pxToRem(48),
     lineHeight: 1.25,
@@ -39,25 +43,25 @@ const typography: TypographyOptions = {
 
   h4: {
     fontSize: pxToRem(24),
-    lineHeight: 1.375,
+    lineHeight: 1.5,
     fontWeight: 700,
   },
 
   h5: {
-    fontSize: pxToRem(20),
-    lineHeight: 1.375,
+    fontSize: pxToRem(22),
+    lineHeight: 1.5,
     fontWeight: 700,
   },
 
   h6: {
     fontSize: pxToRem(16),
-    lineHeight: 1.625,
-    fontWeight: 600,
+    lineHeight: 1.5,
+    fontWeight: 700,
   },
 
   subtitle1: {
-    fontSize: pxToRem(20),
-    lineHeight: 1.625,
+    fontSize: pxToRem(14),
+    lineHeight: 1.25,
   },
 
   subtitle2: {
@@ -71,19 +75,21 @@ const typography: TypographyOptions = {
   },
 
   body1: {
-    fontSize: pxToRem(18),
-    fontWeight: 700,
-    lineHeight: 1.625,
+    fontSize: pxToRem(14),
+    fontWeight: 400,
+    lineHeight: 1.5,
   },
 
   body2: {
-    fontSize: pxToRem(16),
-    lineHeight: 1.6,
+    fontSize: pxToRem(12),
+    letterSpacing: '0rem',
+    fontWeight: 400,
+    lineHeight: 1.333,
   },
 
   button: {
-    fontSize: pxToRem(14),
-    fontWeight: 700,
+    fontSize: pxToRem(16),
+    fontWeight: 400,
     lineHeight: 1.5,
     textTransform: 'none',
   },

@@ -9,15 +9,25 @@ const ListItemButtonComponent: Components<Omit<Theme, 'components'>>['MuiListIte
   },
   styleOverrides: {
     root: ({ theme }) => ({
-      display: 'flex',
-      alignItems: 'center',
-      width: '100%',
-      padding: theme.spacing(1.5, 2),
-      marginLeft: pxToRem(18),
-      position: 'relative',
-      userSelect: 'none',
-      '&:hover, &:focus': {
-        backgroundColor: theme.palette.transparent.main,
+      whiteSpace: 'nowrap',
+
+      padding: theme.spacing(1, 1.25),
+      marginBottom: pxToRem(2),
+      borderRadius: theme.shape.borderRadius * 2,
+      backgroundColor: 'inherit',
+      color: theme.palette.text.secondary,
+      paddingLeft: '10px',
+      '&:hover,  &:focus': {
+        backgroundColor: theme.palette.primary.light,
+        color: theme.palette.primary.main,
+      },
+      '&.Mui-selected': {
+        color: 'white',
+        backgroundColor: theme.palette.primary.main,
+        '&:hover': {
+          backgroundColor: theme.palette.primary.main,
+          color: 'white',
+        },
       },
     }),
   },

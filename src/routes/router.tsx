@@ -10,18 +10,21 @@ import Splash from 'components/loading/Splash';
 // import SmartHomePage from 'pages/smarthome/SmartHome';
 // import VirtualRealityPage from 'pages/vr/VirtualReality';
 import React, { lazy, Suspense } from 'react';
-import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 const App = lazy(() => import('App'));
 const MainLayout = lazy(() => import('layouts/main-layout'));
 const LoginPage = lazy(() => import('pages/authentication/default/Login'));
 const SignUpPage = lazy(() => import('pages/authentication/default/SignUp'));
-const AutomotivePage = lazy(() => import('pages/automotive/Automotive'));
-const CRMPage = lazy(() => import('pages/crm/CRM'));
+const CategoriesPage = lazy(() => import('pages/categories/Categories'));
+const OrdersPage = lazy(() => import('pages/orders/Orders'));
 const Default = lazy(() => import('pages/dashboard/default/Default'));
 const LandingPage = lazy(() => import('pages/dashboard/landing/Landing'));
-const SmartHomePage = lazy(() => import('pages/smarthome/SmartHome'));
-const VirtualRealityPage = lazy(() => import('pages/vr/VirtualReality'));
+const ProductsPage = lazy(() => import('pages/products/Products'));
+const CustomersPage = lazy(() => import('pages/Customers/Customers'));
+const ReportsPage = lazy(() => import('pages/reports/Reports'));
+const CouponsPage = lazy(() => import('pages/coupons/Coupons'));
+const InboxPage = lazy(() => import('pages/inbox/Inbox'));
 
 export const routes = [
   {
@@ -38,11 +41,9 @@ export const routes = [
       {
         path: 'dashboard',
         element: (
-          <MainLayout>
-            <React.Suspense fallback={<PageLoader />}>
-              <Outlet />
-            </React.Suspense>
-          </MainLayout>
+          <React.Suspense fallback={<PageLoader />}>
+            <MainLayout />
+          </React.Suspense>
         ),
         children: [
           {
@@ -58,20 +59,32 @@ export const routes = [
             element: <LandingPage />,
           },
           {
-            path: 'automotive',
-            element: <AutomotivePage />,
+            path: 'categories',
+            element: <CategoriesPage />,
           },
           {
-            path: 'smart-home',
-            element: <SmartHomePage />,
+            path: 'products',
+            element: <ProductsPage />,
           },
           {
-            path: 'virtual-reality',
-            element: <VirtualRealityPage />,
+            path: 'customers',
+            element: <CustomersPage />,
           },
           {
-            path: 'CRM',
-            element: <CRMPage />,
+            path: 'orders',
+            element: <OrdersPage />,
+          },
+          {
+            path: 'reports',
+            element: <ReportsPage />,
+          },
+          {
+            path: 'coupons',
+            element: <CouponsPage />,
+          },
+          {
+            path: 'inbox',
+            element: <InboxPage />,
           },
         ],
       },
