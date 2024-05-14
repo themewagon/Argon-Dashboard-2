@@ -25,6 +25,12 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
           // onMouseEnter={onHoverEnter}
           // onMouseLeave={onHoverLeave}
           variant="permanent"
+          sx={{
+            flexShrink: 0,
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+            },
+          }}
         >
           <Box
             sx={{
@@ -72,7 +78,14 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
       }}
     >
       {/* ------------------------------------------- */}
-      <SidebarLogo />
+      <Box
+        sx={({ palette }) => ({
+          bgcolor: palette.common.white,
+          px: 3,
+        })}
+      >
+        <SidebarLogo />
+      </Box>
 
       {/* ------------------------------------------- */}
       <SimpleBar style={{ height: 'calc(100% - 310px)', maxHeight: '100%' }}>

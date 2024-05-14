@@ -15,7 +15,7 @@ declare module '@mui/material/styles/createTypography' {
 }
 
 const typography: TypographyOptions = {
-  fontFamily: ['Open Sans', 'sans-serif'].join(','),
+  fontFamily: ['Inter', 'Open Sans', 'sans-serif'].join(','),
   //   fontSize: 14,
   fontWeightLighter: 100,
   fontWeightLight: 300,
@@ -30,26 +30,26 @@ const typography: TypographyOptions = {
   },
 
   h2: {
-    fontSize: pxToRem(36),
-    lineHeight: 1.3,
-    fontWeight: 700,
+    fontWeight: 600,
+    fontSize: pxToRem(24),
+    lineHeight: 2.25,
   },
 
   h3: {
-    fontSize: pxToRem(30),
-    lineHeight: 1.375,
-    fontWeight: 700,
-  },
-
-  h4: {
     fontSize: pxToRem(24),
     lineHeight: 1.5,
     fontWeight: 700,
   },
 
-  h5: {
+  h4: {
     fontSize: pxToRem(22),
     lineHeight: 1.5,
+    fontWeight: 700,
+  },
+
+  h5: {
+    fontSize: pxToRem(20),
+    lineHeight: 1.75,
     fontWeight: 700,
   },
 
@@ -62,12 +62,13 @@ const typography: TypographyOptions = {
   subtitle1: {
     fontSize: pxToRem(14),
     lineHeight: 1.25,
+    fontWeight: 400,
   },
 
   subtitle2: {
-    fontSize: pxToRem(16),
-    fontWeight: 700,
-    lineHeight: 1.6,
+    fontSize: pxToRem(12),
+    fontWeight: 400,
+    lineHeight: 1,
   },
   caption: {
     fontWeight: 700,

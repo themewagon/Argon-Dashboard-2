@@ -99,6 +99,7 @@ const palette: PaletteOptions = {
   primary: {
     main: blue[800],
     light: blue[200],
+    lighter: blue[100],
   },
   secondary: {
     lighter: purple[50],
@@ -107,7 +108,7 @@ const palette: PaletteOptions = {
     dark: purple[700],
     darker: purple[900],
   },
-  error: { lighter: red[50], light: red[100], main: red[500], dark: red[700], darker: red[900] },
+  error: { lighter: red[50], light: red[100], main: red[600], dark: red[700], darker: red[900] },
   warning: {
     lighter: orange[50],
     light: orange[100],
@@ -119,8 +120,8 @@ const palette: PaletteOptions = {
   success: {
     lighter: green[50],
     light: green[100],
-    main: green[500],
-    dark: green[600],
+    main: green[600],
+    dark: green[700],
     darker: green[900],
   },
   info: {

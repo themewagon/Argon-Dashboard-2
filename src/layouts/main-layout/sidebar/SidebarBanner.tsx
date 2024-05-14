@@ -39,10 +39,11 @@ const SidebarBanner = () => {
             <Typography variant="subtitle1">Explore our marketing solutions</Typography>
 
             <Button
+              variant="contained"
+              color="secondary"
               size="small"
-              variant="outlined"
               sx={({ spacing }) => ({
-                mt: spacing(1),
+                mt: spacing(1.5),
                 alignSelf: 'flex-start',
               })}
             >

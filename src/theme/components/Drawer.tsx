@@ -21,7 +21,7 @@ const DrawerComponent: Components<Omit<Theme, 'components'>>['MuiDrawer'] = {
       // margin: theme.spacing(2, 0, 2, 2),
       //   marginTop: pxToRem(68),
       //   borderRadius: theme.shape.borderRadius * 4,
-      //   border: 'none',
+      borderImage: `-webkit-linear-gradient(top, #fff ${theme.spacing(8.5)}, ${theme.palette.grey['300']} 0%) 1 repeat`,
     }),
     // opens from the left
     paperAnchorDockedLeft: {

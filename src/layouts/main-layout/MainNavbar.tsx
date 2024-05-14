@@ -32,7 +32,14 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
   return (
     <AppBar position="sticky">
       <Toolbar>
-        <IconButton color="inherit" aria-label="menu" onClick={onDrawerToggle}>
+        <IconButton
+          color="inherit"
+          aria-label="menu"
+          onClick={onDrawerToggle}
+          sx={{
+            display: { xs: 'block', lg: 'none' },
+          }}
+        >
           <IconifyIcon icon="oi:menu" color="primary.main" />
         </IconButton>
         <TextField

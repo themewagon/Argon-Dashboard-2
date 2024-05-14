@@ -15,7 +15,7 @@ const SidebarLogo = () => {
       })}
     >
       <Logo fontSize={'large'} />
-      <Typography variant="h5">Modernize</Typography>
+      <Typography variant="h4">Modernize</Typography>
     </Link>
   );
 };

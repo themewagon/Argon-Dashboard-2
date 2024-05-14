@@ -1,24 +1,32 @@
 import { Box, Grid } from '@mui/material';
-import CardSection from 'components/sections/statistics/CardSection';
 import Categories from '../components/default/Categories/Categories';
+import BarchartSection from '../components/default/Chart/BarChart';
 import LineChartSection from '../components/default/Chart/LineChart';
+import PageHeader from '../components/default/PageHeader/PageHeader';
 import ProgressTracker from '../components/default/ProgressTracker/ProgressTracker';
-import ImageSlider from '../components/default/Slider/ImageSlider';
+import StatisticsCards from '../components/default/Statistics/StatisticCards';
 import UserTable from '../components/default/Table/UserTable';
 import TeamMembers from '../components/default/TeamMembers/TeamMembers';
 import TodoList from '../components/default/TodoList/TodoList';
 
 const Default = () => {
   return (
-    <Box py={3}>
-      <CardSection />
+    <Box py={4}>
+      <PageHeader>Dashboard</PageHeader>
+      {/* /* ------------- Stats section ---------------- */}
+
+      <Grid container spacing={3} mt={1} mb={3}>
+        <Grid item xs={12} lg={12}>
+          <StatisticsCards />
+        </Grid>
+      </Grid>
       {/* /* ------------- Chart section ---------------- */}
       <Grid container spacing={3} mb={3}>
-        <Grid item xs={12} lg={7} zIndex={1}>
+        <Grid item xs={12} lg={8} zIndex={1}>
           <LineChartSection />
         </Grid>
-        <Grid item xs={12} lg={5}>
-          <ImageSlider />
+        <Grid item xs={12} lg={4}>
+          <BarchartSection />
         </Grid>
       </Grid>
       {/* /* ------------- Team section ---------------- */}

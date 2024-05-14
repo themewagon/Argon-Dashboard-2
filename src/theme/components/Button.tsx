@@ -34,32 +34,37 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
       lineHeight: 1.25,
       fontSize: pxToRem(14),
     }),
-    outlined: {
-      backgroundColor: 'primary.light',
-      padding: 100,
-      //   color: 'primary.main',
-    },
+
     outlinedSizeLarge: {
       paddingTop: `${pxToRem(9)}`,
       paddingBottom: `${pxToRem(9)}`,
     },
     outlinedSizeMedium: ({ theme }) => ({
-      fontSize: pxToRem(12),
+      fontSize: pxToRem(16),
       padding: theme.spacing(1.25, 3),
     }),
     outlinedSizeSmall: ({ theme }) => ({
-      backgroundColor: theme.palette.primary.light,
       fontSize: pxToRem(14),
       padding: theme.spacing(1, 4),
-      '&:hover': {
-        backgroundColor: theme.palette.primary.light,
-      },
     }),
 
     containedSizeSmall: ({ theme }) => ({
-      padding: theme.spacing(0.75, 2),
+      padding: theme.spacing(1, 3),
+      fontSize: theme.typography.pxToRem(14),
+      lineHeight: 1.25,
     }),
-
+    containedSizeMedium: ({ theme }) => ({
+      fontSize: pxToRem(16),
+      padding: theme.spacing(1.25, 3),
+      lineHeight: 1.5,
+    }),
+    containedSecondary: ({ theme }) => ({
+      color: theme.palette.primary.main,
+      backgroundColor: theme.palette.primary.light,
+      '&:hover': {
+        backgroundColor: `${theme.palette.primary.contrastText} !important`,
+      },
+    }),
     startIcon: {
       '& > *:first-of-type': {
         fontSize: 18,
