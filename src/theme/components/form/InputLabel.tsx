@@ -8,10 +8,11 @@ const InputLabelComponent: Components<Omit<Theme, 'components'>>['MuiInputLabel'
       position: 'relative',
       transform: 'none',
       color: theme.palette.text.secondary,
-      paddingLeft: theme.spacing(1.75),
-      '&.Mui-focused': {
-        color: theme.palette.text.primary,
-      },
+      paddingLeft: theme.spacing(0),
+      paddingBottom: theme.spacing(0.5),
+    }),
+    focused: ({ theme }) => ({
+      color: theme.palette.success.main,
     }),
   },
 };

@@ -5,13 +5,19 @@ import LineChartSection from '../components/default/Chart/LineChart';
 import PageHeader from '../components/default/PageHeader/PageHeader';
 import ProgressTracker from '../components/default/ProgressTracker/ProgressTracker';
 import StatisticsCards from '../components/default/Statistics/StatisticCards';
+import TopProductsTable from '../components/default/Table/TopProductsTable';
+import TransactionTable from '../components/default/Table/TransactionTable';
 import UserTable from '../components/default/Table/UserTable';
 import TeamMembers from '../components/default/TeamMembers/TeamMembers';
 import TodoList from '../components/default/TodoList/TodoList';
 
 const Default = () => {
   return (
-    <Box py={4}>
+    <Box
+      sx={({ spacing }) => ({
+        pb: spacing(4),
+      })}
+    >
       <PageHeader>Dashboard</PageHeader>
       {/* /* ------------- Stats section ---------------- */}
 
@@ -22,11 +28,20 @@ const Default = () => {
       </Grid>
       {/* /* ------------- Chart section ---------------- */}
       <Grid container spacing={3} mb={3}>
-        <Grid item xs={12} lg={8} zIndex={1}>
+        <Grid item xs={12} md={7} lg={8} zIndex={1}>
           <LineChartSection />
         </Grid>
-        <Grid item xs={12} lg={4}>
+        <Grid item xs={12} md={5} lg={4}>
           <BarchartSection />
+        </Grid>
+      </Grid>
+      {/* /* ------------- Table section ---------------- */}
+      <Grid container spacing={3} mb={3}>
+        <Grid item xs={12} lg={6} zIndex={1}>
+          <TransactionTable />
+        </Grid>
+        <Grid item xs={12} lg={6}>
+          <TopProductsTable />
         </Grid>
       </Grid>
       {/* /* ------------- Team section ---------------- */}

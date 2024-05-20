@@ -25,6 +25,7 @@ const CssBaseline: Components<Omit<Theme, 'components'>>['MuiCssBaseline'] = {
     'a.link:hover, .link:hover, a.link:focus, .link:focus': {
       color: `${theme.palette.info.main} !important`,
     },
+
     hr: {
       borderBottom: 0,
       borderLeft: 0,
@@ -32,6 +33,7 @@ const CssBaseline: Components<Omit<Theme, 'components'>>['MuiCssBaseline'] = {
     },
     body: {
       fontVariantLigatures: 'none',
+
       //   ...scrollbar(theme),
     },
     ...echart(),

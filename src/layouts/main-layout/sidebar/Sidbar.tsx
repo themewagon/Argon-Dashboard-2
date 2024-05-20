@@ -45,11 +45,20 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
             >
               <SidebarLogo />
             </Box>
-            <SimpleBar style={{ height: 'calc(100% - 310px)', maxHeight: '100%' }}>
-              <SidebarItems />
+
+            <SimpleBar style={{ height: 'calc(100% - 70px)' }}>
+              <Box
+                sx={({ palette }) => ({
+                  borderRight: 1,
+                  borderColor: palette.grey['300'],
+                  height: 'calc(100vh + 68px)',
+                })}
+              >
+                <SidebarItems />
+                <SidebarBanner />
+              </Box>
             </SimpleBar>
             {/* <SidebarItems /> */}
-            <SidebarBanner />
           </Box>
         </Drawer>
       </Box>

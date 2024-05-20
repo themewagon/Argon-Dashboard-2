@@ -2,6 +2,7 @@ import {
   BarSeriesOption,
   ComposeOption,
   DatasetComponentOption,
+  EChartsOption,
   GridComponentOption,
   LineSeriesOption,
   TitleComponentOption,
@@ -38,10 +39,7 @@ echarts.use([
   LineChart,
   LabelLayout,
 ]);
-export const option: ECOption = {
-  title: {
-    // text: 'Stacked Line',
-  },
+export const option: EChartsOption = {
   tooltip: {
     trigger: 'axis',
     backgroundColor: '#333752',
@@ -50,7 +48,6 @@ export const option: ECOption = {
   },
 
   legend: {
-    height: 2000,
     data: [
       { name: 'May 11', icon: 'square' },
       { name: 'May 12', icon: 'square' },
@@ -61,7 +58,7 @@ export const option: ECOption = {
       fontSize: '14px',
       padding: [0, 0, 0, 6],
     },
-    top: '-1%',
+    top: '1%',
     right: '3%',
     itemWidth: 14,
     itemHeight: 16,
@@ -71,6 +68,7 @@ export const option: ECOption = {
     left: '2%',
     right: '-1%',
     bottom: '4%',
+    top: '2%',
     containLabel: true,
   },
 
@@ -89,6 +87,7 @@ export const option: ECOption = {
     axisLabel: {
       color: '#a1a7c3',
       fontSize: '12px',
+      margin: 30,
     },
   },
   yAxis: {
@@ -96,6 +95,7 @@ export const option: ECOption = {
     axisLabel: {
       color: '#a1a7c3',
       fontSize: '12px',
+      margin: 17,
     },
     splitLine: {
       lineStyle: {
@@ -113,21 +113,20 @@ export const option: ECOption = {
       name: 'May 11',
       type: 'line',
       color: '#d9e1ec',
-
       emphasis: {
         focus: 'series',
         scale: 4,
         itemStyle: {
           borderCap: 'round',
           borderType: 'solid',
-          borderWidth: 6,
+          borderWidth: 4,
         },
       },
+      data: [32.0, 5.2, 5.1, 25.4, 25.0, 26.0, 31.0, 10.0, 20.0, 35.0, 40.0, 42.0],
 
-      data: [12.0, 9.2, 19.1, 12.4, 29.0, 38.0, 31.0, 37.0, 50.0, 41.0, 25.0, 29.0],
       showSymbol: false,
       lineStyle: {
-        width: 6,
+        width: 4,
       },
     },
     {
@@ -140,14 +139,14 @@ export const option: ECOption = {
         itemStyle: {
           borderCap: 'round',
           borderType: 'solid',
-          borderWidth: 6,
+          borderWidth: 4,
         },
       },
 
-      data: [32.0, 5.2, 5.1, 25.4, 25.0, 26.0, 31.0, 10.0, 20.0, 35.0, 40.0, 42.0],
+      data: [12.0, 9.2, 19.1, 12.4, 32.0, 38.0, 29.0, 34.0, 50.0, 41.0, 26.0, 29.0],
       showSymbol: false,
       lineStyle: {
-        width: 6,
+        width: 4,
       },
     },
   ],

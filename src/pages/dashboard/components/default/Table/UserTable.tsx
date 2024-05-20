@@ -1,4 +1,4 @@
-import { Chip, LinearProgress, Stack } from '@mui/material';
+import { Box, Chip, LinearProgress, Stack } from '@mui/material';
 import {
   DataGrid,
   GridApi,
@@ -10,8 +10,8 @@ import {
 import { useEffect, useState } from 'react';
 import AuthorCell, { AuthorData } from './AuthorCell';
 import CustomFooter from './CustomFooter';
-import { userTableData } from './Data';
 import FunctionCell, { FunctionRole } from './FunctionCell';
+import { userTableData } from './table-data';
 
 export interface RowData {
   id: number;
@@ -89,7 +89,7 @@ const UserTable = () => {
   }, [userTableData, apiRef]);
 
   return (
-    <>
+    <Box>
       <DataGrid
         getRowHeight={() => 65}
         columns={columns}
@@ -108,36 +108,17 @@ const UserTable = () => {
         disableColumnSelector
         disableRowSelectionOnClick
         rowSelection={false}
-        // autoPageSize
-        // autoHeight
-        // autosizeOptions={{
-        //   includeOutliers: true,
-        //   includeHeaders: true,
-        //   outliersFactor: 1,
-        //   expand: true,
-        // }}
         slots={{
           loadingOverlay: LinearProgress as GridSlots['loadingOverlay'],
           pagination: CustomFooter,
         }}
+        slotProps={{
+          pagination: { labelRowsPerPage: rows.length },
+        }}
         initialState={{ pagination: { paginationModel: { page: 1, pageSize: 5 } } }}
         pageSizeOptions={[5, 10, 25]}
-        sx={{
-          '& .MuiDataGrid-virtualScroller::-webkit-scrollbar': {
-            width: '0.4em',
-          },
-          '& .MuiDataGrid-virtualScroller::-webkit-scrollbar-track': {
-            background: '#f1f1f1',
-          },
-          '& .MuiDataGrid-virtualScroller::-webkit-scrollbar-thumb': {
-            backgroundColor: '#888',
-          },
-          '& .MuiDataGrid-virtualScroller::-webkit-scrollbar-thumb:hover': {
-            background: '#555',
-          },
-        }}
       />
-    </>
+    </Box>
   );
 };
 

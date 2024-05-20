@@ -3,7 +3,7 @@ import bg from 'assets/images/illustration.svg';
 import Image from 'components/base/Image';
 const SidebarBanner = () => {
   return (
-    <Stack direction={'row'} alignItems="center" gap={2} sx={{ my: 3, p: 2 }}>
+    <Stack direction={'row'} alignItems="center" gap={2} sx={{ my: 0, p: 2 }}>
       <Box
         sx={({ palette, spacing }) => ({
           height: spacing(20.5),

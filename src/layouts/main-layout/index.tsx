@@ -1,4 +1,4 @@
-import { Box, Container } from '@mui/material';
+import { Box, Container, Stack } from '@mui/material';
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Footer from './Footer';
@@ -37,14 +37,13 @@ const MainLayout = () => {
         mobileOpen={mobileOpen}
       />
 
-      <Box
+      <Stack
+        spacing={2}
         sx={({ transitions }) => ({
           display: 'flex',
           flexGrow: 1,
-          pb: '60px',
-          flexDirection: 'column',
           width: 1,
-
+          justifyContent: 'space-between',
           //   ml: {
           //     xs: 0,
           //     md: typography.pxToRem(308),
@@ -67,7 +66,7 @@ const MainLayout = () => {
         </Container>
 
         <Footer />
-      </Box>
+      </Stack>
     </Box>
   );
 };

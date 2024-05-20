@@ -50,7 +50,7 @@ const StatisticsCards = () => {
     <Grid container spacing={0.25}>
       {stats.map((cardItem, i) => (
         <Grid item xs={12} sm={6} lg={3} key={i}>
-          <StatisticsCardItem cardData={cardItem} />
+          <StatisticsCardItem cardData={cardItem} index={i} />
         </Grid>
       ))}
     </Grid>

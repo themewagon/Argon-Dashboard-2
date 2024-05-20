@@ -9,5 +9,6 @@ const shadows = [
   '0px -2.46px 3.86px 0px rgba(0, 0, 0, 0.02), 0px 2.258px 4.692px 0px rgba(0, 0, 0, 0.02), 0px 6.147px 9.475px 0px rgba(0, 0, 0, 0.03), 4px 18px 18px 0px rgba(0, 0, 0, 0.04)',
 
   '0px -1px 3.15px 0px rgba(0, 0, 0, 0.02), 0px 5.695px 3.531px 0px rgba(0, 0, 0, 0.01), 1px 10.271px 9.478px 0px rgba(0, 0, 0, 0.03), 3px 24px 42px 0px rgba(0, 0, 0, 0.07)',
+  'rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px;',
 ];
 export default shadows;

@@ -40,13 +40,11 @@ const BarchartSection = () => {
           <ReactEchart
             echarts={echarts}
             option={optionBarchart}
-            sx={[
-              upLg && {
-                flex: 1,
-                display: 'flex',
-                alignItems: 'end',
-              },
-            ]}
+            sx={{
+              flex: 1,
+              display: 'flex',
+              alignItems: 'end',
+            }}
           />
         </Box>
       </CardContent>

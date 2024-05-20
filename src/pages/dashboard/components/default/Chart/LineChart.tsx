@@ -18,11 +18,11 @@ const LineChartSection = () => {
             px: spacing(1.5),
             pt: spacing(1.5),
             justifyContent: 'space-between',
+            alignItems: 'center',
+            mb: spacing(1),
           })}
         >
-          <Typography variant="h6" sx={{ mb: 1 }}>
-            Orders Over Time
-          </Typography>
+          <Typography variant="h6">Orders Over Time</Typography>
           <Stack direction="row" alignItems="center">
             <Typography variant="subtitle1" color="text.secondary">
               Last 12 hours
@@ -33,31 +33,42 @@ const LineChartSection = () => {
             />
           </Stack>
         </Stack>
-        <Stack direction="row" spacing={5} sx={{ alignItems: 'center', px: 1.5 }}>
-          <Stack sx={{ justifyContent: 'center' }}>
+        <Stack
+          spacing={{ xs: 0 }}
+          sx={{
+            px: 1.5,
+            gap: { xs: 2, sm: 4 },
+            flexDirection: { xs: 'column', sm: 'row' },
+          }}
+        >
+          <Box>
             <Typography variant="h5">645</Typography>
             <Typography variant="subtitle1" color="text.secondary">
               Orders on May 22
             </Typography>
-          </Stack>
-          <Stack sx={{ justifyContent: 'center' }}>
+          </Box>
+          <Box>
             <Typography variant="h5">645</Typography>
             <Typography variant="subtitle1" color="text.secondary">
               Orders on May 22
             </Typography>
-          </Stack>
+          </Box>
         </Stack>
-        <Box sx={{ height: 300, display: 'flex' }}>
+        <Box
+          sx={({ spacing, typography }) => ({
+            height: typography.pxToRem(300),
+            display: 'flex',
+            mt: spacing(3),
+          })}
+        >
           <ReactEchart
             echarts={echarts}
             option={option}
-            sx={[
-              upLg && {
-                flex: 1,
-                display: 'flex',
-                alignItems: 'end',
-              },
-            ]}
+            sx={{
+              flex: 1,
+              display: 'flex',
+              alignItems: 'end',
+            }}
           />
         </Box>
       </CardContent>

@@ -10,6 +10,7 @@ import ChipComponent from './components/Chip';
 import CssBaseline from './components/CssBaseline';
 import DividerComponent from './components/Divider';
 import DrawerComponent from './components/Drawer';
+import FilledInputComponent from './components/form/FilledInput';
 import InputComponent from './components/form/Input';
 import InputAdornmentComponent from './components/form/InputAdornment';
 import InputBaseComponent from './components/form/InputBase';
@@ -25,6 +26,9 @@ import ListItemButtonComponent from './components/list/ListItemButton';
 import ListItemIconComponent from './components/list/ListItemIcon';
 import ListItemTextComponent from './components/list/ListItemText';
 import ListSubheaderComponent from './components/list/ListSubheader';
+import MenuComponent from './components/menu/Menu';
+import MenuItemComponent from './components/menu/MenuItem';
+import MenuListComponent from './components/menu/MenuList';
 import PaperComponent from './components/Paper';
 import SvgIconComponent from './components/SvgIcon';
 import SwitchComponent from './components/Switch';
@@ -69,7 +73,7 @@ export const theme = createTheme({
     MuiInputBase: InputBaseComponent,
     MuiInputLabel: InputLabelComponent,
     MuiOutlinedInput: OutlinedInputComponent,
-    // MuiFilledInput: FilledInputComponent,
+    MuiFilledInput: FilledInputComponent,
     MuiInputAdornment: InputAdornmentComponent,
     MuiSvgIcon: SvgIconComponent,
     MuiBadge: BadgeComponent,
@@ -86,6 +90,9 @@ export const theme = createTheme({
     MuiLinearProgress: LinearProgressComponent,
     MuiBreadcrumbs: BreadcrumbsComponent,
     MuiDivider: DividerComponent,
+    MuiMenu: MenuComponent,
+    MuiMenuList: MenuListComponent,
+    MuiMenuItem: MenuItemComponent,
     MuiList: ListComponent,
     MuiListItem: ListItemComponent,
     MuiListItemText: ListItemTextComponent,

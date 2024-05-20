@@ -5,7 +5,7 @@ const IconButtonComponent: Components<Omit<Theme, 'components'>>['MuiIconButton'
   defaultProps: { size: 'small' },
   styleOverrides: {
     root: ({ theme }) => ({
-      padding: theme.spacing(0.75),
+      padding: theme.spacing(0),
       '&:hover': {
         backgroundColor: theme.palette.transparent.main,
       },

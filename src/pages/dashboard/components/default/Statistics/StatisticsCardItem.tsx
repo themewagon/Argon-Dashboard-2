@@ -1,17 +1,38 @@
 import { Box, Card, Grid, Stack, Typography } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
+import { useBreakpoints } from 'providers/useBreakPoint';
 import { IStatisticsCard } from './StatisticCards';
 
 interface StatisticsCardProps {
   cardData: IStatisticsCard;
+  index: number;
 }
 
-const StatisticsCardItem = ({ cardData }: StatisticsCardProps) => {
+const StatisticsCardItem = ({ cardData, index }: StatisticsCardProps) => {
   const { title, subtitle, percentage, icon: IconComponent } = cardData || {};
+  const { up } = useBreakpoints();
+  const upLg = up('lg');
+  const upSm = up('sm');
 
   return (
     <>
-      <Card>
+      <Card
+        sx={(theme) => ({
+          borderRadius: theme.shape.borderRadius * 1,
+          ...(upSm && {
+            borderTopLeftRadius: index === 0 || index === 2 ? theme.shape.borderRadius * 2 : 0,
+            borderBottomLeftRadius: index === 0 || index === 2 ? theme.shape.borderRadius * 2 : 0,
+            borderTopRightRadius: index === 1 || index === 3 ? theme.shape.borderRadius * 2 : 0,
+            borderBottomRightRadius: index === 1 || index === 3 ? theme.shape.borderRadius * 2 : 0,
+          }),
+          ...(upLg && {
+            borderTopLeftRadius: index === 0 ? theme.shape.borderRadius * 2 : 0,
+            borderBottomLeftRadius: index === 0 ? theme.shape.borderRadius * 2 : 0,
+            borderTopRightRadius: index === 3 ? theme.shape.borderRadius * 2 : 0,
+            borderBottomRightRadius: index === 3 ? theme.shape.borderRadius * 2 : 0,
+          }),
+        })}
+      >
         <Box
           sx={(theme) => ({
             p: theme.spacing(4),

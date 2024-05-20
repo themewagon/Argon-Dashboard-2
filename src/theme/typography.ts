@@ -25,7 +25,7 @@ const typography: TypographyOptions = {
   fontWeightExtraBold: 800,
   h1: {
     fontSize: pxToRem(48),
-    lineHeight: 1.25,
+    lineHeight: 1.25, // 20
     fontWeight: 700,
   },
 
@@ -97,3 +97,6 @@ const typography: TypographyOptions = {
 };
 
 export default typography;
+
+// 20 = 1.25
+// 24 = 1.5

@@ -9,8 +9,10 @@ import Splash from 'components/loading/Splash';
 // import LandingPage from 'pages/dashboard/landing/Landing';
 // import SmartHomePage from 'pages/smarthome/SmartHome';
 // import VirtualRealityPage from 'pages/vr/VirtualReality';
-import React, { lazy, Suspense } from 'react';
+import AuthLayout from 'layouts/auth-layout';
+import { lazy, Suspense } from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
+import paths, { rootPaths } from './path';
 
 const App = lazy(() => import('App'));
 const MainLayout = lazy(() => import('layouts/main-layout'));
@@ -41,9 +43,9 @@ export const routes = [
       {
         path: 'dashboard',
         element: (
-          <React.Suspense fallback={<PageLoader />}>
+          <Suspense fallback={<PageLoader />}>
             <MainLayout />
-          </React.Suspense>
+          </Suspense>
         ),
         children: [
           {
@@ -89,13 +91,27 @@ export const routes = [
         ],
       },
       {
-        path: 'authentication/sign-in',
-        element: <LoginPage />,
+        path: rootPaths.authRoot,
+        element: <AuthLayout />,
+        children: [
+          {
+            path: paths.login,
+            element: <LoginPage />,
+          },
+          {
+            path: paths.signup,
+            element: <SignUpPage />,
+          },
+        ],
       },
-      {
-        path: 'authentication/sign-up',
-        element: <SignUpPage />,
-      },
+      //   {
+      //     path: 'authentication/sign-in',
+      //     element: <LoginPage />,
+      //   },
+      //   {
+      //     path: 'authentication/sign-up',
+      //     element: <SignUpPage />,
+      //   },
     ],
   },
 

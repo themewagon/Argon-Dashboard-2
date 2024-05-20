@@ -13,10 +13,10 @@ declare module '@mui/material/TextField' {
 
 const TextFieldComponent: Components<Omit<Theme, 'components'>>['MuiTextField'] = {
   defaultProps: {
-    variant: 'filled',
-    InputLabelProps: { shrink: true },
+    // focused: true,
   },
   styleOverrides: {
+    root: {},
     // root: ({ ownerState, theme }) => ({
     //   ...(ownerState.variant === 'filled' && {
     //     background: '#fff !important',
