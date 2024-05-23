@@ -14,7 +14,9 @@ const CustomFooter = (props: CustomFooterProps) => {
   const pageCount = useGridSelector(apiRef, gridPageCountSelector);
   return (
     <Stack width={1} spacing={2} direction="row" justifyContent="space-between" alignItems="center">
-      <Typography variant="body2">Showing 1 to 5 of {props.labelRowsPerPage} data</Typography>
+      <Typography variant="body2" color="text.secondary">
+        Showing 1 to 5 of {props.labelRowsPerPage} data
+      </Typography>
       <Pagination
         color="primary"
         count={pageCount}

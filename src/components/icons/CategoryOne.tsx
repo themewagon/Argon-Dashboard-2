@@ -3,7 +3,7 @@ import { SvgIcon, SvgIconProps } from '@mui/material';
 const CategoryOneIcon = (props: SvgIconProps) => {
   return (
     <SvgIcon {...props} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_1396_4583)">
+      <g clipPath="url(#clip0_1396_4583)">
         <path
           d="M7.8499 2.5H11.6999L8.8499 0.1C8.7499 0.05 8.5999 0 8.4999 0H6.8999L7.8499 2.5Z"
           fill="white"

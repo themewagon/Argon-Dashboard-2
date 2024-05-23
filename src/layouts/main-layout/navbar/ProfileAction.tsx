@@ -3,7 +3,6 @@ import {
   Box,
   Button,
   ButtonBase,
-  IconButton,
   ListItemIcon,
   Menu,
   MenuItem,
@@ -61,9 +60,7 @@ const ProfileAction = () => {
           >
             X’eriya Ponald
           </Typography>
-          <IconButton>
-            <IconifyIcon icon="iconamoon:arrow-down-2-light" width={24} height={24} />
-          </IconButton>
+          <IconifyIcon icon="iconamoon:arrow-down-2-light" width={24} height={24} />
         </Stack>
       </ButtonBase>
       <Menu

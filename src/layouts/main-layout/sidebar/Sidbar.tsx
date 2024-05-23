@@ -12,6 +12,7 @@ interface SideNavProps {
 const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavProps) => {
   const { up } = useBreakpoints();
   const upLg = up('lg');
+
   if (upLg) {
     return (
       <Box
@@ -38,9 +39,10 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
             }}
           >
             <Box
-              sx={({ palette }) => ({
+              sx={({ palette, shadows }) => ({
                 bgcolor: palette.common.white,
                 px: 3,
+                boxShadow: shadows[9],
               })}
             >
               <SidebarLogo />

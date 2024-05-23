@@ -24,8 +24,8 @@ const typography: TypographyOptions = {
   fontWeightBold: 700,
   fontWeightExtraBold: 800,
   h1: {
-    fontSize: pxToRem(48),
-    lineHeight: 1.25, // 20
+    fontSize: pxToRem(32),
+    lineHeight: 1.375,
     fontWeight: 700,
   },
 
@@ -61,7 +61,7 @@ const typography: TypographyOptions = {
 
   subtitle1: {
     fontSize: pxToRem(14),
-    lineHeight: 1.25,
+    lineHeight: 1.4286, // 1.25
     fontWeight: 400,
   },
 
@@ -100,3 +100,4 @@ export default typography;
 
 // 20 = 1.25
 // 24 = 1.5
+// 32 = 2.75

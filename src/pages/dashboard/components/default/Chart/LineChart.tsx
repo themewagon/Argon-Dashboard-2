@@ -1,14 +1,32 @@
-import { Box, Card, CardContent, Stack, Typography } from '@mui/material';
+import { Box, Button, Card, CardContent, Stack, Typography } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
-import ReactEchart from 'components/base/ReactEchart';
 import * as echarts from 'echarts';
+import ReactECharts from 'echarts-for-react';
+import EChartsReactCore from 'echarts-for-react/lib/core';
 import { useBreakpoints } from 'providers/useBreakPoint';
-import { option } from './chart-data';
+import { useRef } from 'react';
+import { optionLinechart } from './chart-data';
 
 const LineChartSection = () => {
   const { up } = useBreakpoints();
   const upLg = up('lg');
+  const chartRef = useRef<EChartsReactCore | null>(null);
+  const handleLegendToggle = (name: string) => {
+    if (chartRef.current) {
+      const instance = chartRef.current.getEchartsInstance();
+      instance.dispatchAction({
+        type: 'legendToggleSelect',
+        name: name,
+      });
+    }
+  };
 
+  //   useEffect(() => {
+  //     let instance = chartRef.current.getEchartsInstance();
+  //     instance.on('click', (params) => {
+  //       console.log(params);
+  //     });
+  //   }, []);
   return (
     <Card sx={{ height: 1 }}>
       <CardContent sx={{ flex: 1, p: 2 }}>
@@ -19,7 +37,7 @@ const LineChartSection = () => {
             pt: spacing(1.5),
             justifyContent: 'space-between',
             alignItems: 'center',
-            mb: spacing(1),
+            mb: spacing(3),
           })}
         >
           <Typography variant="h6">Orders Over Time</Typography>
@@ -34,25 +52,45 @@ const LineChartSection = () => {
           </Stack>
         </Stack>
         <Stack
-          spacing={{ xs: 0 }}
-          sx={{
-            px: 1.5,
-            gap: { xs: 2, sm: 4 },
-            flexDirection: { xs: 'column', sm: 'row' },
-          }}
+          direction="row"
+          sx={{ justifyContent: 'space-between', alignItems: 'center', mt: 2 }}
         >
-          <Box>
-            <Typography variant="h5">645</Typography>
-            <Typography variant="subtitle1" color="text.secondary">
-              Orders on May 22
-            </Typography>
-          </Box>
-          <Box>
-            <Typography variant="h5">645</Typography>
-            <Typography variant="subtitle1" color="text.secondary">
-              Orders on May 22
-            </Typography>
-          </Box>
+          <Stack
+            spacing={{ xs: 0 }}
+            sx={{
+              px: 1.5,
+              gap: { xs: 2, sm: 4 },
+              flexDirection: { xs: 'column', sm: 'row' },
+            }}
+          >
+            <Box>
+              <Typography variant="h5">645</Typography>
+              <Typography variant="subtitle1" color="text.secondary">
+                Orders on May 22
+              </Typography>
+            </Box>
+            <Box>
+              <Typography variant="h5">645</Typography>
+              <Typography variant="subtitle1" color="text.secondary">
+                Orders on May 22
+              </Typography>
+            </Box>
+          </Stack>
+          <Stack direction="row" spacing={2} sx={{ justifyContent: 'center', mt: 2 }}>
+            {Array.isArray(optionLinechart.series) &&
+              optionLinechart.series
+                .filter((series) => typeof series.name === 'string')
+                .map((series) => (
+                  <Button
+                    startIcon={<IconifyIcon icon="ic:round-square" color="secondary.main" />}
+                    key={series.name}
+                    variant="text"
+                    onClick={() => handleLegendToggle(series.name as string)}
+                  >
+                    Toggle {series.name}
+                  </Button>
+                ))}
+          </Stack>
         </Stack>
         <Box
           sx={({ spacing, typography }) => ({
@@ -61,14 +99,19 @@ const LineChartSection = () => {
             mt: spacing(3),
           })}
         >
-          <ReactEchart
+          <ReactECharts
+            style={{ flex: 1, display: 'flex', alignItems: 'end' }}
             echarts={echarts}
-            option={option}
-            sx={{
-              flex: 1,
-              display: 'flex',
-              alignItems: 'end',
-            }}
+            option={optionLinechart}
+            ref={chartRef}
+            opts={{ renderer: 'svg' }}
+            lazyUpdate={true}
+
+            // sx={{
+            //   flex: 1,
+            //   display: 'flex',
+            //   alignItems: 'end',
+            // }}
           />
         </Box>
       </CardContent>

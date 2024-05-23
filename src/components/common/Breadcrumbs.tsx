@@ -16,7 +16,7 @@ const CustomBreadcrumbs = ({ route, title }: { route: string[]; title: string })
               }}
               fill="none"
             >
-              <g clip-path="url(#clip0_3320_350)">
+              <g clipPath="url(#clip0_3320_350)">
                 <path
                   d="M9.15838 2.91667H13.65L10.325 0.116667C10.2084 0.0583333 10.0334 0 9.91672 0H8.05005L9.15838 2.91667Z"
                   fill="white"

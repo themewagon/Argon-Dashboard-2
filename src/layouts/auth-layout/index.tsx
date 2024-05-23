@@ -5,17 +5,20 @@ const AuthLayout = () => {
   return (
     <Box
       sx={{
-        height: 1,
         position: 'relative',
         display: 'flex',
         minHeight: '100vh',
-        width: 1,
+
         bgcolor: 'background.default',
+        placeItems: 'center',
       }}
     >
       <Container
         sx={{
           maxWidth: 1,
+          height: 1,
+
+          width: 1,
         }}
       >
         <Box>

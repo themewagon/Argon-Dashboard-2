@@ -1,16 +1,5 @@
 import { PaletteColorOptions, PaletteOptions } from '@mui/material';
-import {
-  blue,
-  green,
-  grey,
-  greyTheme,
-  orange,
-  purple,
-  red,
-  skyBlue,
-  turquoise,
-  yellow,
-} from './colors';
+import { blue, green, grey, orange, purple, red, skyBlue, turquoise, yellow } from './colors';
 
 declare module '@mui/material/styles' {
   interface PaletteOptions {
@@ -67,12 +56,12 @@ const palette: PaletteOptions = {
     focus: grey[300],
   },
   background: {
-    paper: greyTheme[50],
-    default: greyTheme[100],
+    paper: grey[50],
+    default: grey[100],
   },
   text: {
-    primary: greyTheme[900],
-    secondary: greyTheme[700],
+    primary: grey[900],
+    secondary: grey[700],
     disabled: grey[300],
   },
   white: {
@@ -133,7 +122,7 @@ const palette: PaletteOptions = {
     contrastText: '#ffffff',
   },
 
-  grey: { ...greyTheme },
+  grey: { ...grey },
   gradients: {
     primary: {
       main: blue[800],

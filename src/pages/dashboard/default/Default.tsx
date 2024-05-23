@@ -1,5 +1,4 @@
 import { Box, Grid } from '@mui/material';
-import Categories from '../components/default/Categories/Categories';
 import BarchartSection from '../components/default/Chart/BarChart';
 import LineChartSection from '../components/default/Chart/LineChart';
 import PageHeader from '../components/default/PageHeader/PageHeader';
@@ -7,7 +6,6 @@ import ProgressTracker from '../components/default/ProgressTracker/ProgressTrack
 import StatisticsCards from '../components/default/Statistics/StatisticCards';
 import TopProductsTable from '../components/default/Table/TopProductsTable';
 import TransactionTable from '../components/default/Table/TransactionTable';
-import UserTable from '../components/default/Table/UserTable';
 import TeamMembers from '../components/default/TeamMembers/TeamMembers';
 import TodoList from '../components/default/TodoList/TodoList';
 
@@ -57,14 +55,11 @@ const Default = () => {
         </Grid>
       </Grid>
       {/* /* ------------- Table section ---------------- **/}
-      <Grid container spacing={3}>
+      {/* <Grid container spacing={3}>
         <Grid item xs={12} lg={8}>
           <UserTable />
         </Grid>
-        <Grid item xs={12} lg={4}>
-          <Categories />
-        </Grid>
-      </Grid>
+      </Grid> */}
     </Box>
   );
 };

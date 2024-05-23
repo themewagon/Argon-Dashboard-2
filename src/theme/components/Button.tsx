@@ -24,6 +24,9 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
       borderRadius: theme.shape.borderRadius,
       padding: theme.spacing(1, 3),
     }),
+    fullWidth: ({ theme }) => ({
+      padding: theme.spacing(1.5, 3),
+    }),
     sizeLarge: ({ theme }) => ({
       fontSize: pxToRem(16),
       padding: theme.spacing(1.25, 2.75),
@@ -34,7 +37,9 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
       lineHeight: 1.25,
       fontSize: pxToRem(14),
     }),
-
+    outlined: ({ theme }) => ({
+      borderColor: theme.palette.text.disabled,
+    }),
     outlinedSizeLarge: {
       paddingTop: `${pxToRem(9)}`,
       paddingBottom: `${pxToRem(9)}`,
@@ -60,7 +65,10 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
     }),
     containedSecondary: ({ theme }) => ({
       color: theme.palette.primary.main,
-      backgroundColor: theme.palette.primary.light,
+      backgroundColor: theme.palette.common.white,
+      borderColor: theme.palette.text.disabled,
+      borderWidth: 1,
+      borderStyle: 'solid',
       '&:hover': {
         backgroundColor: `${theme.palette.primary.contrastText} !important`,
       },

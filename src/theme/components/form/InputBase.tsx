@@ -4,7 +4,17 @@ import { Components } from '@mui/material/styles/components';
 const InputBaseComponent: Components<Omit<Theme, 'components'>>['MuiInputBase'] = {
   defaultProps: {},
   styleOverrides: {
-    root: {},
+    root: {
+      '& .Mui-focused': {
+        outline: 0,
+        borderColor: 'success.main',
+        borderStyle: 'solid',
+        boxShadow: '',
+      },
+      '& .Mui-disabled': {
+        '& > fieldset': {},
+      },
+    },
     input: ({ theme }) => ({
       //   width: '100%',
       //   height: pxToRem(22),
@@ -20,17 +30,6 @@ const InputBaseComponent: Components<Omit<Theme, 'components'>>['MuiInputBase'] 
     multiline: ({ theme }) => ({
       padding: `${theme.typography.pxToRem(10)} ${theme.typography.pxToRem(12)}`,
     }),
-    focused: {
-      outline: 0,
-      borderColor: 'success.main',
-      borderStyle: 'solid',
-      boxShadow: '',
-    },
-    disabled: {
-      '& > fieldset': {
-        // border: 0,
-      },
-    },
   },
 };
 

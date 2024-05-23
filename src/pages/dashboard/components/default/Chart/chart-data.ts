@@ -2,7 +2,6 @@ import {
   BarSeriesOption,
   ComposeOption,
   DatasetComponentOption,
-  EChartsOption,
   GridComponentOption,
   LineSeriesOption,
   TitleComponentOption,
@@ -39,12 +38,13 @@ echarts.use([
   LineChart,
   LabelLayout,
 ]);
-export const option: EChartsOption = {
+export const optionLinechart: ECOption = {
   tooltip: {
     trigger: 'axis',
     backgroundColor: '#333752',
     textStyle: { color: '#fff' },
     formatter: '{c0} Orders<br /> {a0}, {b0}',
+    confine: true,
   },
 
   legend: {
@@ -68,7 +68,7 @@ export const option: EChartsOption = {
     left: '2%',
     right: '-1%',
     bottom: '4%',
-    top: '2%',
+    top: '12%',
     containLabel: true,
   },
 

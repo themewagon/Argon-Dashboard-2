@@ -1,59 +1,67 @@
-import { Box, Button, Divider, Grid, Link, Stack, TextField, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Card,
+  Checkbox,
+  Divider,
+  FormControlLabel,
+  FormGroup,
+  Grid,
+  Link,
+  Stack,
+  TextField,
+  Typography,
+} from '@mui/material';
+import IconifyIcon from 'components/base/IconifyIcon';
 
 const LoginPage = () => {
   return (
     <Box
-      sx={({ spacing, palette }) => ({
-        height: '100vh',
-        display: 'flex',
-        alignItems: 'center',
+      sx={({ spacing }) => ({
+        p: { xs: spacing(1), sm: spacing(3) },
       })}
     >
       <Grid container spacing={0} sx={{ overflowX: 'hidden', placeContent: 'center' }}>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          lg={6}
-          xl={6}
-          sx={({ spacing, palette }) => ({
-            p: spacing(6),
-            bgcolor: palette.common.white,
-          })}
-        >
-          <Box
-            sx={{
-              mb: 1,
-            }}
+        <Grid item xs={12} sm={12} lg={6} xl={6}>
+          <Card
+            sx={({ spacing, palette }) => ({
+              p: { xs: spacing(3), sm: spacing(6) },
+              bgcolor: palette.common.white,
+            })}
           >
-            <Box
+            <Stack
+              spacing={1}
               sx={{
                 mb: 1,
-                mt: 3,
                 textAlign: 'center',
               }}
             >
               <Typography
-                fontWeight="700"
-                variant="h3"
-                sx={{
-                  mb: 1,
-                }}
+                variant="h1"
+                sx={{ typography: { sm: 'h1', xs: 'h2', whiteSpace: 'nowrap' } }}
               >
-                Create New Account
+                Sign In
               </Typography>
 
               <Typography
-                variant="caption"
+                variant="button"
+                color="text.secondary"
                 sx={{
                   position: 'relative',
                   px: 2,
                 }}
               >
-                Have an account ? <Link href="/">Sign In</Link>
+                New to Our Product?
+                <Typography ml={1} color="primary" component={Link} href="/authentication/sign-up">
+                  Create an Account
+                </Typography>
               </Typography>
-            </Box>
-            <Stack>
+            </Stack>
+            <Box
+              sx={({ spacing }) => ({
+                mt: spacing(5),
+              })}
+            >
               <Stack spacing={3}>
                 <TextField fullWidth variant="outlined" id="mail" type="text" label="Email" />
                 <TextField
@@ -63,6 +71,15 @@ const LoginPage = () => {
                   type="text"
                   label="Password"
                 />
+                <FormGroup sx={{ mt: 0 }}>
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label="Keep me signed in"
+                    sx={({ palette }) => ({
+                      color: palette.text.secondary,
+                    })}
+                  />
+                </FormGroup>
                 <Button
                   color="primary"
                   variant="contained"
@@ -70,63 +87,55 @@ const LoginPage = () => {
                   fullWidth
                   component={Link}
                   href="#!"
-                  type="submit"
+
+                  //   type="submit"
                 >
                   Sign In
                 </Button>
-              </Stack>
-              <Divider />
-              {/* <Box>
-                <CustomFormLabel htmlFor="password">Password</CustomFormLabel>
-                <CustomTextField id="password" type="password" variant="outlined" fullWidth />
-              </Box>
-              <Stack justifyContent="space-between" direction="row" alignItems="center" my={2}>
-                <FormGroup>
-                  <FormControlLabel
-                    control={<CustomCheckbox defaultChecked />}
-                    label="Remeber this Device"
-                  />
-                </FormGroup>
-                <Typography
-                  component={Link}
-                  to="/auth/forgot-password"
-                  fontWeight="500"
-                  sx={{
-                    textDecoration: 'none',
-                    color: 'primary.main',
-                  }}
+                <Stack
+                  spacing={0.5}
+                  sx={({ spacing }) => ({
+                    textAlign: 'center',
+                    color: 'text.secondary',
+                    mb: spacing(1),
+                  })}
                 >
-                  Forgot Password ?
-                </Typography>
-              </Stack> */}
-            </Stack>
-            {/* <AuthLogin
-              title="Welcome to Modernize"
-              subtext={
-                <Typography variant="subtitle1" color="textSecondary" mb={1}>
-                  Your Admin Dashboard
-                </Typography>
-              }
-              subtitle={
-                <Stack direction="row" spacing={1} mt={3}>
-                  <Typography color="textSecondary" variant="h6" fontWeight="500">
-                    New to Modernize?
-                  </Typography>
-                  <Typography
-                    component={Link}
-                    to="/auth/register"
-                    fontWeight="500"
-                    sx={{
-                      textDecoration: 'none',
-                      color: 'primary.main',
-                    }}
-                  >
-                    Create an account
+                  <Typography color="primary" variant="subtitle1">
+                    Forgot Your Password?{' '}
                   </Typography>
                 </Stack>
-              }
-            /> */}
-          </Box>
+              </Stack>
+              <Divider
+                sx={({ spacing }) => ({
+                  my: spacing(3),
+                })}
+              />
+              <Typography textAlign="center" color="text.secondary" variant="subtitle1">
+                Or sign in using:
+              </Typography>
+              <Stack
+                spacing={1.5}
+                sx={({ spacing }) => ({
+                  mt: spacing(3),
+                })}
+              >
+                <Button
+                  startIcon={<IconifyIcon icon="flat-color-icons:google" />}
+                  variant="outlined"
+                  sx={{ typography: { sm: 'button', xs: 'subtitle1', whiteSpace: 'nowrap' } }}
+                >
+                  Continue with Google
+                </Button>
+                <Button
+                  startIcon={<IconifyIcon icon="logos:facebook" />}
+                  variant="outlined"
+                  sx={{ typography: { sm: 'button', xs: 'subtitle1', whiteSpace: 'nowrap' } }}
+                >
+                  Continue with Facebook
+                </Button>
+              </Stack>
+            </Box>
+          </Card>
         </Grid>
       </Grid>
     </Box>
