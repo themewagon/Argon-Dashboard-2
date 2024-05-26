@@ -18,6 +18,11 @@ const LineChartSection = () => {
 
     const handleMouseOver = (params: echarts.ECElementEvent) => {
       if (params.componentType === 'series' && params.seriesName) {
+        chartInstance?.dispatchAction({
+          type: 'highlight',
+          seriesName: params.seriesName,
+          dataIndex: params.dataIndex,
+        });
         setActiveSeriesName(params.seriesName);
       }
     };
@@ -25,6 +30,7 @@ const LineChartSection = () => {
     const handleMouseOut = (params: echarts.ECElementEvent) => {
       if (params.componentType === 'series') {
         setActiveSeriesName(null);
+        chartInstance?.dispatchAction({ type: 'downplay' });
       }
     };
 
@@ -113,6 +119,7 @@ const LineChartSection = () => {
               justifyContent: 'center',
               mt: spacing(2),
               pr: spacing(1),
+              flexDirection: { xs: 'column', sm: 'row' },
             })}
           >
             {Array.isArray(optionLinechart.series) &&
@@ -147,7 +154,7 @@ const LineChartSection = () => {
           <ReactECharts
             style={{ flex: 1, display: 'flex', alignItems: 'end', overflow: 'visible' }}
             echarts={echarts}
-            option={optionLinechart}
+            option={options}
             ref={chartRef}
             opts={{ renderer: 'svg' }}
             lazyUpdate={true}

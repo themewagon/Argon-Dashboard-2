@@ -48,6 +48,7 @@ const topProductsColumns: GridColDef<TopProductsRowData>[] = [
     },
     headerName: 'Name',
     width: 100,
+    flex: 1,
   },
   {
     field: 'price',

@@ -46,7 +46,7 @@ const TransactionTable = () => {
         overflow: 'auto',
         minHeight: 0,
         position: 'relative',
-        height: typography.pxToRem(500),
+        height: { xs: 'auto', sm: typography.pxToRem(500) },
       })}
     >
       <SimpleBar>

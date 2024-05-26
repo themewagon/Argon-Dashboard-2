@@ -47,20 +47,24 @@ export const getLineChartOptions = (activeSeriesName: string | null): ECOption =
     backgroundColor: '#333752',
     textStyle: { color: '#fff' },
     formatter: function (params) {
-      if (!activeSeriesName) return '';
-
+      let tooltipContent = '';
+      if (!activeSeriesName) return tooltipContent;
+      console.log(activeSeriesName);
       if (Array.isArray(params)) {
-        const series = params.find((param) => param.seriesName === activeSeriesName);
-        return series ? `<div class="tooltip">${series.seriesName}: ${series.value}</div>` : '';
+        const activeParam = params.find((param) => param.seriesName === activeSeriesName);
+        if (activeParam) {
+          tooltipContent += `<div class="tooltip"><strong>Orders: ${activeParam.value}</strong><br/>${activeParam.seriesName}, ${activeParam.name}</div>`;
+        }
       }
-      return '';
+      return tooltipContent;
     },
+
     confine: false,
     position: function (point, params, dom, rect, size) {
       const tooltipWidth = size.contentSize[0];
-      let offsetY = 40;
+      let offsetY = 78;
       if (rect !== null) {
-        offsetY += rect.height;
+        offsetY += rect?.height ?? 0;
       }
       return [point[0] - tooltipWidth / 2, point[1] - offsetY];
     },
@@ -70,7 +74,7 @@ export const getLineChartOptions = (activeSeriesName: string | null): ECOption =
   },
   grid: {
     left: '2%',
-    right: '-1%',
+    right: '1%',
     bottom: '4%',
     top: '12%',
     containLabel: true,
@@ -115,7 +119,7 @@ export const getLineChartOptions = (activeSeriesName: string | null): ECOption =
       name: 'May 11',
       type: 'line',
       color: '#d9e1ec',
-      triggerLineEvent: true,
+      triggerLineEvent: false,
       emphasis: {
         focus: 'series',
         scale: 4,
@@ -135,9 +139,13 @@ export const getLineChartOptions = (activeSeriesName: string | null): ECOption =
       name: 'May 12',
       type: 'line',
       color: '#2968fa',
-      triggerLineEvent: true,
+      triggerLineEvent: false,
       emphasis: {
         focus: 'series',
+        areaStyle: {
+          //--> to avoid the fade effect, set the same color
+          color: '#171717',
+        },
         scale: 4,
         itemStyle: {
           borderCap: 'round',
@@ -179,7 +187,8 @@ export const optionLinechart: ECOption = {
     },
     confine: false,
     position: function (point, params, dom, rect, size) {
-      console.log(point);
+      console.log(rect);
+
       const tooltipWidth = size.contentSize[0];
       let offsetY = 78;
       if (rect !== null) {
