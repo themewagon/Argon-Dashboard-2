@@ -73,6 +73,7 @@ const typography: TypographyOptions = {
   caption: {
     fontWeight: 700,
     fontSize: pxToRem(12),
+    lineHeight: 1,
   },
 
   body1: {

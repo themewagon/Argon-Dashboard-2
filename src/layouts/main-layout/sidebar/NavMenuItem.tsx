@@ -16,7 +16,6 @@ interface NavMenuItemType {
 }
 const NavMenuItem = ({ item, pathTo }: NavMenuItemType) => {
   const { icon: Icon } = item;
-
   const itemIcon = Icon ? <Icon /> : null;
   return (
     <List component="li" disablePadding key={item?.id && item.title}>
@@ -46,10 +45,13 @@ const NavMenuItem = ({ item, pathTo }: NavMenuItemType) => {
             variant={item?.variant ? item?.variant : 'outlined'}
             size="small"
             label={item?.chip}
-            sx={({ palette }) => ({
+            sx={({ palette, shape, typography }) => ({
+              borderRadius: shape.borderRadius * 3,
+              ...typography.caption,
               ...(pathTo === item?.href
                 ? {
                     bgcolor: palette.text.disabled,
+                    color: palette.primary.main,
                   }
                 : {
                     bgcolor: palette.text.primary,
