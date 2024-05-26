@@ -1,28 +1,18 @@
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
 import NoDataIcon from 'components/icons/table/NoDataIcon';
-
-const StyledGridOverlay = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  height: '100%',
-  marginTop: '55px',
-}));
 
 function CustomNoRows() {
   return (
     <Box
-      sx={{
+      sx={({ spacing, typography }) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100%',
-        marginTop: '55px',
-      }}
+        height: typography.pxToRem(200),
+        marginTop: spacing(8),
+      })}
     >
       <NoDataIcon
         sx={({ spacing }) => ({
@@ -30,8 +20,15 @@ function CustomNoRows() {
           height: spacing(15),
         })}
       />
-      <Box sx={{ mt: 1 }}>
-        <Typography variant="button">No Data</Typography>
+      <Box
+        sx={({ spacing }) => ({
+          mt: spacing(1),
+          mb: spacing(2),
+        })}
+      >
+        <Typography variant="subtitle2" color="text.secondary">
+          No Data
+        </Typography>
       </Box>
     </Box>
   );
