@@ -9,7 +9,7 @@ const ChipComponent: Components<Omit<Theme, 'components'>>['MuiChip'] = {
       ...typography.subtitle1,
       height: 'auto',
       padding: theme.spacing(0.5, 1),
-      backgroundColor: theme.palette.grey['200'],
+      backgroundColor: theme.palette.grey[200],
       whiteSpace: 'nowrap',
       verticalAlign: 'baseline',
       borderRadius: theme.shape.borderRadius,

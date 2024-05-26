@@ -52,7 +52,7 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
               <Box
                 sx={({ palette }) => ({
                   borderRight: 1,
-                  borderColor: palette.grey['300'],
+                  borderColor: palette.grey[300],
                   height: 'calc(100vh + 68px)',
                 })}
               >

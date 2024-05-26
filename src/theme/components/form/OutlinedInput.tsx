@@ -8,7 +8,7 @@ const OutlinedInputComponent: Components<Omit<Theme, 'components'>>['MuiOutlined
   },
   styleOverrides: {
     root: ({ theme, ownerState }) => ({
-      color: theme.palette.grey['800'],
+      color: theme.palette.grey[800],
       fontSize: theme.typography.pxToRem(14),
       fontWeight: theme.typography.fontWeightRegular,
       lineHeight: 20,

@@ -33,7 +33,7 @@ const MessageAction = () => {
         size="large"
         color="inherit"
         sx={({ palette }) => ({
-          color: palette.grey['500'],
+          color: palette.grey[600],
         })}
       >
         <IconifyIcon icon="mdi:message-text-outline" fontSize="1.5rem" />

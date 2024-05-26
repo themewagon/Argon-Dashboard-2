@@ -24,7 +24,7 @@ const InputBaseComponent: Components<Omit<Theme, 'components'>>['MuiInputBase'] 
 
       '&::placeholder': {
         opacity: 1,
-        color: theme.palette.grey['600'],
+        color: theme.palette.grey[600],
       },
     }),
     multiline: ({ theme }) => ({

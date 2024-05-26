@@ -8,7 +8,7 @@ const InputAdornmentComponent: Components<Omit<Theme, 'components'>>['MuiInputAd
       '& .iconify': {
         flexShrink: 0,
         fontSize: theme.typography.pxToRem(24),
-        color: theme.palette.grey['700'],
+        color: theme.palette.grey[700],
       },
     }),
   },

@@ -45,7 +45,7 @@ const NotificationAction = () => {
         color="inherit"
         onClick={handleClick}
         sx={({ palette }) => ({
-          color: palette.grey['500'],
+          color: palette.grey[600],
         })}
       >
         <Badge color="primary" badgeContent={5}>

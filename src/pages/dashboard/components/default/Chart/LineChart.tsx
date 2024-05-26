@@ -4,13 +4,41 @@ import * as echarts from 'echarts';
 import ReactECharts from 'echarts-for-react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import { useBreakpoints } from 'providers/useBreakPoint';
-import { useRef } from 'react';
-import { optionLinechart } from './chart-data';
+import { useEffect, useRef, useState } from 'react';
+import { getLineChartOptions, optionLinechart } from './chart-data';
 
 const LineChartSection = () => {
   const { up } = useBreakpoints();
   const upLg = up('lg');
   const chartRef = useRef<EChartsReactCore | null>(null);
+  const [activeSeriesName, setActiveSeriesName] = useState<string | null>(null);
+
+  useEffect(() => {
+    const chartInstance = chartRef.current?.getEchartsInstance();
+
+    const handleMouseOver = (params: echarts.ECElementEvent) => {
+      if (params.componentType === 'series' && params.seriesName) {
+        setActiveSeriesName(params.seriesName);
+      }
+    };
+
+    const handleMouseOut = (params: echarts.ECElementEvent) => {
+      if (params.componentType === 'series') {
+        setActiveSeriesName(null);
+      }
+    };
+
+    chartInstance?.on('mouseover', handleMouseOver);
+    chartInstance?.on('mouseout', handleMouseOut);
+
+    // Cleanup on component unmount
+    return () => {
+      chartInstance?.off('mouseover', handleMouseOver);
+      chartInstance?.off('mouseout', handleMouseOut);
+    };
+  }, []);
+
+  const options = getLineChartOptions(activeSeriesName);
   const handleLegendToggle = (name: string) => {
     if (chartRef.current) {
       const instance = chartRef.current.getEchartsInstance();
@@ -22,10 +50,12 @@ const LineChartSection = () => {
   };
 
   //   useEffect(() => {
-  //     let instance = chartRef.current.getEchartsInstance();
-  //     instance.on('click', (params) => {
-  //       console.log(params);
-  //     });
+  //     const instance = chartRef.current?.getEchartsInstance();
+  //     if (instance) {
+  //       instance.on('mouseover', (params) => {
+  //         console.log(params.seriesName, 'dxs');
+  //       });
+  //     }
   //   }, []);
   return (
     <Card sx={{ height: 1 }}>
@@ -76,18 +106,33 @@ const LineChartSection = () => {
               </Typography>
             </Box>
           </Stack>
-          <Stack direction="row" spacing={2} sx={{ justifyContent: 'center', mt: 2 }}>
+          <Stack
+            direction="row"
+            spacing={0.5}
+            sx={({ spacing }) => ({
+              justifyContent: 'center',
+              mt: spacing(2),
+              pr: spacing(1),
+            })}
+          >
             {Array.isArray(optionLinechart.series) &&
               optionLinechart.series
                 .filter((series) => typeof series.name === 'string')
-                .map((series) => (
+                .map((series, i, array) => (
                   <Button
-                    startIcon={<IconifyIcon icon="ic:round-square" color="secondary.main" />}
+                    size="small"
+                    startIcon={
+                      <IconifyIcon
+                        icon="ic:round-square"
+                        color={i === array.length - 1 ? 'primary.main' : 'action.disabled'}
+                      />
+                    }
                     key={series.name}
                     variant="text"
+                    sx={{ color: 'text.secondary' }}
                     onClick={() => handleLegendToggle(series.name as string)}
                   >
-                    Toggle {series.name}
+                    {series.name}
                   </Button>
                 ))}
           </Stack>
@@ -100,7 +145,7 @@ const LineChartSection = () => {
           })}
         >
           <ReactECharts
-            style={{ flex: 1, display: 'flex', alignItems: 'end' }}
+            style={{ flex: 1, display: 'flex', alignItems: 'end', overflow: 'visible' }}
             echarts={echarts}
             option={optionLinechart}
             ref={chartRef}

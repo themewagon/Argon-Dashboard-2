@@ -85,7 +85,7 @@ const TransactionTable = () => {
           sx={({ spacing, palette }) => ({
             boxShadow: 1,
             px: spacing(3),
-            borderColor: palette.grey['200'],
+            borderColor: palette.grey[200],
             height: 1,
             width: 1,
           })}

@@ -12,9 +12,9 @@ const FilledInputComponent: Components<Omit<Theme, 'components'>>['MuiFilledInpu
       '&:before, &:after': {
         display: 'none',
       },
-      backgroundColor: theme.palette.grey['100'],
+      backgroundColor: theme.palette.grey[100],
       '&:hover': {
-        backgroundColor: theme.palette.grey['200'],
+        backgroundColor: theme.palette.grey[200],
       },
     }),
     input: {

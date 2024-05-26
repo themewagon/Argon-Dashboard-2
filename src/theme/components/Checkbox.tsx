@@ -25,7 +25,7 @@ const CheckboxComponent: Components<Omit<Theme, 'components'>>['MuiCheckbox'] = 
         borderRadius: theme.shape.borderRadius,
       },
       '&.Mui-disabled svg': {
-        color: theme.palette.grey[400],
+        color: theme.palette.grey[500],
       },
     }),
 

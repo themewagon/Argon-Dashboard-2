@@ -13,7 +13,7 @@ const DataGridComponent: DataGridComponents<Omit<Theme, 'components'>>['MuiDataG
       paddingTop: theme.spacing(2.5),
       paddingBottom: theme.spacing(2.5),
       '--DataGrid-containerBackground': theme.palette.common.white,
-      '--DataGrid-rowBorderColor': theme.palette.grey['200'],
+      '--DataGrid-rowBorderColor': theme.palette.grey[200],
       '.MuiDataGrid-overlayWrapper': {},
       '.MuiDataGrid-overlayWrapperInner': {
         height: 'auto !important',
@@ -33,11 +33,16 @@ const DataGridComponent: DataGridComponents<Omit<Theme, 'components'>>['MuiDataG
     filler: ({ theme }) => ({
       backgroundColor: theme.palette.common.white,
     }),
+    row: ({ theme }) => ({
+      '&:hover': {
+        backgroundColor: theme.palette.background.default,
+      },
+    }),
 
     cell: ({ theme }) => ({
       ...typography.subtitle1,
       color: theme.palette.text.primary,
-      borderColor: theme.palette.grey['200'],
+      borderColor: theme.palette.grey[200],
       padding: theme.spacing(1),
       paddingLeft: theme.spacing(3),
       paddingRight: theme.spacing(3),

@@ -49,7 +49,7 @@ declare module '@mui/material/styles' {
 const palette: PaletteOptions = {
   action: {
     active: grey[500],
-    hover: grey[50],
+    hover: grey[100],
     selected: grey[100],
     disabled: grey[400],
     disabledBackground: grey[200],
