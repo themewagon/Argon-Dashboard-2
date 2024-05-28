@@ -10,6 +10,7 @@ const PageHeader = ({ children }: PageHeaderProps) => {
   return (
     <Stack
       direction="row"
+      alignItems="center"
       sx={({ spacing }) => ({
         pt: spacing(1),
       })}
@@ -17,10 +18,11 @@ const PageHeader = ({ children }: PageHeaderProps) => {
       <Typography variant="h2">{children}</Typography>
       <Box flexGrow={1} />
       <Button
-        variant="contained"
+        disabled
+        variant="outlined"
         color="secondary"
-        sx={{ gap: 0.5 }}
         startIcon={<GlobalSettingsIcon />}
+        size="large"
       >
         Manage
       </Button>

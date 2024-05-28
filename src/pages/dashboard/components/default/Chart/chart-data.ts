@@ -41,20 +41,22 @@ echarts.use([
   LabelLayout,
 ]);
 
-export const getLineChartOptions = (activeSeriesName: string | null): ECOption => ({
+export const getLineChartOptions = (): ECOption => ({
   tooltip: {
     trigger: 'axis',
     backgroundColor: '#333752',
     textStyle: { color: '#fff' },
+    borderWidth: 0,
+
     formatter: function (params) {
       let tooltipContent = '';
-      if (!activeSeriesName) return tooltipContent;
-      console.log(activeSeriesName);
       if (Array.isArray(params)) {
-        const activeParam = params.find((param) => param.seriesName === activeSeriesName);
-        if (activeParam) {
-          tooltipContent += `<div class="tooltip"><strong>Orders: ${activeParam.value}</strong><br/>${activeParam.seriesName}, ${activeParam.name}</div>`;
+        for (let i = 0; i < params.length; i++) {
+          const param = params[i];
+          tooltipContent += `<div class="tooltip"><strong>Orders: ${param.value}</strong><br/>${param.seriesName}, ${param.name}</div>`;
         }
+      } else {
+        tooltipContent = `${params.seriesName}: ${params.value}`;
       }
       return tooltipContent;
     },
@@ -62,7 +64,7 @@ export const getLineChartOptions = (activeSeriesName: string | null): ECOption =
     confine: false,
     position: function (point, params, dom, rect, size) {
       const tooltipWidth = size.contentSize[0];
-      let offsetY = 78;
+      let offsetY = 118;
       if (rect !== null) {
         offsetY += rect?.height ?? 0;
       }
@@ -173,7 +175,6 @@ export const optionLinechart: ECOption = {
     backgroundColor: '#333752',
     textStyle: { color: '#fff' },
     formatter: function (params) {
-      console.log(params);
       let tooltipContent = '';
       if (Array.isArray(params)) {
         for (let i = 0; i < params.length; i++) {
@@ -187,8 +188,6 @@ export const optionLinechart: ECOption = {
     },
     confine: false,
     position: function (point, params, dom, rect, size) {
-      console.log(rect);
-
       const tooltipWidth = size.contentSize[0];
       let offsetY = 78;
       if (rect !== null) {

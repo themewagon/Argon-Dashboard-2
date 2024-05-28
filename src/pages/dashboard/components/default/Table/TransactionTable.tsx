@@ -42,12 +42,12 @@ const TransactionTable = () => {
 
   return (
     <Box
-      sx={({ typography }) => ({
+      sx={{
         overflow: 'auto',
         minHeight: 0,
         position: 'relative',
-        height: { xs: 'auto', sm: typography.pxToRem(500) },
-      })}
+        height: { xs: 'auto', sm: 500 },
+      }}
     >
       <SimpleBar>
         <DataGrid

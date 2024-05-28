@@ -27,7 +27,11 @@ const ProfileAction = () => {
     setAnchorEl(null);
   };
   return (
-    <Box>
+    <Box
+      sx={({ spacing }) => ({
+        px: spacing(0.75),
+      })}
+    >
       <ButtonBase
         aria-controls="msgs-menu"
         aria-haspopup="true"

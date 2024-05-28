@@ -16,12 +16,13 @@ const ReactEchart = forwardRef<null | EChartsReactCore, ReactEchartProps>(
     return (
       <Box
         component={ReactEChartsCore}
+        opts={{ renderer: 'svg' }}
+        lazyUpdate={true}
         ref={ref}
         option={{
           ...option,
           tooltip: {
             ...option.tooltip,
-            confine: true,
           },
         }}
         {...rest}

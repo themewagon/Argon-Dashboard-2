@@ -1,5 +1,4 @@
 import { Components, Theme } from '@mui/material/styles';
-import pxToRem from 'theme/functions/pxToRem';
 
 declare module '@mui/material/Button' {
   //   interface ButtonPropsVariantOverrides {
@@ -27,65 +26,94 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
     fullWidth: ({ theme }) => ({
       padding: theme.spacing(1.5, 3),
     }),
-    sizeLarge: ({ theme }) => ({
-      fontSize: pxToRem(16),
-      padding: theme.spacing(1.25, 2.75),
-      lineHeight: 1.375,
+
+    textSizeLarge: ({ theme }) => ({
+      ...theme.typography.button,
+      padding: theme.spacing(1.5, 3),
     }),
-    sizeSmall: ({ theme }) => ({
-      padding: theme.spacing(0.75, 1.25),
-      lineHeight: 1.25,
-      fontSize: pxToRem(14),
+    textSizeMedium: ({ theme }) => ({
+      ...theme.typography.button,
+      padding: theme.spacing(1.5, 3),
+    }),
+    textSizeSmall: ({ theme }) => ({
+      ...theme.typography.subtitle1,
+      padding: theme.spacing(1, 2.5),
     }),
     outlined: ({ theme }) => ({
       borderColor: theme.palette.text.disabled,
+      '&.MuiButton-outlined.Mui-disabled': {
+        backgroundColor: theme.palette.action.disabledBackground,
+      },
     }),
-    outlinedSizeLarge: {
-      paddingTop: `${pxToRem(9)}`,
-      paddingBottom: `${pxToRem(9)}`,
-    },
+    outlinedSecondary: ({ theme }) => ({
+      backgroundColor: theme.palette.common.white,
+      color: theme.palette.primary.main,
+      '&:hover': {
+        backgroundColor: `${theme.palette.primary.lighter}`,
+        borderColor: `${theme.palette.primary.main}`,
+      },
+    }),
+    outlinedSizeLarge: ({ theme }) => ({
+      ...theme.typography.button,
+      padding: theme.spacing(1.5, 3),
+    }),
     outlinedSizeMedium: ({ theme }) => ({
-      fontSize: pxToRem(16),
-      padding: theme.spacing(1.25, 3),
+      ...theme.typography.button,
+      padding: theme.spacing(1.5, 3),
     }),
     outlinedSizeSmall: ({ theme }) => ({
-      fontSize: pxToRem(14),
-      padding: theme.spacing(1, 4),
+      ...theme.typography.subtitle1,
+      padding: theme.spacing(1, 2.5),
     }),
 
     containedSizeSmall: ({ theme }) => ({
-      padding: theme.spacing(1, 3),
-      fontSize: theme.typography.pxToRem(14),
-      lineHeight: 1.25,
+      ...theme.typography.subtitle1,
+      padding: theme.spacing(1, 2.5),
     }),
     containedSizeMedium: ({ theme }) => ({
-      fontSize: pxToRem(16),
-      padding: theme.spacing(1.25, 3),
-      lineHeight: 1.5,
+      ...theme.typography.button,
+      padding: theme.spacing(1, 3),
+    }),
+    containedSizeLarge: ({ theme }) => ({
+      ...theme.typography.button,
+      padding: theme.spacing(1.5, 3),
     }),
     containedSecondary: ({ theme }) => ({
       color: theme.palette.primary.main,
-      backgroundColor: theme.palette.common.white,
-      borderColor: theme.palette.text.disabled,
-      borderWidth: 1,
-      borderStyle: 'solid',
+      backgroundColor: theme.palette.primary.light,
+      //   borderColor: theme.palette.text.disabled,
+      //   borderWidth: 1,
+      //   borderStyle: 'solid',
       '&:hover': {
-        backgroundColor: `${theme.palette.primary.contrastText} !important`,
+        backgroundColor: `${theme.palette.primary.lighter}`,
       },
     }),
+
     startIcon: {
       '& > *:first-of-type': {
         fontSize: 18,
       },
+      //   margin: 0,
     },
     endIcon: {
       '& > *:first-of-type': {
         fontSize: 18,
       },
     },
+
+    iconSizeSmall: {
+      '& > *:first-of-type': {
+        fontSize: 20,
+      },
+    },
+    iconSizeMedium: {
+      '& > *:first-of-type': {
+        fontSize: 24,
+      },
+    },
     iconSizeLarge: {
       '& > *:first-of-type': {
-        fontSize: 30,
+        fontSize: 24,
       },
     },
     // outlinedNeutral: ({ theme }) => ({

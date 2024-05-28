@@ -1,7 +1,7 @@
 import { Box, Grid } from '@mui/material';
+import PageHeader from '../../../components/common/PageHeader';
 import BarchartSection from '../components/default/Chart/BarChart';
 import LineChartSection from '../components/default/Chart/LineChart';
-import PageHeader from '../components/default/PageHeader/PageHeader';
 import ProgressTracker from '../components/default/ProgressTracker/ProgressTracker';
 import StatisticsCards from '../components/default/Statistics/StatisticCards';
 import TopProductsTable from '../components/default/Table/TopProductsTable';

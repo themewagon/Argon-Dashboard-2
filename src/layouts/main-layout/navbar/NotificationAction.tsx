@@ -41,7 +41,6 @@ const NotificationAction = () => {
     <Box>
       <IconButton
         aria-label={notificationsLabel(100)}
-        size="large"
         color="inherit"
         onClick={handleClick}
         sx={({ palette }) => ({

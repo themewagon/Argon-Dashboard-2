@@ -12,6 +12,7 @@ input[data-autocompleted] {
   width: 90px;
   text-align: center;
   border-radius: 10px;
+  box-shadow: none;
 }
 
 .tooltip:before {

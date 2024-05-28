@@ -1,50 +1,18 @@
 import { Box, Button, Card, CardContent, Stack, Typography } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
+import ReactEchart from 'components/base/ReactEchart';
 import * as echarts from 'echarts';
-import ReactECharts from 'echarts-for-react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import { useBreakpoints } from 'providers/useBreakPoint';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { getLineChartOptions, optionLinechart } from './chart-data';
 
 const LineChartSection = () => {
   const { up } = useBreakpoints();
   const upLg = up('lg');
   const chartRef = useRef<EChartsReactCore | null>(null);
-  const [activeSeriesName, setActiveSeriesName] = useState<string | null>(null);
 
-  useEffect(() => {
-    const chartInstance = chartRef.current?.getEchartsInstance();
-
-    const handleMouseOver = (params: echarts.ECElementEvent) => {
-      if (params.componentType === 'series' && params.seriesName) {
-        chartInstance?.dispatchAction({
-          type: 'highlight',
-          seriesName: params.seriesName,
-          dataIndex: params.dataIndex,
-        });
-        setActiveSeriesName(params.seriesName);
-      }
-    };
-
-    const handleMouseOut = (params: echarts.ECElementEvent) => {
-      if (params.componentType === 'series') {
-        setActiveSeriesName(null);
-        chartInstance?.dispatchAction({ type: 'downplay' });
-      }
-    };
-
-    chartInstance?.on('mouseover', handleMouseOver);
-    chartInstance?.on('mouseout', handleMouseOut);
-
-    // Cleanup on component unmount
-    return () => {
-      chartInstance?.off('mouseover', handleMouseOver);
-      chartInstance?.off('mouseout', handleMouseOut);
-    };
-  }, []);
-
-  const options = getLineChartOptions(activeSeriesName);
+  const options = getLineChartOptions();
   const handleLegendToggle = (name: string) => {
     if (chartRef.current) {
       const instance = chartRef.current.getEchartsInstance();
@@ -145,25 +113,22 @@ const LineChartSection = () => {
           </Stack>
         </Stack>
         <Box
-          sx={({ spacing, typography }) => ({
-            height: typography.pxToRem(300),
+          sx={({ spacing }) => ({
+            height: 300,
             display: 'flex',
             mt: spacing(3),
           })}
         >
-          <ReactECharts
-            style={{ flex: 1, display: 'flex', alignItems: 'end', overflow: 'visible' }}
+          <ReactEchart
             echarts={echarts}
             option={options}
             ref={chartRef}
-            opts={{ renderer: 'svg' }}
-            lazyUpdate={true}
-
-            // sx={{
-            //   flex: 1,
-            //   display: 'flex',
-            //   alignItems: 'end',
-            // }}
+            sx={{
+              flex: 1,
+              display: 'flex',
+              alignItems: 'end',
+              overflow: 'visible',
+            }}
           />
         </Box>
       </CardContent>

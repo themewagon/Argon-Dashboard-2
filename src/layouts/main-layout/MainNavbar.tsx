@@ -35,7 +35,7 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
           />
         </Stack>
         <Box flexGrow={1} />
-        <Stack spacing={2.5} direction="row" alignItems="center">
+        <Stack spacing={0.5} direction="row" alignItems="center">
           <MessageAction />
           <NotificationAction />
           <ProfileAction />

@@ -56,12 +56,12 @@ const TopProductsTable = () => {
           getRowHeight={() => 52}
           columns={topProductsColumns}
           rows={rows}
-          //   onResize={() => {
-          //     apiRef.current.autosizeColumns({
-          //       includeOutliers: true,
-          //       expand: true,
-          //     });
-          //   }}
+          onResize={() => {
+            apiRef.current.autosizeColumns({
+              includeOutliers: true,
+              expand: true,
+            });
+          }}
           loading={isLoading}
           apiRef={apiRef}
           hideFooterSelectedRowCount
@@ -80,7 +80,6 @@ const TopProductsTable = () => {
             toolbar: {
               title: 'Top Products by Units Sold',
               flag: 'products',
-
               value: searchText,
               onChange: (event: React.ChangeEvent<HTMLInputElement>) =>
                 requestSearch(event.target.value),

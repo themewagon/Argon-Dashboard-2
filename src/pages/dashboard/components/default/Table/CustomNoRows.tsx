@@ -5,12 +5,12 @@ import NoDataIcon from 'components/icons/table/NoDataIcon';
 function CustomNoRows() {
   return (
     <Box
-      sx={({ spacing, typography }) => ({
+      sx={({ spacing }) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: typography.pxToRem(200),
+        height: 200,
         marginTop: spacing(8),
       })}
     >

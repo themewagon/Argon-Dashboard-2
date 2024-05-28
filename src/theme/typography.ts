@@ -16,7 +16,7 @@ declare module '@mui/material/styles/createTypography' {
 
 const typography: TypographyOptions = {
   fontFamily: ['Inter', 'Open Sans', 'sans-serif'].join(','),
-  //   fontSize: 14,
+  fontSize: 14,
   fontWeightLighter: 100,
   fontWeightLight: 300,
   fontWeightRegular: 400,
@@ -98,7 +98,7 @@ const typography: TypographyOptions = {
 };
 
 export default typography;
-
-// 20 = 1.25
-// 24 = 1.5
-// 32 = 2.75
+// 16 = 1 (1.142857)
+// 20 = 1.25 (1.42857)
+// 24 = 1.5 (1.7142857)
+// 32 = 2.75 (2.2857)

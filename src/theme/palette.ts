@@ -51,8 +51,8 @@ const palette: PaletteOptions = {
     active: grey[500],
     hover: grey[100],
     selected: grey[100],
-    disabled: grey[400],
-    disabledBackground: grey[200],
+    disabled: 'white',
+    disabledBackground: grey[300],
     focus: grey[300],
   },
   background: {
@@ -89,6 +89,7 @@ const palette: PaletteOptions = {
     main: blue[800],
     light: blue[200],
     lighter: blue[100],
+    dark: blue[600],
   },
   secondary: {
     lighter: purple[50],
@@ -97,7 +98,13 @@ const palette: PaletteOptions = {
     dark: purple[700],
     darker: purple[900],
   },
-  error: { lighter: red[50], light: red[100], main: red[600], dark: red[700], darker: red[900] },
+  error: {
+    lighter: red[50],
+    light: red[100],
+    main: red[600],
+    dark: red[500],
+    darker: red[900],
+  },
   warning: {
     lighter: orange[50],
     light: orange[100],

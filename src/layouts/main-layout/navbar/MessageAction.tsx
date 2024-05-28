@@ -30,7 +30,6 @@ const MessageAction = () => {
     <>
       <IconButton
         onClick={handleClick}
-        size="large"
         color="inherit"
         sx={({ palette }) => ({
           color: palette.grey[600],
