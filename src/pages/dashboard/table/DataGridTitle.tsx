@@ -28,8 +28,8 @@ const DataGridTitle = (props: NonNullable<GridSlotsComponentsProps['toolbar']>) 
       <Typography variant="h6">{props.title}</Typography>
 
       <TextField
+        color="secondary"
         variant="filled"
-        size="small"
         value={props.value}
         onChange={handleChange}
         placeholder={`Search ${props.flag}...`}

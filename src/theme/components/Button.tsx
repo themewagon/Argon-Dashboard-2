@@ -59,7 +59,7 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
     }),
     outlinedSizeMedium: ({ theme }) => ({
       ...theme.typography.button,
-      padding: theme.spacing(1.5, 3),
+      padding: theme.spacing(1, 3),
     }),
     outlinedSizeSmall: ({ theme }) => ({
       ...theme.typography.subtitle1,

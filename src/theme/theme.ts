@@ -16,7 +16,6 @@ import InputAdornmentComponent from './components/form/InputAdornment';
 import InputBaseComponent from './components/form/InputBase';
 import InputLabelComponent from './components/form/InputLabel';
 import OutlinedInputComponent from './components/form/OutlinedInput';
-import TextFieldComponent from './components/form/TextField';
 import IconButtonComponent from './components/IconButton';
 import LinearProgressComponent from './components/LinearProgress';
 import LinkComponent from './components/Link';
@@ -69,7 +68,6 @@ export const theme = createTheme({
   components: {
     MuiToolbar: ToolbarComponent,
     MuiInput: InputComponent,
-    MuiTextField: TextFieldComponent,
     MuiInputBase: InputBaseComponent,
     MuiInputLabel: InputLabelComponent,
     MuiOutlinedInput: OutlinedInputComponent,

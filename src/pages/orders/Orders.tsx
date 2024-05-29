@@ -266,13 +266,13 @@ const OrdersPage = () => {
           </Typography>
           <Stack direction="row" alignItems="center" sx={{ '& button': { m: 1 } }}>
             <>
-              <Button variant="outlined" color="primary" size="large">
+              <Button variant="outlined" color="primary" size="medium">
                 Button
               </Button>
               <Button
                 variant="outlined"
                 color="primary"
-                size="large"
+                size="medium"
                 startIcon={<IconifyIcon icon="gridicons:trash" />}
               >
                 Button
@@ -418,18 +418,18 @@ const OrdersPage = () => {
           </Typography>
           <Stack direction="row" alignItems="center" sx={{ '& button': { m: 1 } }}>
             <>
-              <Button variant="outlined" color="primary" size="large">
+              <Button variant="outlined" color="primary" size="small">
                 Button
               </Button>
               <Button
                 variant="outlined"
                 color="primary"
-                size="large"
+                size="small"
                 startIcon={<IconifyIcon icon="gridicons:trash" />}
               >
                 Button
               </Button>
-              <Button variant="text" color="primary" size="large">
+              <Button variant="text" color="primary" size="small">
                 Button
               </Button>
             </>

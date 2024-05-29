@@ -1,15 +1,15 @@
 import { Box, Grid } from '@mui/material';
-import PageHeader from '../../../components/common/PageHeader';
-import BarchartSection from '../components/default/Chart/BarChart';
-import LineChartSection from '../components/default/Chart/LineChart';
-import ProgressTracker from '../components/default/ProgressTracker/ProgressTracker';
-import StatisticsCards from '../components/default/Statistics/StatisticCards';
-import TopProductsTable from '../components/default/Table/TopProductsTable';
-import TransactionTable from '../components/default/Table/TransactionTable';
-import TeamMembers from '../components/default/TeamMembers/TeamMembers';
-import TodoList from '../components/default/TodoList/TodoList';
+import PageHeader from 'components/common/PageHeader';
+import SalesBarChart from 'pages/dashboard/chart/bar-chart/SalesBarChart';
+import TeamMembers from 'pages/dashboard/members/TeamMembers';
+import OrdersSection from 'pages/dashboard/orders/OrdersSection';
+import ProgressTracker from 'pages/dashboard/progressTracker/ProgressTracker';
+import StatisticsCards from 'pages/dashboard/statistics/StatisticCards';
+import TopProductsTable from 'pages/dashboard/table/TopProductsTable';
+import TransactionTable from 'pages/dashboard/table/TransactionTable';
+import TodoList from 'pages/dashboard/todos/TodoList';
 
-const Default = () => {
+const Dashboard = () => {
   return (
     <Box
       sx={({ spacing }) => ({
@@ -27,10 +27,10 @@ const Default = () => {
       {/* /* ------------- Chart section ---------------- */}
       <Grid container spacing={3} mb={3}>
         <Grid item xs={12} md={7} lg={8} zIndex={1}>
-          <LineChartSection />
+          <OrdersSection />
         </Grid>
         <Grid item xs={12} md={5} lg={4}>
-          <BarchartSection />
+          <SalesBarChart />
         </Grid>
       </Grid>
       {/* /* ------------- Table section ---------------- */}
@@ -55,13 +55,8 @@ const Default = () => {
         </Grid>
       </Grid>
       {/* /* ------------- Table section ---------------- **/}
-      {/* <Grid container spacing={3}>
-        <Grid item xs={12} lg={8}>
-          <UserTable />
-        </Grid>
-      </Grid> */}
     </Box>
   );
 };
 
-export default Default;
+export default Dashboard;

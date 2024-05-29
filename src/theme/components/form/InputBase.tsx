@@ -21,7 +21,7 @@ const InputBaseComponent: Components<Omit<Theme, 'components'>>['MuiInputBase'] 
       paddingTop: 0,
       paddingRight: 0,
       paddingBottom: 0,
-
+      margin: 0,
       '&::placeholder': {
         opacity: 1,
         color: theme.palette.grey[600],

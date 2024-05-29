@@ -20,10 +20,9 @@ const LoginPage = lazy(() => import('pages/authentication/default/Login'));
 const SignUpPage = lazy(() => import('pages/authentication/default/SignUp'));
 const CategoriesPage = lazy(() => import('pages/categories/Categories'));
 const OrdersPage = lazy(() => import('pages/orders/Orders'));
-const Default = lazy(() => import('pages/dashboard/default/Default'));
-const LandingPage = lazy(() => import('pages/dashboard/landing/Landing'));
+const Dashboard = lazy(() => import('pages/dashboard/index'));
 const ProductsPage = lazy(() => import('pages/products/Products'));
-const CustomersPage = lazy(() => import('pages/Customers/Customers'));
+const CustomersPage = lazy(() => import('pages/customers/Customers'));
 const ReportsPage = lazy(() => import('pages/reports/Reports'));
 const CouponsPage = lazy(() => import('pages/coupons/Coupons'));
 const InboxPage = lazy(() => import('pages/inbox/Inbox'));
@@ -54,11 +53,7 @@ export const routes = [
           },
           {
             path: 'default',
-            element: <Default />,
-          },
-          {
-            path: 'landing',
-            element: <LandingPage />,
+            element: <Dashboard />,
           },
           {
             path: 'categories',

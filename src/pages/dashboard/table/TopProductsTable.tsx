@@ -13,8 +13,7 @@ const TopProductsTable = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [searchText, setSearchText] = useState('');
   const [originalRows, setOriginalRows] = useState<TopProductsRowData[]>([]);
-
-  const [rows, setRows] = useState<TopProductsRowData[]>([]);
+  const [rows, setRowsState] = useState<TopProductsRowData[]>([]);
   const apiRef = useGridApiRef<GridApi>();
 
   useEffect(() => {
@@ -22,21 +21,31 @@ const TopProductsTable = () => {
     const timeoutId = setTimeout(() => {
       const data = topProductsTableData;
       setOriginalRows(data);
-      setRows(data);
+      setRowsState(data);
       setIsLoading(false);
       apiRef.current.autosizeColumns({ includeOutliers: true, expand: true });
     }, 500);
     return () => {
-      clearInterval(timeoutId);
+      clearTimeout(timeoutId);
     };
   }, [apiRef]);
+
+  const setRows = (newRows: TopProductsRowData[]) => {
+    setRowsState(newRows);
+    apiRef.current.setRows(newRows);
+  };
 
   const requestSearch = (searchValue: string) => {
     setSearchText(searchValue);
     const searchRegex = new RegExp(escapeRegExp(searchValue), 'i');
     const filteredRows = originalRows.filter((row) =>
-      Object.values(row).some((fieldValue) => searchRegex.test(fieldValue.toString())),
+      Object.values(row).some((fieldValue) =>
+        fieldValue && typeof fieldValue === 'object' && 'title' in fieldValue
+          ? searchRegex.test(fieldValue.title)
+          : searchRegex.test(fieldValue.toString()),
+      ),
     );
+    console.log(filteredRows);
     setRows(filteredRows);
   };
 
@@ -49,7 +58,6 @@ const TopProductsTable = () => {
         height: { xs: 'auto', sm: typography.pxToRem(500) },
       })}
     >
-      {/* <Typography>aa</Typography> */}
       <SimpleBar>
         <DataGrid
           autoHeight={false}
