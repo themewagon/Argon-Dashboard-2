@@ -44,18 +44,11 @@ const MainLayout = () => {
         }}
       >
         <MainNavbar onDrawerToggle={handleDrawerToggle} />
-        <Container
-          sx={
-            {
-              // maxWidth: '100%!important',
-            }
-          }
-        >
+        <Container>
           <Box sx={{ minHeight: `calc(100vh - ${drawerHeight}px)` }}>
             <Outlet />
           </Box>
         </Container>
-
         <Footer />
       </Stack>
     </Box>

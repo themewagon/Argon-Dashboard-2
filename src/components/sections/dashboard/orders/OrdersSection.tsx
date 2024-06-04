@@ -116,11 +116,11 @@ const OrdersSection = () => {
           {chartData ? (
             <Stack
               direction="row"
-              spacing={2.5}
               sx={{
                 justifyContent: 'center',
                 mt: { lg: 2 },
                 flexDirection: { xs: 'column', lg: 'row' },
+                spacing: { xs: 0, lg: 2.5 },
               }}
             >
               <Button
@@ -128,7 +128,7 @@ const OrdersSection = () => {
                 startIcon={<IconifyIcon icon="ic:round-square" color="grey.400" />}
                 key={yesterdayLabel}
                 variant="text"
-                sx={{ color: 'text.secondary', p: 0.5 }}
+                sx={{ color: 'text.secondary', py: 0.5, px: 1 }}
                 onClick={() => handleLegendToggle(yesterdayLabel)}
               >
                 {yesterdayLabel}
@@ -138,7 +138,7 @@ const OrdersSection = () => {
                 startIcon={<IconifyIcon icon="ic:round-square" color="primary.main" />}
                 key={todayLabel}
                 variant="text"
-                sx={{ color: 'text.secondary', p: 0.5 }}
+                sx={{ color: 'text.secondary', py: 0.5, px: 1 }}
                 onClick={() => handleLegendToggle(todayLabel)}
               >
                 {todayLabel}

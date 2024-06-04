@@ -1,15 +1,13 @@
 import { Avatar, Box, Stack, Typography } from '@mui/material';
+import { ItemType } from 'data/dashboard/table';
 
-export interface ProductData {
-  image: string;
-  title: string;
-}
 export interface ProductCellProps {
-  value: ProductData;
+  value: ItemType;
 }
 
 const ProductCell = ({ value }: ProductCellProps) => {
   const { image, title } = value;
+  console.log(value);
   return (
     <Stack direction="row" alignItems="center">
       <Box mr={2}>

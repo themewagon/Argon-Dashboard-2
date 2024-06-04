@@ -8,7 +8,7 @@ import IconifyIcon from 'components/base/IconifyIcon';
 //   }
 // }
 
-const CustomDataGridTitle = (props: NonNullable<GridSlotsComponentsProps['toolbar']>) => {
+const CustomDataGridHeader = (props: NonNullable<GridSlotsComponentsProps['toolbar']>) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (props.onChange) {
       props.onChange(event as React.ChangeEvent<HTMLInputElement>);
@@ -55,4 +55,4 @@ const CustomDataGridTitle = (props: NonNullable<GridSlotsComponentsProps['toolba
   );
 };
 
-export default CustomDataGridTitle;
+export default CustomDataGridHeader;

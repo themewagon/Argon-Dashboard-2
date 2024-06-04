@@ -1,44 +1,82 @@
-import { Box, LinearProgress } from '@mui/material';
-import { DataGrid, GridApi, GridSlots, useGridApiRef } from '@mui/x-data-grid';
-import { escapeRegExp } from '@mui/x-data-grid/internals';
-import { useEffect, useState } from 'react';
+import { Box, Chip, LinearProgress, Typography } from '@mui/material';
+import { DataGrid, GridApi, GridColDef, GridSlots, useGridApiRef } from '@mui/x-data-grid';
+import { ChangeEvent, useEffect, useState } from 'react';
 import SimpleBar from 'simplebar-react';
 
 import CustomDataGridFooter from 'components/common/table/CustomDataGridFooter';
-import CustomDataGridTitle from 'components/common/table/CustomDataGridHeader';
+import CustomDataGridHeader from 'components/common/table/CustomDataGridHeader';
 import CustomDataGridNoRows from 'components/common/table/CustomDataGridNoRows';
-import { transactionColumns } from 'components/sections/dashboard/transactions/TransactionTableColumn';
+
 import { TransactionRowData, transactionTableData } from 'data/dashboard/table';
+import dayjs from 'dayjs';
+
+export const transactionColumns: GridColDef<TransactionRowData>[] = [
+  {
+    field: 'name',
+    renderCell: (params) => {
+      return <Typography sx={{ fontWeight: 500 }}>{params.value}</Typography>;
+    },
+    headerName: 'Name',
+    width: 100,
+  },
+  {
+    field: 'date',
+    headerName: 'Date',
+    width: 100,
+    valueFormatter: (params) => dayjs(params).format('DD.MM.YYYY'),
+    sortComparator: (v1, v2) => dayjs(v1).unix() - dayjs(v2).unix(),
+  },
+  { field: 'amount', headerName: 'Amount', width: 100 },
+  {
+    field: 'status',
+    renderCell: (params) => {
+      let color: 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' =
+        'default';
+
+      switch (params.value) {
+        case 'paid':
+          color = 'success';
+          break;
+        case 'pending':
+          color = 'default';
+          break;
+        default:
+          break;
+      }
+
+      return <Chip label={params.value} color={color} />;
+    },
+    headerName: 'Status',
+    width: 100,
+  },
+];
 
 const TransactionTable = () => {
-  const [isLoading, setIsLoading] = useState(false);
   const [searchText, setSearchText] = useState('');
-  const [originalRows, setOriginalRows] = useState<TransactionRowData[]>([]);
-
-  const [rows, setRows] = useState<TransactionRowData[]>([]);
   const apiRef = useGridApiRef<GridApi>();
 
+  //   useEffect(() => {
+  //     const searchRegex = new RegExp(escapeRegExp(searchText), 'i');
+  //     const filteredRows = transactionTableData.filter((row) =>
+  //       Object.values(row).some((fieldValue) => searchRegex.test(fieldValue.toString()))
+  //     );
+  //     apiRef.current.setRows(filteredRows);
+  //   }, [searchText, apiRef]);
+
   useEffect(() => {
-    setIsLoading(true);
-    const timeoutId = setTimeout(() => {
-      const data = transactionTableData;
-      setOriginalRows(data);
-      setRows(data);
-      setIsLoading(false);
-      apiRef.current.autosizeColumns({ includeOutliers: true, expand: true });
-    }, 500);
-    return () => {
-      clearInterval(timeoutId);
-    };
+    apiRef.current.setRows(transactionTableData);
   }, [apiRef]);
 
-  const requestSearch = (searchValue: string) => {
+  useEffect(() => {
+    apiRef.current.setQuickFilterValues([searchText]);
+  }, [searchText, apiRef]);
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const searchValue = event.currentTarget.value;
     setSearchText(searchValue);
-    const searchRegex = new RegExp(escapeRegExp(searchValue), 'i');
-    const filteredRows = originalRows.filter((row) =>
-      Object.values(row).some((fieldValue) => searchRegex.test(fieldValue.toString())),
-    );
-    setRows(filteredRows);
+    if (searchValue === '') {
+      apiRef.current.setRows(transactionTableData);
+    }
   };
 
   return (
@@ -55,9 +93,14 @@ const TransactionTable = () => {
           autoHeight={false}
           getRowHeight={() => 52}
           columns={transactionColumns}
-          rows={rows}
-          loading={isLoading}
+          loading={false} // Since there's no loading state now
           apiRef={apiRef}
+          onResize={() => {
+            apiRef.current.autosizeColumns({
+              includeOutliers: true,
+              expand: true,
+            });
+          }}
           hideFooterSelectedRowCount
           disableColumnResize
           disableColumnMenu
@@ -67,7 +110,7 @@ const TransactionTable = () => {
           slots={{
             loadingOverlay: LinearProgress as GridSlots['loadingOverlay'],
             pagination: CustomDataGridFooter,
-            toolbar: CustomDataGridTitle,
+            toolbar: CustomDataGridHeader,
             noRowsOverlay: CustomDataGridNoRows,
           }}
           slotProps={{
@@ -75,11 +118,10 @@ const TransactionTable = () => {
               title: 'Recent Transactions',
               flag: 'user',
               value: searchText,
-              onChange: (event: React.ChangeEvent<HTMLInputElement>) =>
-                requestSearch(event.target.value),
-              clearSearch: () => requestSearch(''),
+              onChange: handleChange,
+              clearSearch: () => setSearchText(''),
             },
-            pagination: { labelRowsPerPage: rows.length },
+            pagination: { labelRowsPerPage: transactionTableData.length },
           }}
           initialState={{ pagination: { paginationModel: { page: 1, pageSize: 5 } } }}
           pageSizeOptions={[5, 10, 25]}

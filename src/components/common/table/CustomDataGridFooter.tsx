@@ -2,6 +2,8 @@ import { Pagination, PaginationItem, Stack, Typography } from '@mui/material';
 import {
   gridPageCountSelector,
   gridPageSelector,
+  gridPageSizeSelector,
+  gridRowCountSelector,
   useGridApiContext,
   useGridSelector,
 } from '@mui/x-data-grid';
@@ -12,10 +14,16 @@ const CustomDataGridFooter = (props: CustomFooterProps) => {
   const apiRef = useGridApiContext();
   const page = useGridSelector(apiRef, gridPageSelector);
   const pageCount = useGridSelector(apiRef, gridPageCountSelector);
+  const rowCount = useGridSelector(apiRef, gridRowCountSelector);
+  const pageSize = useGridSelector(apiRef, gridPageSizeSelector);
+
+  // Calculate the range of rows currently being shown
+  const startRow = page * pageSize + 1;
+  const endRow = Math.min((page + 1) * pageSize, rowCount);
   return (
     <Stack width={1} spacing={2} direction="row" justifyContent="space-between" alignItems="center">
       <Typography variant="body2" color="text.secondary">
-        Showing 1 to 5 of {props.labelRowsPerPage} data
+        Showing {startRow} to {endRow} of {props.labelRowsPerPage} data
       </Typography>
       <Pagination
         color="primary"

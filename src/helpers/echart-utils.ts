@@ -2,8 +2,6 @@ import { CallbackDataParams } from 'echarts/types/dist/shared.js';
 import 'index.css';
 export const tooltipFormatterList = (params: CallbackDataParams[]) => {
   const result = params.map((param) => {
-    console.log(param);
-
     return {
       value: param.value,
       label: param.name,
