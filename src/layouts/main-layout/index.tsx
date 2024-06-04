@@ -5,10 +5,12 @@ import Footer from './Footer';
 import MainNavbar from './MainNavbar';
 import Sidebar from './sidebar/Sidbar';
 
+const drawerHeight = 170;
+
 const MainLayout = () => {
-  const [mobileOpen, setMobileOpen] = useState<boolean>(false);
-  const [isClosing, setIsClosing] = useState<boolean>(false);
-  console.log(mobileOpen);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
   const handleDrawerClose = () => {
     setIsClosing(true);
     setMobileOpen(false);
@@ -26,11 +28,6 @@ const MainLayout = () => {
 
   return (
     <Box sx={{ height: 1, position: 'relative', display: 'flex', minHeight: '100vh', width: 1 }}>
-      {/* <SideNavSection
-        onDrawerClose={handleDrawerClose}
-        onDrawerTransitionEnd={handleDrawerTransitionEnd}
-        mobileOpen={mobileOpen}
-      /> */}
       <Sidebar
         onDrawerClose={handleDrawerClose}
         onDrawerTransitionEnd={handleDrawerTransitionEnd}
@@ -39,28 +36,22 @@ const MainLayout = () => {
 
       <Stack
         spacing={2}
-        sx={({ transitions }) => ({
+        sx={{
           display: 'flex',
           flexGrow: 1,
           width: 1,
           justifyContent: 'space-between',
-          //   ml: {
-          //     xs: 0,
-          //     md: typography.pxToRem(308),
-          //   },
-          transition: transitions.create(['margin-left', 'margin-right'], {
-            easing: transitions.easing.easeInOut,
-            duration: transitions.duration.standard,
-          }),
-        })}
+        }}
       >
         <MainNavbar onDrawerToggle={handleDrawerToggle} />
         <Container
-          sx={{
-            maxWidth: '100%!important',
-          }}
+          sx={
+            {
+              // maxWidth: '100%!important',
+            }
+          }
         >
-          <Box sx={{ minHeight: 'calc(100vh - 170px)' }}>
+          <Box sx={{ minHeight: `calc(100vh - ${drawerHeight}px)` }}>
             <Outlet />
           </Box>
         </Container>

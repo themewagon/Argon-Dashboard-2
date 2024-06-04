@@ -11,9 +11,9 @@ const PageHeader = ({ children }: PageHeaderProps) => {
     <Stack
       direction="row"
       alignItems="center"
-      sx={({ spacing }) => ({
-        pt: spacing(1),
-      })}
+      sx={{
+        pt: 1,
+      }}
     >
       <Typography variant="h2">{children}</Typography>
       <Box flexGrow={1} />

@@ -27,9 +27,10 @@ const NavMenuItem = ({ item, pathTo }: NavMenuItemType) => {
         // onClick={onClick}
       >
         <ListItemIcon
-          sx={({ spacing }) => ({
-            p: spacing(0.4, 0),
-          })}
+          sx={{
+            py: 0.4,
+            px: 0,
+          }}
         >
           {itemIcon}
         </ListItemIcon>

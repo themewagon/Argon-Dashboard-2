@@ -5,10 +5,10 @@ const Splash = () => {
     <Backdrop
       open={true}
       component="main"
-      sx={({ palette }) => ({
-        color: palette.common.white,
+      sx={{
+        color: 'common.white',
         zIndex: (theme) => theme.zIndex.drawer + 1,
-      })}
+      }}
     >
       <CircularProgress color="inherit" />
     </Backdrop>

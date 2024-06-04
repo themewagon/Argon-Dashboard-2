@@ -1,4 +1,5 @@
 import { createTheme, Shadows } from '@mui/material';
+import ContainerComponent from 'theme/components/Container';
 import AppBarComponent from './components/AppBar';
 import AvatarComponent from './components/Avatar';
 import BadgeComponent from './components/Badge';
@@ -66,6 +67,7 @@ export const theme = createTheme({
   typography,
   shadows: [...shadows] as Shadows,
   components: {
+    MuiContainer: ContainerComponent,
     MuiToolbar: ToolbarComponent,
     MuiInput: InputComponent,
     MuiInputBase: InputBaseComponent,

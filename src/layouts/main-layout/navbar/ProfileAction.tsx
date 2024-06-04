@@ -28,9 +28,9 @@ const ProfileAction = () => {
   };
   return (
     <Box
-      sx={({ spacing }) => ({
-        px: spacing(0.75),
-      })}
+      sx={{
+        px: 0.75,
+      }}
     >
       <ButtonBase
         aria-controls="msgs-menu"
@@ -42,19 +42,19 @@ const ProfileAction = () => {
           spacing={1.5}
           direction="row"
           alignItems="center"
-          sx={({ spacing }) => ({
-            py: spacing(0.75),
-            ml: spacing(0.75),
-          })}
+          sx={{
+            py: 0.75,
+            ml: 0.75,
+          }}
         >
           <Avatar
             alt="avatar"
             variant="rounded"
             src={AvatarImage}
-            sx={({ spacing }) => ({
-              height: spacing(4.5),
-              width: spacing(4.5),
-            })}
+            sx={{
+              height: 36,
+              width: 36,
+            }}
           />
           <Typography
             variant="button"
@@ -86,10 +86,10 @@ const ProfileAction = () => {
         {profileOptions.map((option) => (
           <MenuItem
             key={option.id}
-            sx={({ spacing }) => ({
-              py: spacing(1),
-              px: spacing(1.5),
-            })}
+            sx={{
+              py: 1,
+              px: 1.5,
+            }}
             onClick={handleClose}
           >
             <ListItemIcon>
@@ -102,10 +102,10 @@ const ProfileAction = () => {
           <Button
             size="small"
             variant="outlined"
-            sx={({ spacing }) => ({
-              mt: spacing(1.5),
+            sx={{
+              mt: 1.5,
               width: '80%',
-            })}
+            }}
           >
             Logout
           </Button>

@@ -16,16 +16,16 @@ import paths, { rootPaths } from './path';
 
 const App = lazy(() => import('App'));
 const MainLayout = lazy(() => import('layouts/main-layout'));
-const LoginPage = lazy(() => import('pages/authentication/default/Login'));
-const SignUpPage = lazy(() => import('pages/authentication/default/SignUp'));
-const CategoriesPage = lazy(() => import('pages/categories/Categories'));
-const OrdersPage = lazy(() => import('pages/orders/Orders'));
+const LoginPage = lazy(() => import('pages/authentication/login'));
+const SignUpPage = lazy(() => import('pages/authentication/register'));
+const CategoriesPage = lazy(() => import('pages/categories'));
+const OrdersPage = lazy(() => import('pages/orders'));
 const Dashboard = lazy(() => import('pages/dashboard/index'));
-const ProductsPage = lazy(() => import('pages/products/Products'));
-const CustomersPage = lazy(() => import('pages/customers/Customers'));
-const ReportsPage = lazy(() => import('pages/reports/Reports'));
-const CouponsPage = lazy(() => import('pages/coupons/Coupons'));
-const InboxPage = lazy(() => import('pages/inbox/Inbox'));
+const ProductsPage = lazy(() => import('pages/products'));
+const CustomersPage = lazy(() => import('pages/customers'));
+const ReportsPage = lazy(() => import('pages/reports'));
+const CouponsPage = lazy(() => import('pages/coupons'));
+const InboxPage = lazy(() => import('pages/inbox'));
 
 export const routes = [
   {

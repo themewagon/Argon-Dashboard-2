@@ -16,39 +16,38 @@ const Footer = () => {
       direction={{ xs: 'column', lg: 'row' }}
       justifyContent="space-between"
       alignItems="center"
-      sx={({ spacing }) => ({
-        px: spacing(1.5),
+      sx={{
+        px: 1.5,
         spacing: 0,
-        pb: spacing(2),
-      })}
+        pb: 2,
+      }}
     >
       <>
         <Typography
           variant="h6"
           fontWeight={400}
           textAlign="center"
-          sx={({ spacing }) => ({
-            px: spacing(1.5),
-          })}
+          sx={{
+            px: 1.5,
+          }}
         >
           &copy; {new Date().getFullYear()}, made with
           <IconifyIcon
             icon="ri:heart-fill"
-            sx={({ spacing }) => ({
+            sx={{
               color: 'text.secondary',
-              mb: spacing(-0.5),
-              mx: spacing(0.5),
-            })}
+              mb: -0.5,
+              mx: 0.5,
+            }}
           />
           By
           <Typography
             component="span"
             variant="h6"
             color="text.primary"
-            px={1}
-            sx={({ spacing }) => ({
-              px: spacing(1),
-            })}
+            sx={{
+              px: 1,
+            }}
           >
             Creative Tim
           </Typography>
@@ -74,10 +73,10 @@ const Footer = () => {
             component={Link}
             href={link.href}
             target="_blank"
-            sx={({ spacing }) => ({
-              px: spacing(2),
+            sx={{
+              px: 2,
               lineHeight: 1,
-            })}
+            }}
           >
             <Typography variant="button" fontWeight="regular" color="text.secondary">
               {link.title}

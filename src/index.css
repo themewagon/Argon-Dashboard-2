@@ -7,23 +7,3 @@ input:-webkit-autofill:focus {
 input[data-autocompleted] {
   background-color: transparent !important;
 }
-
-.tooltip {
-  width: 90px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: none;
-}
-
-.tooltip:before {
-  content: '';
-  display: block;
-  width: 0;
-  border-width: 5px 5px 0 5px;
-  border-color: #333752 transparent;
-  border-style: solid;
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-}

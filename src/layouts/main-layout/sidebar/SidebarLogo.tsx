@@ -5,14 +5,14 @@ const SidebarLogo = () => {
   return (
     <Link
       href="/"
-      sx={(theme) => ({
-        height: theme.spacing(8.5),
+      sx={{
+        height: 68,
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
-        gap: theme.spacing(1.5),
+        gap: 1.5,
         // pl: theme.spacing(2.5),
-      })}
+      }}
     >
       <Logo fontSize={'large'} />
       <Typography variant="h4">Modernize</Typography>

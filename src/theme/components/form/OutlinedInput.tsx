@@ -13,11 +13,8 @@ const OutlinedInputComponent: Components<Omit<Theme, 'components'>>['MuiOutlined
       fontWeight: theme.typography.fontWeightRegular,
       lineHeight: 20,
 
-      //   '& .MuiOutlinedInput-notchedOutline': {
-      //     borderColor: 'green',
-      //   },
       '&:hover .MuiOutlinedInput-notchedOutline': {
-        borderColor: theme.palette.primary.lighter,
+        borderColor: `${theme.palette[ownerState.color!]?.main}` || theme.palette.primary.lighter,
       },
       '&.Mui-focused': {
         '& .MuiOutlinedInput-notchedOutline': {
@@ -36,15 +33,25 @@ const OutlinedInputComponent: Components<Omit<Theme, 'components'>>['MuiOutlined
       paddingRight: 1,
       paddingBottom: theme.spacing(1.5),
     }),
+    inputSizeSmall: ({ theme }) => ({
+      paddingTop: theme.spacing(0.75),
+      paddingBottom: theme.spacing(0.75),
+    }),
     notchedOutline: ({ theme }) => ({
       //   borderColor: 'transparent !important',
-      borderColor: theme.palette.primary.lighter,
+      borderColor: theme.palette.action.focus,
     }),
     colorSecondary: ({ theme }) => ({
       '& fieldset': {
-        border: 1,
+        borderWidth: 1,
         borderStyle: 'solid',
-        borderColor: `${theme.palette.secondary.main}`,
+        borderColor: theme.palette.secondary.main,
+      },
+      '&:hover fieldset': {
+        borderColor: theme.palette.secondary.main,
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: theme.palette.secondary.main,
       },
     }),
   },

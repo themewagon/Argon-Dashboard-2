@@ -4,21 +4,20 @@ import { Outlet } from 'react-router-dom';
 const AuthLayout = () => {
   return (
     <Box
+      position="absolute"
       sx={{
-        position: 'relative',
         display: 'flex',
         minHeight: '100vh',
-
         bgcolor: 'background.default',
         placeItems: 'center',
+        flexGrow: 1,
+        width: 1,
+        justifyContent: 'space-between',
       }}
     >
       <Container
         sx={{
-          maxWidth: 1,
-          height: 1,
-
-          width: 1,
+          p: 0,
         }}
       >
         <Box>

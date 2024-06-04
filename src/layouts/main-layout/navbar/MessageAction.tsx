@@ -31,9 +31,9 @@ const MessageAction = () => {
       <IconButton
         onClick={handleClick}
         color="inherit"
-        sx={({ palette }) => ({
-          color: palette.grey[600],
-        })}
+        sx={{
+          color: 'grey.600',
+        }}
       >
         <IconifyIcon icon="mdi:message-text-outline" fontSize="1.5rem" />
       </IconButton>
@@ -64,24 +64,24 @@ const MessageAction = () => {
           {messageOptions.map((notification) => (
             <MenuItem
               key={notification.id}
-              sx={({ spacing }) => ({
-                py: spacing(2),
-                px: spacing(4),
-              })}
+              sx={{
+                py: 2,
+                px: 4,
+              }}
               onClick={handleClose}
             >
               <Stack direction="row" alignItems="center" spacing={2}>
                 <Avatar
                   src={notification.avatar}
                   alt={notification.avatar}
-                  sx={({ spacing }) => ({
-                    width: spacing(4.5),
-                    height: spacing(4.5),
-                  })}
+                  sx={{
+                    width: 36,
+                    height: 36,
+                  }}
                 />
                 <Box
                   sx={{
-                    width: '200px',
+                    width: 200,
                   }}
                 >
                   <Typography variant="subtitle2" color="textPrimary" fontWeight={600} noWrap>
@@ -99,10 +99,10 @@ const MessageAction = () => {
           <Button
             size="small"
             variant="outlined"
-            sx={({ spacing }) => ({
-              mt: spacing(3.5),
+            sx={{
+              mt: 3.5,
               width: '80%',
-            })}
+            }}
           >
             See All Messages
           </Button>

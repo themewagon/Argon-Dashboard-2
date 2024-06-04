@@ -1,0 +1,189 @@
+// OrdersSection.tsx
+import { Box, Button, Card, CardContent, Stack, Typography } from '@mui/material';
+import IconifyIcon from 'components/base/IconifyIcon';
+import CircularLoader from 'components/loading/Circular';
+import OrdersLineChart from 'components/sections/dashboard/orders/OrdersLineChart';
+import { ordersOverTimeData } from 'data/dashboard/charts';
+import dayjs from 'dayjs';
+import EChartsReactCore from 'echarts-for-react/lib/core';
+import { useEffect, useRef, useState } from 'react';
+
+/**
+ * Functional component that renders a line chart section with dynamic data.
+ * @returns JSX element representing the line chart section.
+ */
+const OrdersSection = () => {
+  const chartRef = useRef<EChartsReactCore | null>(null);
+  const [chartData, setChartData] = useState<null | {
+    today: number[];
+    yesterday: number[];
+    time: string[];
+  }>(null);
+
+  const todayLabel = dayjs().format('MMM DD');
+  const yesterdayLabel = dayjs().subtract(1, 'day').format('MMM DD');
+
+  // Simulating data fetching and processing
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = ordersOverTimeData;
+      setChartData({
+        today: data.today.map((item) => item.orders),
+        yesterday: data.yesterday.map((item) => item.orders),
+        time: data.today.map((item) => item.time),
+      });
+    };
+
+    fetchData();
+  }, []);
+
+  const handleLegendToggle = (name: string) => {
+    if (chartRef.current) {
+      const instance = chartRef.current.getEchartsInstance();
+      instance.dispatchAction({
+        type: 'legendToggleSelect',
+        name: name,
+      });
+    }
+  };
+
+  /**
+   * Adds an event listener for window resize to handle manual chart resizing using Echarts.
+   * It resizes the chart instance when the window is resized.
+   */
+  useEffect(() => {
+    const handleResize = () => {
+      if (chartRef.current) {
+        const instance = chartRef.current.getEchartsInstance();
+        instance.resize();
+      }
+    };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+    <Card sx={{ height: 1 }}>
+      <CardContent sx={{ flex: 1, p: 2 }}>
+        <Stack
+          direction="row"
+          sx={{
+            px: 1.5,
+            pt: 1.5,
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            mb: 3,
+          }}
+        >
+          <Typography variant="h6">Orders Over Time</Typography>
+          <Stack direction="row" alignItems="center">
+            <Typography variant="subtitle1" color="text.secondary">
+              Last 12 hours
+            </Typography>
+            <IconifyIcon
+              icon="iconamoon:arrow-down-2-light"
+              sx={{ ml: 1, width: 24, height: 24 }}
+            />
+          </Stack>
+        </Stack>
+        <Stack
+          direction="row"
+          sx={{ justifyContent: 'space-between', alignItems: 'center', mt: 2, px: 1.5 }}
+        >
+          <Stack
+            spacing={{ xs: 0 }}
+            sx={{
+              gap: { xs: 2, sm: 4 },
+              flexDirection: { xs: 'column', sm: 'row' },
+            }}
+          >
+            <Box>
+              <Typography variant="h5">645</Typography>
+              <Typography variant="subtitle1" color="text.secondary">
+                Orders on May 22
+              </Typography>
+            </Box>
+            <Box>
+              <Typography variant="h5">645</Typography>
+              <Typography variant="subtitle1" color="text.secondary">
+                Orders on May 22
+              </Typography>
+            </Box>
+          </Stack>
+          {chartData ? (
+            <Stack
+              direction="row"
+              spacing={2.5}
+              sx={{
+                justifyContent: 'center',
+                mt: { lg: 2 },
+                flexDirection: { xs: 'column', lg: 'row' },
+              }}
+            >
+              <Button
+                size="small"
+                startIcon={<IconifyIcon icon="ic:round-square" color="grey.400" />}
+                key={yesterdayLabel}
+                variant="text"
+                sx={{ color: 'text.secondary', p: 0.5 }}
+                onClick={() => handleLegendToggle(yesterdayLabel)}
+              >
+                {yesterdayLabel}
+              </Button>
+              <Button
+                size="small"
+                startIcon={<IconifyIcon icon="ic:round-square" color="primary.main" />}
+                key={todayLabel}
+                variant="text"
+                sx={{ color: 'text.secondary', p: 0.5 }}
+                onClick={() => handleLegendToggle(todayLabel)}
+              >
+                {todayLabel}
+              </Button>
+            </Stack>
+          ) : (
+            <Typography
+              variant="body2"
+              sx={{
+                mr: 5,
+                color: 'text.secondary',
+              }}
+            >
+              Loading...
+            </Typography>
+          )}
+        </Stack>
+        <Stack
+          direction="row"
+          sx={{
+            height: 300,
+            display: 'flex',
+            mt: 3,
+            placeItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          {chartData ? (
+            <OrdersLineChart
+              seriesData={chartData}
+              chartRef={chartRef}
+              sx={{
+                flex: 1,
+                display: 'flex',
+                alignItems: 'end',
+                overflow: 'visible',
+              }}
+            />
+          ) : (
+            <CircularLoader />
+          )}
+        </Stack>
+      </CardContent>
+    </Card>
+  );
+};
+
+export default OrdersSection;

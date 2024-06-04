@@ -1,20 +1,21 @@
 import { Box, Grid } from '@mui/material';
 import PageHeader from 'components/common/PageHeader';
-import SalesBarChart from 'pages/dashboard/chart/bar-chart/SalesBarChart';
-import TeamMembers from 'pages/dashboard/members/TeamMembers';
-import OrdersSection from 'pages/dashboard/orders/OrdersSection';
-import ProgressTracker from 'pages/dashboard/progressTracker/ProgressTracker';
-import StatisticsCards from 'pages/dashboard/statistics/StatisticCards';
-import TopProductsTable from 'pages/dashboard/table/TopProductsTable';
-import TransactionTable from 'pages/dashboard/table/TransactionTable';
-import TodoList from 'pages/dashboard/todos/TodoList';
+import TeamMembers from 'components/sections/dashboard/members/TeamMembers';
+import OrdersSection from 'components/sections/dashboard/orders/OrdersSection';
+import ProgressTracker from 'components/sections/dashboard/progressTracker/ProgressTracker';
+import SalesSection from 'components/sections/dashboard/sales/SalesSection';
+import StatisticsCards from 'components/sections/dashboard/statistics/StatisticCards';
+
+import TodoList from 'components/sections/dashboard/todos/TodoList';
+import TopProductsTable from 'components/sections/dashboard/topProducts/TopProductsTable';
+import TransactionTable from 'components/sections/dashboard/transactions/TransactionTable';
 
 const Dashboard = () => {
   return (
     <Box
-      sx={({ spacing }) => ({
-        pb: spacing(4),
-      })}
+      sx={{
+        pb: 4,
+      }}
     >
       <PageHeader>Dashboard</PageHeader>
       {/* /* ------------- Stats section ---------------- */}
@@ -30,7 +31,7 @@ const Dashboard = () => {
           <OrdersSection />
         </Grid>
         <Grid item xs={12} md={5} lg={4}>
-          <SalesBarChart />
+          <SalesSection />
         </Grid>
       </Grid>
       {/* /* ------------- Table section ---------------- */}

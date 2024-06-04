@@ -1,43 +1,60 @@
 type TimeOrders = { time: string; orders: number }[];
-
+type SalesRevenue = {
+  day: string;
+  orders: number;
+}[];
 export interface ComparisonChartData {
   today: TimeOrders;
   yesterday: TimeOrders;
 }
-
+export interface SalesChartData {
+  revenue: SalesRevenue;
+}
 export const ordersOverTimeData: ComparisonChartData = {
   today: [
-    { time: '12:00 AM', orders: 20 },
-    { time: '1:00 AM', orders: 12 },
-    { time: '2:00 AM', orders: 16 },
-    { time: '3:00 AM', orders: 14 },
-    { time: '4:00 AM', orders: 26 },
-    { time: '5:00 AM', orders: 16 },
-    { time: '6:00 AM', orders: 175 },
-    { time: '7:00 AM', orders: 18 },
-    { time: '8:00 AM', orders: 11 },
-    { time: '9:00 AM', orders: 13 },
-    { time: '10:00 AM', orders: 8 },
-    { time: '11:00 AM', orders: 16 },
-    { time: '12:00 PM', orders: 16 },
-    { time: '1:00 PM', orders: 15 },
-    { time: '2:00 PM', orders: 9 },
+    { time: '12am', orders: 20 },
+    { time: '1am', orders: 32 },
+    { time: '2am', orders: 46 },
+    { time: '3am', orders: 54 },
+    { time: '4am', orders: 66 },
+    { time: '5am', orders: 76 },
+    { time: '6am', orders: 17 },
+    { time: '7am', orders: 18 },
+    { time: '8am', orders: 11 },
+    { time: '9am', orders: 13 },
+    { time: '10am', orders: 8 },
+    { time: '11am', orders: 66 },
+    { time: '12pm', orders: 56 },
+    { time: '1pm', orders: 15 },
+    { time: '2pm', orders: 9 },
   ],
   yesterday: [
-    { time: '12:00 AM', orders: 10 },
-    { time: '1:00 AM', orders: 15 },
-    { time: '2:00 AM', orders: 95 },
-    { time: '3:00 AM', orders: 95 },
-    { time: '4:00 AM', orders: 98 },
-    { time: '5:00 AM', orders: 14 },
-    { time: '6:00 AM', orders: 13 },
-    { time: '7:00 AM', orders: 15 },
-    { time: '8:00 AM', orders: 15 },
-    { time: '9:00 AM', orders: 16 },
-    { time: '10:00 AM', orders: 255 },
-    { time: '11:00 AM', orders: 14 },
-    { time: '12:00 PM', orders: 14 },
-    { time: '1:00 PM', orders: 16 },
-    { time: '2:00 PM', orders: 16 },
+    { time: '12am', orders: 10 },
+    { time: '1am', orders: 15 },
+    { time: '2am', orders: 95 },
+    { time: '3am', orders: 95 },
+    { time: '4am', orders: 98 },
+    { time: '5am', orders: 14 },
+    { time: '6am', orders: 73 },
+    { time: '7am', orders: 65 },
+    { time: '8am', orders: 85 },
+    { time: '9am', orders: 16 },
+    { time: '10am', orders: 25 },
+    { time: '11am', orders: 14 },
+    { time: '12pm', orders: 14 },
+    { time: '1pm', orders: 16 },
+    { time: '2pm', orders: 16 },
+  ],
+};
+
+export const salesData: SalesChartData = {
+  revenue: [
+    { day: '12', orders: 20 },
+    { day: '13', orders: 12 },
+    { day: '14', orders: 16 },
+    { day: '15', orders: 14 },
+    { day: '16', orders: 26 },
+    { day: '17', orders: 16 },
+    { day: '18', orders: 17 },
   ],
 };

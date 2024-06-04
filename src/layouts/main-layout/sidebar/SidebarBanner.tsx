@@ -5,12 +5,12 @@ const SidebarBanner = () => {
   return (
     <Stack direction={'row'} alignItems="center" gap={2} sx={{ my: 0, p: 2 }}>
       <Box
-        sx={({ palette, spacing }) => ({
-          height: spacing(20.5),
+        sx={{
+          height: 164,
           width: 1,
           position: 'relative',
-          color: palette.common.white,
-        })}
+          color: 'common.white',
+        }}
       >
         <Image
           src={bg}
@@ -19,8 +19,8 @@ const SidebarBanner = () => {
             position: 'absolute',
             top: 0,
             left: 0,
-            width: '100%',
-            height: '100%',
+            width: 1,
+            height: 1,
             zIndex: -1,
             objectFit: 'cover',
           }}
@@ -42,10 +42,10 @@ const SidebarBanner = () => {
               variant="contained"
               color="secondary"
               size="small"
-              sx={({ spacing }) => ({
-                mt: spacing(1.5),
+              sx={{
+                mt: 1.5,
                 alignSelf: 'flex-start',
-              })}
+              }}
             >
               Read More
             </Button>

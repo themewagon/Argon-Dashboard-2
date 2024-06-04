@@ -39,22 +39,22 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
             }}
           >
             <Box
-              sx={({ palette, shadows }) => ({
-                bgcolor: palette.common.white,
+              sx={{
+                bgcolor: 'common.white',
                 px: 3,
-                boxShadow: shadows[9],
-              })}
+                boxShadow: 9,
+              }}
             >
               <SidebarLogo />
             </Box>
 
             <SimpleBar style={{ height: 'calc(100% - 70px)' }}>
               <Box
-                sx={({ palette }) => ({
+                sx={{
                   borderRight: 1,
-                  borderColor: palette.grey[300],
+                  borderColor: 'action.disabledBackground',
                   height: 'calc(100vh + 68px)',
-                })}
+                }}
               >
                 <SidebarItems />
                 <SidebarBanner />
@@ -90,10 +90,10 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
     >
       {/* ------------------------------------------- */}
       <Box
-        sx={({ palette }) => ({
-          bgcolor: palette.common.white,
+        sx={{
+          bgcolor: 'common.white',
           px: 3,
-        })}
+        }}
       >
         <SidebarLogo />
       </Box>

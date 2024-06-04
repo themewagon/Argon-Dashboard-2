@@ -13,7 +13,7 @@ const CircularLoader = () => {
       <CircularProgress
         variant="determinate"
         sx={{
-          color: (theme) => theme.palette.grey[200],
+          color: 'grey.200',
         }}
         size={40}
         thickness={4}
@@ -23,7 +23,7 @@ const CircularLoader = () => {
         variant="indeterminate"
         disableShrink
         sx={{
-          color: (theme) => theme.palette.primary.main,
+          color: 'primary.main',
           animationDuration: '550ms',
           position: 'absolute',
           left: 0,

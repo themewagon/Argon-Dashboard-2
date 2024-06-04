@@ -50,10 +50,10 @@ const palette: PaletteOptions = {
   action: {
     active: grey[500],
     hover: grey[100],
-    selected: grey[100],
+    selected: grey[200],
     disabled: 'white',
     disabledBackground: grey[300],
-    focus: grey[300],
+    focus: grey[400],
   },
   background: {
     paper: grey[50],
@@ -72,7 +72,7 @@ const palette: PaletteOptions = {
     main: '#000000',
   },
   dark: {
-    main: '#344767',
+    main: grey[800],
   },
   transparent: {
     main: 'transparent',
