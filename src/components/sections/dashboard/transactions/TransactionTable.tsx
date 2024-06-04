@@ -85,7 +85,8 @@ const TransactionTable = () => {
         overflow: 'auto',
         minHeight: 0,
         position: 'relative',
-        height: { xs: 'auto', sm: 500 },
+        height: { xs: 'auto', sm: 1 },
+        width: 1,
       }}
     >
       <SimpleBar>
@@ -93,7 +94,7 @@ const TransactionTable = () => {
           autoHeight={false}
           getRowHeight={() => 52}
           columns={transactionColumns}
-          loading={false} // Since there's no loading state now
+          loading={false}
           apiRef={apiRef}
           onResize={() => {
             apiRef.current.autosizeColumns({

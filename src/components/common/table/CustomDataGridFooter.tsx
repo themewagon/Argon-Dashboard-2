@@ -21,7 +21,16 @@ const CustomDataGridFooter = (props: CustomFooterProps) => {
   const startRow = page * pageSize + 1;
   const endRow = Math.min((page + 1) * pageSize, rowCount);
   return (
-    <Stack width={1} spacing={2} direction="row" justifyContent="space-between" alignItems="center">
+    <Stack
+      width={1}
+      spacing={2}
+      direction={{ sm: 'row', xs: 'column' }}
+      sx={{
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        py: 2,
+      }}
+    >
       <Typography variant="body2" color="text.secondary">
         Showing {startRow} to {endRow} of {props.labelRowsPerPage} data
       </Typography>

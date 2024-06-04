@@ -22,7 +22,7 @@ const CustomDataGridHeader = (props: NonNullable<GridSlotsComponentsProps['toolb
         alignItems: 'center',
         justifyContent: 'space-between',
         flexDirection: { xs: 'column', sm: 'row' },
-        gap: 5.5,
+        gap: { xs: 2, sm: 5.5 },
       }}
     >
       <Typography variant="h6" sx={{ flex: 1, typography: { whiteSpace: 'nowrap' } }}>

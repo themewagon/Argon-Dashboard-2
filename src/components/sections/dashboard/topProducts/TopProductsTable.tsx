@@ -58,7 +58,7 @@ const TopProductsTable = () => {
         overflow: 'auto',
         minHeight: 0,
         position: 'relative',
-        height: { xs: 'auto', sm: 500 },
+        height: { xs: 'auto', sm: 1 },
       }}
     >
       <SimpleBar>
@@ -72,7 +72,7 @@ const TopProductsTable = () => {
               expand: true,
             });
           }}
-          loading={false} // No loading state needed
+          loading={false}
           apiRef={apiRef}
           hideFooterSelectedRowCount
           disableColumnResize

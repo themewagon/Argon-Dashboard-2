@@ -11,9 +11,9 @@ const DataGridComponent: DataGridComponents<Omit<Theme, 'components'>>['MuiDataG
       boxShadow: theme.shadows[1],
       backgroundColor: theme.palette.common.white,
       paddingTop: theme.spacing(2.5),
-      paddingBottom: theme.spacing(2.5),
+      paddingBottom: theme.spacing(0),
       '--DataGrid-containerBackground': theme.palette.common.white,
-      '--DataGrid-rowBorderColor': theme.palette.grey[200],
+      '--DataGrid-rowBorderColor': theme.palette.action.selected,
       '.MuiDataGrid-overlayWrapper': {},
       '.MuiDataGrid-overlayWrapperInner': {
         height: 'auto !important',
@@ -86,6 +86,13 @@ const DataGridComponent: DataGridComponents<Omit<Theme, 'components'>>['MuiDataG
       width: theme.spacing(2),
       height: theme.spacing(2),
       color: theme.palette.primary.main,
+    }),
+    overlay: ({ theme }) => ({
+      backgroundColor: theme.palette.background.paper,
+      fontSize: theme.typography.subtitle1.fontSize,
+      fontWeight: theme.typography.subtitle1.fontWeight,
+      fontFamily: theme.typography.body1.fontFamily,
+      flex: 1,
     }),
   },
 };
