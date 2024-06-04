@@ -10,6 +10,7 @@ import Splash from 'components/loading/Splash';
 // import SmartHomePage from 'pages/smarthome/SmartHome';
 // import VirtualRealityPage from 'pages/vr/VirtualReality';
 import AuthLayout from 'layouts/auth-layout';
+import NotFoundPage from 'pages/not-found';
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import paths, { rootPaths } from './path';
@@ -99,14 +100,10 @@ export const routes = [
           },
         ],
       },
-      //   {
-      //     path: 'authentication/sign-in',
-      //     element: <LoginPage />,
-      //   },
-      //   {
-      //     path: 'authentication/sign-up',
-      //     element: <SignUpPage />,
-      //   },
+      {
+        path: '*',
+        element: <NotFoundPage />,
+      },
     ],
   },
 

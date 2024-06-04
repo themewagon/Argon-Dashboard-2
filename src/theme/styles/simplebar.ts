@@ -26,5 +26,10 @@ const simplebar = (theme: Theme) => ({
       },
     },
   },
+  '& .simplebar-wrapper': {
+    '& .simplebar-content': {
+      overflow: 'hidden',
+    },
+  },
 });
 export default simplebar;

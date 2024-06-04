@@ -28,12 +28,21 @@ const CustomDataGridFooter = (props: CustomFooterProps) => {
       sx={{
         justifyContent: 'space-between',
         alignItems: 'center',
-        py: 2,
       }}
     >
-      <Typography variant="body2" color="text.secondary">
-        Showing {startRow} to {endRow} of {props.labelRowsPerPage} data
-      </Typography>
+      {pageCount !== 0 ? (
+        <>
+          <Typography variant="body2" color="text.secondary">
+            Showing {startRow} to {endRow} of {props.labelRowsPerPage} data
+          </Typography>
+        </>
+      ) : (
+        <>
+          <Typography variant="body2" color="text.secondary">
+            Showing 0 result of {props.labelRowsPerPage} data
+          </Typography>
+        </>
+      )}
       <Pagination
         color="primary"
         count={pageCount}

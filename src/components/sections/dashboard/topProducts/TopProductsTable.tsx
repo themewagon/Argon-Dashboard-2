@@ -55,7 +55,7 @@ const TopProductsTable = () => {
   return (
     <Box
       sx={{
-        overflow: 'auto',
+        overflow: 'hidden',
         minHeight: 0,
         position: 'relative',
         height: { xs: 'auto', sm: 1 },
@@ -64,7 +64,7 @@ const TopProductsTable = () => {
       <SimpleBar>
         <DataGrid
           autoHeight={false}
-          getRowHeight={() => 52}
+          //   getRowHeight={() => 52}
           columns={topProductsColumns}
           onResize={() => {
             apiRef.current.autosizeColumns({
@@ -72,6 +72,7 @@ const TopProductsTable = () => {
               expand: true,
             });
           }}
+          rowHeight={52}
           loading={false}
           apiRef={apiRef}
           hideFooterSelectedRowCount
@@ -105,8 +106,15 @@ const TopProductsTable = () => {
             boxShadow: 1,
             px: 3,
             borderColor: 'common.white',
+            '& .MuiDataGrid-overlayWrapperInner': {
+              height: '250px !important',
+            },
+            overflow: 'auto',
+            // position: 'absolute',
             height: 1,
             width: 1,
+            // display: 'flex',
+            // flex: 1,
           }}
         />
       </SimpleBar>

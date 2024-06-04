@@ -88,12 +88,17 @@ const DataGridComponent: DataGridComponents<Omit<Theme, 'components'>>['MuiDataG
       color: theme.palette.primary.main,
     }),
     overlay: ({ theme }) => ({
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: theme.palette.action.selected,
       fontSize: theme.typography.subtitle1.fontSize,
       fontWeight: theme.typography.subtitle1.fontWeight,
       fontFamily: theme.typography.body1.fontFamily,
       flex: 1,
     }),
+    virtualScroller: {
+      minHeight: '3em',
+      display: 'flex',
+      flexDirection: 'column',
+    },
   },
 };
 

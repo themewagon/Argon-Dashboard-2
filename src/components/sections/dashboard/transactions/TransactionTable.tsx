@@ -92,7 +92,7 @@ const TransactionTable = () => {
       <SimpleBar>
         <DataGrid
           autoHeight={false}
-          getRowHeight={() => 52}
+          rowHeight={52}
           columns={transactionColumns}
           loading={false}
           apiRef={apiRef}
