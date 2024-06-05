@@ -14,15 +14,13 @@ const DataGridComponent: DataGridComponents<Omit<Theme, 'components'>>['MuiDataG
       paddingBottom: theme.spacing(0),
       '--DataGrid-containerBackground': theme.palette.common.white,
       '--DataGrid-rowBorderColor': theme.palette.action.selected,
-      '.MuiDataGrid-overlayWrapper': {},
-      '.MuiDataGrid-overlayWrapperInner': {
-        height: 'auto !important',
-      },
     }),
     overlayWrapper: {
       height: 'auto !important',
     },
-    overlayWrapperInner: {},
+    overlayWrapperInner: {
+      height: 'auto !important',
+    },
     main: ({ theme }) => ({
       borderTopRightRadius: theme.shape.borderRadius * 4,
       borderTopLeftRadius: theme.shape.borderRadius * 4,

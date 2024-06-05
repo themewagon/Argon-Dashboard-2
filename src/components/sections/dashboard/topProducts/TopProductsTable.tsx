@@ -85,7 +85,7 @@ const TopProductsTable = () => {
             loadingOverlay: LinearProgress as GridSlots['loadingOverlay'],
             pagination: CustomDataGridFooter,
             toolbar: CustomDataGridHeader,
-            noRowsOverlay: CustomDataGridNoRows,
+            noResultsOverlay: CustomDataGridNoRows,
           }}
           slotProps={{
             toolbar: {
@@ -106,9 +106,7 @@ const TopProductsTable = () => {
             boxShadow: 1,
             px: 3,
             borderColor: 'common.white',
-            '& .MuiDataGrid-overlayWrapperInner': {
-              height: '250px !important',
-            },
+
             overflow: 'auto',
             // position: 'absolute',
             height: 1,

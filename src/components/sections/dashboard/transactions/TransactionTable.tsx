@@ -85,11 +85,11 @@ const TransactionTable = () => {
         overflow: 'auto',
         minHeight: 0,
         position: 'relative',
-        height: { xs: 'auto', sm: 1 },
+        height: { xs: 'auto', sm: 500 },
         width: 1,
       }}
     >
-      <SimpleBar>
+      <SimpleBar style={{ height: '500px' }}>
         <DataGrid
           autoHeight={false}
           rowHeight={52}
@@ -112,7 +112,7 @@ const TransactionTable = () => {
             loadingOverlay: LinearProgress as GridSlots['loadingOverlay'],
             pagination: CustomDataGridFooter,
             toolbar: CustomDataGridHeader,
-            noRowsOverlay: CustomDataGridNoRows,
+            noResultsOverlay: CustomDataGridNoRows,
           }}
           slotProps={{
             toolbar: {

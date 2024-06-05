@@ -8,7 +8,7 @@ function CustomDataGridNoRows() {
       sx={{
         alignItems: 'center',
         justifyContent: 'center',
-        height: 200,
+        height: 195,
         marginTop: 8,
       }}
     >

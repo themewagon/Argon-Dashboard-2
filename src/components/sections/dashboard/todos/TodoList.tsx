@@ -12,12 +12,12 @@ const data = [
 const TodoList = () => {
   return (
     <Card sx={{ height: 1, overflow: 'hidden', color: 'dark.main' }}>
-      <Box sx={{ p: 3, pb: 1 }}>
+      <Box sx={{ p: 3 }}>
         <Typography variant="h5" textTransform="capitalize" fontWeight="medium">
           To Do List
         </Typography>
       </Box>
-      <Box sx={{ pb: 3, px: 3, my: 'auto' }}>
+      <Box sx={{ pb: 3, px: 3 }}>
         <Stack component="ul" sx={{ listStyle: 'none', display: 'flex', m: 0, p: 0 }}>
           {data.map(({ title, time, checked }, key) => (
             <React.Fragment key={key}>
