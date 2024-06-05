@@ -1,6 +1,5 @@
 import {
   Avatar,
-  Badge,
   Box,
   Button,
   Chip,
@@ -11,22 +10,12 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
-import NotificationIcon from 'components/icons/NotificationIcon';
+import IconifyIcon from 'components/base/IconifyIcon';
+import { messageOptions } from 'data/navbar/menu-data';
 import { useState } from 'react';
 import SimpleBar from 'simplebar-react';
-import { notificationOptions } from './menu-data';
 
-function notificationsLabel(count: number) {
-  if (count === 0) {
-    return 'no notifications';
-  }
-  if (count > 99) {
-    return 'more than 99 notifications';
-  }
-  return `${count} notifications`;
-}
-
-const NotificationAction = () => {
+const MessageDropdown = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const open = Boolean(anchorEl);
   const theme = useTheme();
@@ -38,18 +27,15 @@ const NotificationAction = () => {
     setAnchorEl(null);
   };
   return (
-    <Box>
+    <>
       <IconButton
-        aria-label={notificationsLabel(100)}
-        color="inherit"
         onClick={handleClick}
+        color="inherit"
         sx={{
-          color: 'grey.200',
+          color: 'grey.600',
         }}
       >
-        <Badge color="primary" badgeContent={5}>
-          <NotificationIcon />
-        </Badge>
+        <IconifyIcon icon="mdi:message-text-outline" fontSize="1.5rem" />
       </IconButton>
       <Menu
         id="long-menu"
@@ -71,11 +57,11 @@ const NotificationAction = () => {
         }}
       >
         <Stack direction="row" py={2} px={4} justifyContent="space-between" alignItems="center">
-          <Typography variant="h6">Notifications</Typography>
+          <Typography variant="h6">Messages</Typography>
           <Chip label="5 new" color="primary" size="small" />
         </Stack>
         <SimpleBar style={{ height: '385px' }}>
-          {notificationOptions.map((notification) => (
+          {messageOptions.map((notification) => (
             <MenuItem
               key={notification.id}
               sx={{
@@ -118,12 +104,12 @@ const NotificationAction = () => {
               width: '80%',
             }}
           >
-            See All Notifications
+            See All Messages
           </Button>
         </Stack>
       </Menu>
-    </Box>
+    </>
   );
 };
 
-export default NotificationAction;
+export default MessageDropdown;

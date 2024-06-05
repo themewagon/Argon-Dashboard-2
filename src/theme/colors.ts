@@ -1,15 +1,3 @@
-// export const grey = {
-//   50: '#f8f9fa',
-//   100: '#F6F9FC',
-//   200: '#E9ECEF',
-//   300: '#DEE2E6',
-//   400: '#CED4DA',
-//   500: '#ADB5BD',
-//   600: '#6C757D',
-//   700: '#525F7F',
-//   800: '#32325D',
-//   900: '#212529',
-// };
 export const grey = {
   900: '#131523',
   800: '#333752',
@@ -20,7 +8,7 @@ export const grey = {
   300: '#D7DBEC',
   200: '#E6E9F4',
   100: '#F5F6FA',
-  50: '#D8D8D8',
+  50: '#ffffff',
 };
 export const blue = {
   50: '#EAF3FD',
@@ -76,6 +64,9 @@ export const yellow = {
 };
 export const pink = {
   500: '#D63384',
+};
+export const silver = {
+  500: '#d8d8d8',
 };
 export const green = {
   50: '#DAF9EC',

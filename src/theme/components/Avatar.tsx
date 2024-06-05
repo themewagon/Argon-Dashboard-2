@@ -14,7 +14,7 @@ const AvatarComponent: Components<Omit<Theme, 'components'>>['MuiAvatar'] = {
     }),
     rounded: ({ theme }) => ({
       borderRadius: theme.shape.borderRadius * 5,
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: theme.palette.neutral.main,
     }),
   },
 };

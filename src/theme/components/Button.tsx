@@ -81,9 +81,6 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
     containedSecondary: ({ theme }) => ({
       color: theme.palette.primary.main,
       backgroundColor: theme.palette.primary.light,
-      //   borderColor: theme.palette.text.disabled,
-      //   borderWidth: 1,
-      //   borderStyle: 'solid',
       '&:hover': {
         backgroundColor: `${theme.palette.primary.lighter}`,
       },
@@ -93,7 +90,6 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
       '& > *:first-of-type': {
         fontSize: 18,
       },
-      //   margin: 0,
     },
     endIcon: {
       '& > *:first-of-type': {
@@ -116,11 +112,5 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
         fontSize: 24,
       },
     },
-    // outlinedNeutral: ({ theme }) => ({
-    //   borderColor: grey[500],
-    //   '&:hover': {
-    //     backgroundColor: theme.palette.neutral.lighter,
-    //   },
-    // }),
   },
 };

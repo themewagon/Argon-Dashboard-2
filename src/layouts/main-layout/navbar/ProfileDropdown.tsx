@@ -12,10 +12,10 @@ import {
 } from '@mui/material';
 import AvatarImage from 'assets/images/avatar.svg';
 import IconifyIcon from 'components/base/IconifyIcon';
+import { profileOptions } from 'data/navbar/menu-data';
 import { useState } from 'react';
-import { profileOptions } from './menu-data';
 
-const ProfileAction = () => {
+const ProfileDropdown = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const open = Boolean(anchorEl);
   const theme = useTheme();
@@ -57,7 +57,7 @@ const ProfileAction = () => {
             }}
           />
           <Typography
-            variant="button"
+            variant="subtitle1"
             sx={{
               display: { xs: 'none', sm: 'block' },
             }}
@@ -114,4 +114,4 @@ const ProfileAction = () => {
     </Box>
   );
 };
-export default ProfileAction;
+export default ProfileDropdown;
