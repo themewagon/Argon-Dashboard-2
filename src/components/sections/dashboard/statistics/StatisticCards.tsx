@@ -11,14 +11,16 @@ interface PercentageProps {
   text?: string;
 }
 export interface IStatisticsCard {
+  id: number;
   title: string;
   subtitle: string;
   percentage: PercentageProps;
   icon: (props: SvgIconProps) => JSX.Element;
 }
 
-const stats: IStatisticsCard[] = [
+export const stats: IStatisticsCard[] = [
   {
+    id: 0,
     percentage: { color: 'success', count: '22.45%' },
     icon: DollarIcon,
     title: '$10.540',
@@ -26,18 +28,21 @@ const stats: IStatisticsCard[] = [
   },
 
   {
+    id: 1,
     percentage: { color: 'success', count: '22.45%' },
     icon: CartIcon,
     title: '$1,056',
     subtitle: 'Orders',
   },
   {
+    id: 2,
     percentage: { color: 'error', count: '02.45%' },
     icon: PersonalSettingsIcon,
     title: '$0,056',
     subtitle: 'Active Sessions',
   },
   {
+    id: 3,
     percentage: { color: 'error', count: '00.45%' },
     icon: CustomersIcon,
     title: '$0,056',
@@ -48,11 +53,13 @@ const stats: IStatisticsCard[] = [
 const StatisticsCards = () => {
   return (
     <Grid container spacing={0.25}>
-      {stats.map((cardItem, i) => (
-        <Grid item xs={12} sm={6} lg={3} key={i}>
-          <StatisticsCardItem cardData={cardItem} index={i} />
-        </Grid>
-      ))}
+      {stats.map((cardItem) => {
+        return (
+          <Grid item xs={12} sm={6} xl={3} key={cardItem.id}>
+            <StatisticsCardItem cardData={cardItem} index={cardItem.id} totalCount={stats.length} />
+          </Grid>
+        );
+      })}
     </Grid>
   );
 };

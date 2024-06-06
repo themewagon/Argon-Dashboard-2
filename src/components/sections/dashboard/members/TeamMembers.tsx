@@ -4,22 +4,24 @@ import person1 from 'assets/images/team/team-1.jpg';
 import person2 from 'assets/images/team/team-2.jpg';
 import person3 from 'assets/images/team/team-3.jpg';
 import person4 from 'assets/images/team/team-4.jpg';
-import React from 'react';
+import { Fragment } from 'react';
 
 // Team member Data
+/* -------------------------------------------------------------------------- */
 interface TeamMember {
+  id: number;
   img: string;
   name: string;
   status: string;
   badge: 'success' | 'warning' | 'error' | 'default' | 'primary' | 'secondary' | 'info';
 }
 const data: TeamMember[] = [
-  { img: person1, name: 'John Michael', status: 'online', badge: 'success' },
-  { img: person2, name: 'Alex Smith', status: 'in meeting', badge: 'warning' },
-  { img: person3, name: 'Samantha Ivy', status: 'offline', badge: 'error' },
-  { img: person4, name: 'John Michael', status: 'online', badge: 'success' },
+  { id: 1, img: person1, name: 'John Michael', status: 'online', badge: 'success' },
+  { id: 2, img: person2, name: 'Alex Smith', status: 'in meeting', badge: 'warning' },
+  { id: 3, img: person3, name: 'Samantha Ivy', status: 'offline', badge: 'error' },
+  { id: 4, img: person4, name: 'John Michael', status: 'online', badge: 'success' },
 ];
-
+/* -------------------------------------------------------------------------- */
 const TeamMembers = () => {
   return (
     <Card sx={{ height: 1, overflow: 'hidden', color: 'dark.main' }}>
@@ -30,8 +32,8 @@ const TeamMembers = () => {
       </Box>
       <Box sx={{ pb: 3, px: 3 }}>
         <Stack component="ul" direction="column" sx={{ listStyle: 'none', m: 0, p: 0 }}>
-          {data.map(({ img, name, badge }, key) => (
-            <React.Fragment key={key}>
+          {data.map(({ id, img, name, badge }) => (
+            <Fragment key={id}>
               <Box component="li" sx={{ py: 1 }}>
                 <Grid container spacing={3} alignItems="center">
                   <Grid item alignItems="center">
@@ -53,7 +55,7 @@ const TeamMembers = () => {
                   </Grid>
                 </Grid>
               </Box>
-              {key !== data.length - 1 && (
+              {id !== data.length - 1 && (
                 <Divider
                   sx={{
                     borderTop: 1,
@@ -64,7 +66,7 @@ const TeamMembers = () => {
                   }}
                 />
               )}
-            </React.Fragment>
+            </Fragment>
           ))}
         </Stack>
       </Box>

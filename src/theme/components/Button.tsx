@@ -47,10 +47,10 @@ export const ButtonComponent: Components<Omit<Theme, 'components'>>['MuiButton']
     }),
     outlinedSecondary: ({ theme }) => ({
       backgroundColor: theme.palette.common.white,
-      color: theme.palette.primary.main,
+      color: theme.palette.secondary.main,
       '&:hover': {
-        backgroundColor: `${theme.palette.primary.lighter}`,
-        borderColor: `${theme.palette.primary.main}`,
+        backgroundColor: `${theme.palette.secondary.lighter}`,
+        borderColor: `${theme.palette.secondary.main}`,
       },
     }),
     outlinedSizeLarge: ({ theme }) => ({

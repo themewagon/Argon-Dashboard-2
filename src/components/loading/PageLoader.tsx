@@ -1,10 +1,10 @@
-import { Box, LinearProgress } from '@mui/material';
+import { LinearProgress } from '@mui/material';
 
 const PageLoader = () => {
   return (
-    <Box>
+    <div>
       <LinearProgress color="secondary" />
-    </Box>
+    </div>
   );
 };
 

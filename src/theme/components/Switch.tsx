@@ -2,7 +2,6 @@ import { Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
 
 const SwitchComponent: Components<Omit<Theme, 'components'>>['MuiSwitch'] = {
-  defaultProps: {},
   styleOverrides: {
     root: {
       height: 18,

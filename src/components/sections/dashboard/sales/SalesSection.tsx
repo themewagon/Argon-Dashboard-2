@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Divider, Stack, Typography } from '@mui/material';
+import { Card, CardContent, Divider, Stack, Typography } from '@mui/material';
 import CircularLoader from 'components/loading/Circular';
 import SalesBarChart from 'components/sections/dashboard/sales/SalesBarChart';
 import { salesData } from 'data/dashboard/charts';
@@ -49,18 +49,18 @@ const SalesSection = () => {
       <CardContent sx={{ p: 3.5, flex: 1 }}>
         <Typography variant="h6">Last 7 Days Sales</Typography>
         <Stack spacing={2.5} sx={{ pt: 3 }}>
-          <Box>
+          <div>
             <Typography variant="h5">1,259</Typography>
             <Typography variant="subtitle1" color="text.secondary">
               Item Sold
             </Typography>
-          </Box>
-          <Box>
+          </div>
+          <div>
             <Typography variant="h5">$12,546</Typography>
             <Typography variant="subtitle1" color="text.secondary">
               Revenue
             </Typography>
-          </Box>
+          </div>
           <Divider />
         </Stack>
         <Stack direction="row" sx={{ height: 215, display: 'flex' }}>

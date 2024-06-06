@@ -17,7 +17,8 @@ const DrawerComponent: Components<Omit<Theme, 'components'>>['MuiDrawer'] = {
       transition: theme.transitions.create('width', {
         duration: theme.transitions.duration.shortest,
       }),
-      //   height: `calc(100vh - ${pxToRem(32)})`,
+      //   height: `calc(100vh - ${pxToRem(68)})`,
+      height: `100vh`,
       // margin: theme.spacing(2, 0, 2, 2),
       //   marginTop: pxToRem(68),
       //   borderRadius: theme.shape.borderRadius * 4,

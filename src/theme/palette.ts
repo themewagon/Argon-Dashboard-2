@@ -61,7 +61,7 @@ const palette: PaletteOptions = {
     hover: grey[100],
     selected: grey[200],
     disabled: 'white',
-    disabledBackground: grey[300],
+    disabledBackground: grey[600],
     focus: grey[400],
   },
   background: {

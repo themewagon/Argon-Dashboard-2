@@ -42,7 +42,7 @@ const Menuitems: IMenuitems[] = [
     id: uniqueId(),
     title: 'Orders',
     icon: OrderIcon,
-    href: '/dashboard/orders',
+    href: '/dashboard/#!',
     chip: '16',
     chipColor: 'secondary',
   },
@@ -50,37 +50,37 @@ const Menuitems: IMenuitems[] = [
     id: uniqueId(),
     title: 'Products',
     icon: ProductsIcon,
-    href: '/dashboard/products',
+    href: '/dashboard/#!',
   },
   {
     id: uniqueId(),
     title: 'Categories',
     icon: CategoriesIcon,
-    href: '/dashboard/categories',
+    href: '/dashboard/#!',
   },
   {
     id: uniqueId(),
     title: 'Customers',
     icon: CustomersIcon,
-    href: '/dashboard/customers',
+    href: '/dashboard/#!',
   },
   {
     id: uniqueId(),
     title: 'Reports',
     icon: ReportsIcon,
-    href: '/dashboard/reports',
+    href: '/dashboard/#!',
   },
   {
     id: uniqueId(),
     title: 'Coupons',
     icon: CouponsIcon,
-    href: '/dashboard/coupons',
+    href: '/dashboard/#!',
   },
   {
     id: uniqueId(),
     title: 'Inbox',
     icon: InboxIcon,
-    href: '/dashboard/inbox',
+    href: '/dashboard/#!',
   },
   {
     navlabel: true,
@@ -88,15 +88,15 @@ const Menuitems: IMenuitems[] = [
   },
   {
     id: uniqueId(),
-    title: 'Knowledge base',
+    title: 'Create an account',
     icon: KnowledgebaseIcon,
-    href: '/knowledge-base',
+    href: '/authentication/sign-up',
   },
   {
     id: uniqueId(),
-    title: 'Product Updates',
+    title: 'Log In',
     icon: ProductUpdateIcon,
-    href: '/product-updates',
+    href: '/authentication/login',
   },
 
   {
@@ -107,34 +107,14 @@ const Menuitems: IMenuitems[] = [
     id: uniqueId(),
     title: 'Personal Settings',
     icon: PersonalSettingsIcon,
-    href: '/settings/personal',
+    href: '/settings/#!',
   },
   {
     id: uniqueId(),
     title: 'Global Settings',
     icon: GlobalSettingsIcon,
-    href: '/settings/global',
+    href: '/settings/#!',
   },
-  //   {
-  //     id: uniqueId(),
-  //     title: 'Settings',
-  //     icon: HomeIcon,
-  //     href: '/settings',
-  //     children: [
-  //       {
-  //         id: uniqueId(),
-  //         title: 'Personal Settings',
-  //         icon: HomeIcon,
-  //         href: '/settings/personal',
-  //       },
-  //       {
-  //         id: uniqueId(),
-  //         title: 'Global Settings',
-  //         icon: HomeIcon,
-  //         href: '/settings/global',
-  //       },
-  //     ],
-  //   },
 ];
 
 export default Menuitems;

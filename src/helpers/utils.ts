@@ -16,3 +16,10 @@ export const numberFormat = (number: number, notation: 'standard' | 'compact' = 
   new Intl.NumberFormat('en-US', {
     notation,
   }).format(number);
+
+export const percentageFormat = (number: number) =>
+  new Intl.NumberFormat('en-US', {
+    style: 'percent',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(number / 100);

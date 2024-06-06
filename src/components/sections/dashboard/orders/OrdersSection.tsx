@@ -1,5 +1,14 @@
 // OrdersSection.tsx
-import { Box, Button, Card, CardContent, Stack, Typography } from '@mui/material';
+import {
+  Button,
+  Card,
+  CardContent,
+  FormControl,
+  MenuItem,
+  Select,
+  Stack,
+  Typography,
+} from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import CircularLoader from 'components/loading/Circular';
 import OrdersLineChart from 'components/sections/dashboard/orders/OrdersLineChart';
@@ -80,13 +89,31 @@ const OrdersSection = () => {
         >
           <Typography variant="h6">Orders Over Time</Typography>
           <Stack direction="row" alignItems="center">
-            <Typography variant="subtitle1" color="text.secondary">
+            <FormControl sx={{ m: 1, minWidth: 80, height: 50 }}>
+              <Select
+                variant="standard"
+                labelId="demo-select-small-label"
+                id="demo-simple-select"
+                value={1}
+                label="Age"
+                size="medium"
+                sx={{ height: 30, mt: 1, minWidth: 80 }}
+                // onChange={handleChange}
+              >
+                <MenuItem value={1} selected>
+                  Last 12 hours
+                </MenuItem>
+                <MenuItem value={2}>Last 24 hours</MenuItem>
+                <MenuItem value={3}>Last 48 hours</MenuItem>
+              </Select>
+            </FormControl>
+            {/* <Typography variant="subtitle1" color="text.secondary">
               Last 12 hours
-            </Typography>
-            <IconifyIcon
+            </Typography> */}
+            {/* <IconifyIcon
               icon="iconamoon:arrow-down-2-light"
               sx={{ ml: 1, width: 24, height: 24 }}
-            />
+            /> */}
           </Stack>
         </Stack>
         <Stack
@@ -100,18 +127,18 @@ const OrdersSection = () => {
               flexDirection: { xs: 'column', sm: 'row' },
             }}
           >
-            <Box>
+            <div>
               <Typography variant="h5">645</Typography>
               <Typography variant="subtitle1" color="text.secondary">
                 Orders on May 22
               </Typography>
-            </Box>
-            <Box>
+            </div>
+            <div>
               <Typography variant="h5">645</Typography>
               <Typography variant="subtitle1" color="text.secondary">
                 Orders on May 22
               </Typography>
-            </Box>
+            </div>
           </Stack>
           {chartData ? (
             <Stack

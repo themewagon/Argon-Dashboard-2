@@ -9,18 +9,18 @@ const LANGS = [
   {
     value: 'en-Us',
     label: 'English (Global)',
-    icon: '/flag-icons/gb.svg',
+    icon: '/Modernize-Material-Admin/flag-icons/gb.svg',
   },
   {
     value: 'en-Uk',
     label: 'English',
-    icon: '/flag-icons/us.svg',
+    icon: '/Modernize-Material-Admin/flag-icons/us.svg',
   },
 
   {
     value: 'bd',
     label: 'Bangla',
-    icon: '/flag-icons/bd.svg',
+    icon: '/Modernize-Material-Admin/flag-icons/bd.svg',
   },
 ];
 

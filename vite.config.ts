@@ -10,9 +10,17 @@ export default defineConfig({
     tsconfigPaths(),
     checker({
       typescript: true,
-      //   eslint: {
-      //     lintCommand: 'eslint "./src/**/*.{ts,tsx}"',
-      //   },
+      eslint: {
+        lintCommand: 'eslint "./src/**/*.{ts,tsx}"',
+      },
     }),
   ],
+  base: '/Modernize-Material-Admin',
+  preview: {
+    port: 5000,
+  },
+  server: {
+    host: '0.0.0.0',
+    port: 3000,
+  },
 });

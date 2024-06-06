@@ -13,12 +13,7 @@ const FilledInputComponent: Components<Omit<Theme, 'components'>>['MuiFilledInpu
         display: 'none',
       },
     }),
-    colorSecondary: ({ theme }) => ({
-      //   backgroundColor: theme.palette.grey[100],
-      //   '&:hover': {
-      //     backgroundColor: theme.palette.grey[200],
-      //   },
-    }),
+
     input: ({ theme }) => ({
       fontSize: theme.typography.pxToRem(14),
       //   paddingTop: theme.spacing(0.75),

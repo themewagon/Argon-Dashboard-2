@@ -9,8 +9,6 @@ const data = [
   { href: '/license', title: 'License ', key: 'license' },
 ];
 const Footer = () => {
-  //   const { up } = useBreakpoints();
-  //   const upLg = up('lg');
   return (
     <Stack
       direction={{ xs: 'column', lg: 'row' }}

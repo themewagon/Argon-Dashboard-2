@@ -6,8 +6,12 @@ const ContainerComponent: Components<Omit<Theme, 'components'>>['MuiContainer'] 
   styleOverrides: {
     root: ({ theme }) => ({
       //   maxWidth: '100%!important',
-      paddingLeft: theme.spacing(5),
-      paddingRight: theme.spacing(5),
+      paddingLeft: theme.spacing(3),
+      paddingRight: theme.spacing(3),
+      [theme.breakpoints.up('lg')]: {
+        paddingLeft: theme.spacing(5),
+        paddingRight: theme.spacing(5),
+      },
     }),
   },
 };

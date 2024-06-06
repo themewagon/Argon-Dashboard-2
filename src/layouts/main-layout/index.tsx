@@ -27,7 +27,16 @@ const MainLayout = () => {
   };
 
   return (
-    <Box sx={{ height: 1, position: 'relative', display: 'flex', minHeight: '100vh', width: 1 }}>
+    <Stack
+      sx={{
+        height: 1,
+        position: 'relative',
+        flexDirection: 'row',
+        minHeight: '100vh',
+        width: 1,
+        maxWidth: 'calc(100% + 270px)',
+      }}
+    >
       <Sidebar
         onDrawerClose={handleDrawerClose}
         onDrawerTransitionEnd={handleDrawerTransitionEnd}
@@ -40,6 +49,7 @@ const MainLayout = () => {
           display: 'flex',
           flexGrow: 1,
           width: 1,
+          maxWidth: 'calc(100% + 270px)',
           justifyContent: 'space-between',
         }}
       >
@@ -51,7 +61,7 @@ const MainLayout = () => {
         </Container>
         <Footer />
       </Stack>
-    </Box>
+    </Stack>
   );
 };
 

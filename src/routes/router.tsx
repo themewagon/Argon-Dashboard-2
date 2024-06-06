@@ -1,20 +1,12 @@
 import PageLoader from 'components/loading/PageLoader';
 import Splash from 'components/loading/Splash';
-// import MainLayout from 'layouts/main-layout';
-// import LoginPage from 'pages/authentication/default/Login';
-// import SignUpPage from 'pages/authentication/default/SignUp';
-// import AutomotivePage from 'pages/automotive/Automotive';
-// import CRMPage from 'pages/crm/CRM';
-// import Default from 'pages/dashboard/default/Default';
-// import LandingPage from 'pages/dashboard/landing/Landing';
-// import SmartHomePage from 'pages/smarthome/SmartHome';
-// import VirtualRealityPage from 'pages/vr/VirtualReality';
+
 import AuthLayout from 'layouts/auth-layout';
-import NotFoundPage from 'pages/not-found';
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import paths, { rootPaths } from './path';
 
+/* ---------------- Lazy loads various components ------------------------- */
 const App = lazy(() => import('App'));
 const MainLayout = lazy(() => import('layouts/main-layout'));
 const LoginPage = lazy(() => import('pages/authentication/login'));
@@ -27,7 +19,8 @@ const CustomersPage = lazy(() => import('pages/customers'));
 const ReportsPage = lazy(() => import('pages/reports'));
 const CouponsPage = lazy(() => import('pages/coupons'));
 const InboxPage = lazy(() => import('pages/inbox'));
-
+const NotFoundPage = lazy(() => import('pages/not-found'));
+/* -------------------------------------------------------------------------- */
 export const routes = [
   {
     element: (
@@ -38,10 +31,10 @@ export const routes = [
     children: [
       {
         index: true,
-        element: <Navigate to="dashboard/default" />,
+        element: <Navigate to={paths.default} />,
       },
       {
-        path: 'dashboard',
+        path: rootPaths.pagesRoot,
         element: (
           <Suspense fallback={<PageLoader />}>
             <MainLayout />
@@ -50,38 +43,38 @@ export const routes = [
         children: [
           {
             index: true,
-            element: <Navigate to="default" />,
+            element: <Navigate to={paths.default} />,
           },
           {
-            path: 'default',
+            path: paths.default,
             element: <Dashboard />,
           },
           {
-            path: 'categories',
+            path: paths.categories,
             element: <CategoriesPage />,
           },
           {
-            path: 'products',
+            path: paths.products,
             element: <ProductsPage />,
           },
           {
-            path: 'customers',
+            path: paths.customers,
             element: <CustomersPage />,
           },
           {
-            path: 'orders',
+            path: paths.orders,
             element: <OrdersPage />,
           },
           {
-            path: 'reports',
+            path: paths.customers,
             element: <ReportsPage />,
           },
           {
-            path: 'coupons',
+            path: paths.coupons,
             element: <CouponsPage />,
           },
           {
-            path: 'inbox',
+            path: paths.inbox,
             element: <InboxPage />,
           },
         ],
@@ -101,15 +94,23 @@ export const routes = [
         ],
       },
       {
+        path: rootPaths.errorRoot,
+        children: [
+          {
+            path: paths[404],
+            element: <NotFoundPage />,
+          },
+        ],
+      },
+      {
         path: '*',
-        element: <NotFoundPage />,
+        element: <Navigate to={paths[404]} replace />,
       },
     ],
   },
-
-  //   { path: 'authentication/forgot-password', element: <ForgotPassword /> },
-  //   { path: '*', element: <NotFound /> },
 ];
 
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes, {
+  basename: '/Modernize-Material-Admin',
+});
 export default router;

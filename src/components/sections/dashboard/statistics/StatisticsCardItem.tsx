@@ -1,31 +1,39 @@
 import { Box, Card, Grid, Stack, Typography } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
+import { percentageFormat } from 'helpers/utils';
 import { useBreakpoints } from 'providers/useBreakPoint';
 import { IStatisticsCard } from './StatisticCards';
 
 interface StatisticsCardProps {
   cardData: IStatisticsCard;
   index: number;
+  totalCount?: number;
 }
 
 const StatisticsCardItem = ({ cardData, index }: StatisticsCardProps) => {
   const { title, subtitle, percentage, icon: IconComponent } = cardData || {};
   const { up } = useBreakpoints();
-  const upLg = up('lg');
+  const upXl = up('xl');
   const upSm = up('sm');
-
+  const upXs = up('xs');
   return (
     <>
       <Card
         sx={{
           borderRadius: 4,
-          ...(upSm && {
-            borderTopLeftRadius: index === 0 || index === 2 ? 8 : 0,
-            borderBottomLeftRadius: index === 0 || index === 2 ? 8 : 0,
-            borderTopRightRadius: index === 1 || index === 3 ? 8 : 0,
-            borderBottomRightRadius: index === 1 || index === 3 ? 8 : 0,
+          ...(upXs && {
+            borderTopLeftRadius: index === 0 ? 8 : 0,
+            borderTopRightRadius: index === 0 ? 8 : 0,
+            borderBottomLeftRadius: index === 3 ? 8 : 0,
+            borderBottomRightRadius: index === 3 ? 8 : 0,
           }),
-          ...(upLg && {
+          ...(upSm && {
+            borderTopLeftRadius: index === 0 ? 8 : 0,
+            borderBottomLeftRadius: index === 2 ? 8 : 0,
+            borderTopRightRadius: index === 1 ? 8 : 0,
+            borderBottomRightRadius: index === 3 ? 8 : 0,
+          }),
+          ...(upXl && {
             borderTopLeftRadius: index === 0 ? 8 : 0,
             borderBottomLeftRadius: index === 0 ? 8 : 0,
             borderTopRightRadius: index === 3 ? 8 : 0,
@@ -51,7 +59,7 @@ const StatisticsCardItem = ({ cardData, index }: StatisticsCardProps) => {
               </Box>
               <Stack direction="row" alignItems="center">
                 <Typography variant="subtitle1" color={`${percentage.color}.dark`}>
-                  {percentage.count}
+                  {percentageFormat(parseFloat(percentage.count))}
                 </Typography>
                 {percentage.color !== 'success' ? (
                   <IconifyIcon
@@ -77,7 +85,7 @@ const StatisticsCardItem = ({ cardData, index }: StatisticsCardProps) => {
                     display: 'grid',
                     width: 56,
                     height: 56,
-                    borderRadius: 40,
+                    borderRadius: '50%',
                     placeItems: 'center',
                     bgcolor: 'primary.lighter',
                   }}

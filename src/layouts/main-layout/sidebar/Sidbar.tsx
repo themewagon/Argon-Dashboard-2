@@ -48,12 +48,12 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
               <SidebarLogo />
             </Box>
 
-            <SimpleBar style={{ height: 'calc(100% - 70px)' }}>
+            <SimpleBar style={{ height: 'calc(100% - 68px)' }}>
               <Box
                 sx={{
                   borderRight: 1,
-                  borderColor: 'action.disabledBackground',
-                  height: 'calc(100vh + 68px)',
+                  borderColor: 'text.disabled',
+                  //   height: 'calc(100vh + 68px)',
                 }}
               >
                 <SidebarItems />
@@ -99,10 +99,12 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
       </Box>
 
       {/* ------------------------------------------- */}
-      <SimpleBar style={{ height: 'calc(100% - 310px)', maxHeight: '100%' }}>
-        <SidebarItems />
+      <SimpleBar style={{ height: 'calc(100% - 68px)' }}>
+        <>
+          <SidebarItems />
+          <SidebarBanner />
+        </>
       </SimpleBar>
-      <SidebarBanner />
     </Drawer>
   );
 };

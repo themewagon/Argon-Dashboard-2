@@ -55,14 +55,6 @@ const TransactionTable = () => {
   const [searchText, setSearchText] = useState('');
   const apiRef = useGridApiRef<GridApi>();
 
-  //   useEffect(() => {
-  //     const searchRegex = new RegExp(escapeRegExp(searchText), 'i');
-  //     const filteredRows = transactionTableData.filter((row) =>
-  //       Object.values(row).some((fieldValue) => searchRegex.test(fieldValue.toString()))
-  //     );
-  //     apiRef.current.setRows(filteredRows);
-  //   }, [searchText, apiRef]);
-
   useEffect(() => {
     apiRef.current.setRows(transactionTableData);
   }, [apiRef]);
@@ -85,11 +77,11 @@ const TransactionTable = () => {
         overflow: 'auto',
         minHeight: 0,
         position: 'relative',
-        height: { xs: 'auto', sm: 500 },
+        height: { xs: 'auto', sm: 1 },
         width: 1,
       }}
     >
-      <SimpleBar style={{ height: '500px' }}>
+      <SimpleBar>
         <DataGrid
           autoHeight={false}
           rowHeight={52}

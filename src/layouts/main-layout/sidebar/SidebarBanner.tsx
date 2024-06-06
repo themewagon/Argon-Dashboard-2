@@ -34,7 +34,7 @@ const SidebarBanner = () => {
             textAlign: 'left',
           }}
         >
-          <Stack>
+          <div>
             <Typography variant="h6">Grow Business</Typography>
             <Typography variant="subtitle1">Explore our marketing solutions</Typography>
 
@@ -49,7 +49,7 @@ const SidebarBanner = () => {
             >
               Read More
             </Button>
-          </Stack>
+          </div>
         </Box>
       </Box>
     </Stack>

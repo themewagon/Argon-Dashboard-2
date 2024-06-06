@@ -1,6 +1,7 @@
 import { createTheme, Shadows } from '@mui/material';
 import ContainerComponent from 'theme/components/Container';
 import PopoverComponent from 'theme/components/Popover';
+import SelectComponent from 'theme/components/Select';
 import AppBarComponent from './components/AppBar';
 import AvatarComponent from './components/Avatar';
 import BadgeComponent from './components/Badge';
@@ -95,6 +96,7 @@ export const theme = createTheme({
     MuiMenu: MenuComponent,
     MuiMenuList: MenuListComponent,
     MuiMenuItem: MenuItemComponent,
+    MuiSelect: SelectComponent,
     MuiList: ListComponent,
     MuiListItem: ListItemComponent,
     MuiListItemText: ListItemTextComponent,

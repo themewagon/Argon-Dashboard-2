@@ -4,9 +4,12 @@ import { Components } from '@mui/material/styles/components';
 const MenuItemComponent: Components<Omit<Theme, 'components'>>['MuiMenuItem'] = {
   defaultProps: {},
   styleOverrides: {
-    root: {
+    root: ({ theme }) => ({
       minHeight: 0,
-    },
+      '&.Mui-selected': {
+        backgroundColor: theme.palette.action.selected,
+      },
+    }),
   },
 };
 

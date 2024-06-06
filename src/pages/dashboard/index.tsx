@@ -36,10 +36,10 @@ const Dashboard = () => {
       </Grid>
       {/* /* ------------- Table section ---------------- */}
       <Grid container spacing={3} mb={3}>
-        <Grid item xs={12} lg={6} zIndex={1}>
+        <Grid item xs={12} xl={6} zIndex={1}>
           <TransactionTable />
         </Grid>
-        <Grid item xs={12} lg={6}>
+        <Grid item xs={12} xl={6}>
           <TopProductsTable />
         </Grid>
       </Grid>

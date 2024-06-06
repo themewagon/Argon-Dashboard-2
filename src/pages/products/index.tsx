@@ -2,7 +2,7 @@ import { Box, Divider, Grid, Stack, TextField, Typography } from '@mui/material'
 
 const ProductsPage = () => {
   return (
-    <Box>
+    <>
       <Box px={1}>
         <Typography variant="h2" mb={5}>
           Default / Medium
@@ -180,7 +180,7 @@ const ProductsPage = () => {
           </Stack>
         </Grid>
       </Grid>
-    </Box>
+    </>
   );
 };
 

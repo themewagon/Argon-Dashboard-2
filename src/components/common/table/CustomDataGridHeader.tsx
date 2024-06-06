@@ -1,6 +1,5 @@
-import { IconButton, Stack, TextField, Typography } from '@mui/material';
+import { Stack, TextField, Typography } from '@mui/material';
 import { GridSlotsComponentsProps } from '@mui/x-data-grid';
-import IconifyIcon from 'components/base/IconifyIcon';
 
 // declare module '@mui/x-data-grid' {
 //   interface ToolbarPropsOverrides {
@@ -30,26 +29,27 @@ const CustomDataGridHeader = (props: NonNullable<GridSlotsComponentsProps['toolb
       </Typography>
 
       <TextField
+        type="search"
         size="small"
         color="secondary"
         variant="filled"
         value={props.value}
         onChange={handleChange}
         placeholder={`Search ${props.flag}...`}
-        InputProps={{
-          //   startAdornment: <SearchIcon fontSize="small" />,
-          endAdornment: (
-            <IconButton
-              title="Clear"
-              aria-label="Clear"
-              size="small"
-              style={{ visibility: props.value ? 'visible' : 'hidden' }}
-              onClick={props.clearSearch}
-            >
-              <IconifyIcon icon="mdi:clear-circle" fontSize="1rem" />
-            </IconButton>
-          ),
-        }}
+        // InputProps={{
+        //   //   startAdornment: <SearchIcon fontSize="small" />,
+        //   endAdornment: (
+        //     <IconButton
+        //       title="Clear"
+        //       aria-label="Clear"
+        //       size="small"
+        //       style={{ visibility: props.value ? 'visible' : 'hidden' }}
+        //       onClick={props.clearSearch}
+        //     >
+        //       <IconifyIcon icon="mdi:clear-circle" fontSize="1rem" />
+        //     </IconButton>
+        //   ),
+        // }}
       />
     </Stack>
   );

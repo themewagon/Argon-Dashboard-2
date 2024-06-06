@@ -20,9 +20,7 @@ const AuthLayout = () => {
           p: 0,
         }}
       >
-        <Box>
-          <Outlet />
-        </Box>
+        <Outlet />
       </Container>
     </Box>
   );

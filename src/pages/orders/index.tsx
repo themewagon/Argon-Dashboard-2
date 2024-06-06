@@ -3,7 +3,7 @@ import IconifyIcon from 'components/base/IconifyIcon';
 
 const OrdersPage = () => {
   return (
-    <Box>
+    <>
       <Box px={1}>
         <Typography variant="h2" mb={5}>
           Large
@@ -449,7 +449,7 @@ const OrdersPage = () => {
           </Stack>
         </Grid>
       </Grid>
-    </Box>
+    </>
   );
 };
 

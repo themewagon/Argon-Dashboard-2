@@ -7,7 +7,6 @@ export interface ProductCellProps {
 
 const ProductCell = ({ value }: ProductCellProps) => {
   const { image, title } = value;
-  console.log(value);
   return (
     <Stack direction="row" alignItems="center">
       <Box mr={2}>
@@ -20,13 +19,10 @@ const ProductCell = ({ value }: ProductCellProps) => {
           }}
         />
       </Box>
-      <Stack>
-        <Typography variant="subtitle1" color="text.primary">
-          <Typography component="span" style={{ fontWeight: 500 }}>
-            {title}
-          </Typography>
-        </Typography>
-      </Stack>
+
+      <Typography variant="subtitle1" color="text.primary" fontWeight={500}>
+        {title}
+      </Typography>
     </Stack>
   );
 };
