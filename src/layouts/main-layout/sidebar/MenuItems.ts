@@ -26,7 +26,7 @@ export interface IMenuitems {
   chip?: string;
   chipColor?: string | any;
   variant?: string | any;
-  external?: boolean;
+  available?: boolean;
   level?: number;
   onClick?: React.MouseEvent<HTMLButtonElement, MouseEvent>;
 }
@@ -37,66 +37,76 @@ const Menuitems: IMenuitems[] = [
     title: 'Dashboard',
     icon: HomeIcon,
     href: '/dashboard/default',
+    available: true,
   },
   {
     id: uniqueId(),
     title: 'Orders',
     icon: OrderIcon,
-    href: '/dashboard/#!',
+    href: '#!',
     chip: '16',
     chipColor: 'secondary',
+    available: false,
   },
   {
     id: uniqueId(),
     title: 'Products',
     icon: ProductsIcon,
-    href: '/dashboard/#!',
+    href: '#!',
+    available: false,
   },
   {
     id: uniqueId(),
     title: 'Categories',
     icon: CategoriesIcon,
-    href: '/dashboard/#!',
+    href: '#!',
+    available: false,
   },
   {
     id: uniqueId(),
     title: 'Customers',
     icon: CustomersIcon,
-    href: '/dashboard/#!',
+    href: '#!',
+    available: false,
   },
   {
     id: uniqueId(),
     title: 'Reports',
     icon: ReportsIcon,
-    href: '/dashboard/#!',
+    href: '#!',
+    available: false,
   },
   {
     id: uniqueId(),
     title: 'Coupons',
     icon: CouponsIcon,
-    href: '/dashboard/#!',
+    href: '#!',
+    available: false,
   },
   {
     id: uniqueId(),
     title: 'Inbox',
     icon: InboxIcon,
-    href: '/dashboard/#!',
+    href: '#!',
+    available: false,
   },
   {
     navlabel: true,
-    subheader: 'Other Information',
+    subheader: 'Authentication',
   },
   {
     id: uniqueId(),
-    title: 'Create an account',
+    title: 'Sign Up',
     icon: KnowledgebaseIcon,
     href: '/authentication/sign-up',
+    available: true,
   },
   {
     id: uniqueId(),
-    title: 'Log In',
+    title: 'Sign In',
     icon: ProductUpdateIcon,
     href: '/authentication/login',
+    available: true,
   },
 
   {
@@ -108,12 +118,14 @@ const Menuitems: IMenuitems[] = [
     title: 'Personal Settings',
     icon: PersonalSettingsIcon,
     href: '/settings/#!',
+    available: false,
   },
   {
     id: uniqueId(),
     title: 'Global Settings',
     icon: GlobalSettingsIcon,
     href: '/settings/#!',
+    available: false,
   },
 ];
 

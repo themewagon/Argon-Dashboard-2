@@ -34,7 +34,7 @@ const MainLayout = () => {
         flexDirection: 'row',
         minHeight: '100vh',
         width: 1,
-        maxWidth: 'calc(100% + 270px)',
+        // maxWidth: 'calc(100% + 270px)',
       }}
     >
       <Sidebar
@@ -49,7 +49,6 @@ const MainLayout = () => {
           display: 'flex',
           flexGrow: 1,
           width: 1,
-          maxWidth: 'calc(100% + 270px)',
           justifyContent: 'space-between',
         }}
       >

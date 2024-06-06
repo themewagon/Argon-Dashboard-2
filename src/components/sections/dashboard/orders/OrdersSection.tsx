@@ -89,7 +89,7 @@ const OrdersSection = () => {
         >
           <Typography variant="h6">Orders Over Time</Typography>
           <Stack direction="row" alignItems="center">
-            <FormControl sx={{ m: 1, minWidth: 80, height: 50 }}>
+            <FormControl sx={{ minWidth: 80 }}>
               <Select
                 variant="standard"
                 labelId="demo-select-small-label"
@@ -97,7 +97,7 @@ const OrdersSection = () => {
                 value={1}
                 label="Age"
                 size="medium"
-                sx={{ height: 30, mt: 1, minWidth: 80 }}
+                sx={{ height: 30, mt: 1, minWidth: 80, color: 'text.secondary' }}
                 // onChange={handleChange}
               >
                 <MenuItem value={1} selected>
@@ -107,13 +107,6 @@ const OrdersSection = () => {
                 <MenuItem value={3}>Last 48 hours</MenuItem>
               </Select>
             </FormControl>
-            {/* <Typography variant="subtitle1" color="text.secondary">
-              Last 12 hours
-            </Typography> */}
-            {/* <IconifyIcon
-              icon="iconamoon:arrow-down-2-light"
-              sx={{ ml: 1, width: 24, height: 24 }}
-            /> */}
           </Stack>
         </Stack>
         <Stack

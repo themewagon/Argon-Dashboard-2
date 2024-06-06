@@ -8,7 +8,7 @@ const ListSubheaderComponent: Components<Omit<Theme, 'components'>>['MuiListSubh
       ...theme.typography.body2,
       marginTop: theme.spacing(3),
       marginBottom: theme.spacing(0),
-      color: theme.palette.grey[500],
+      color: theme.palette.action.active,
       backgroundColor: theme.palette.transparent.main,
       padding: theme.spacing(0.4, 1.5),
       //   marginLeft: '-10px',

@@ -30,11 +30,22 @@ const NavMenuItem = ({ item, pathTo }: NavMenuItemType) => {
           sx={{
             py: 0.4,
             px: 0,
+            ...(!item.available && {
+              color: 'action.active',
+              opacity: 0.9,
+            }),
           }}
         >
           {itemIcon}
         </ListItemIcon>
-        <ListItemText>
+        <ListItemText
+          sx={{
+            ...(!item.available && {
+              color: 'action.active',
+              opacity: 0.9,
+            }),
+          }}
+        >
           {<>{`${item?.title}`}</>}
           <br />
           {item?.subtitle ? <Typography variant="caption">{item.subtitle}</Typography> : ''}

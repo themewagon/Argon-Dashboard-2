@@ -3,9 +3,9 @@ import RegisterForm from 'components/sections/authentication/RegisterForm';
 
 const SignUpPage = () => {
   return (
-    <Box mx="auto" sx={{ mx: 'auto', px: 1, width: 1, height: '100vh' }}>
-      <Grid container spacing={1} justifyContent="center" alignItems="center" height="100%">
-        <Grid item xs={12} sm={9} md={6} lg={4}>
+    <Box mx="auto" sx={{ mx: 'auto', p: 4, width: 1, height: 1 }}>
+      <Grid container spacing={1} justifyContent="center" alignItems="center">
+        <Grid item xs={12} sm={9} md={6} lg={5} xl={4}>
           <Card
             sx={{
               py: { xs: 3, sm: 6 },
@@ -24,9 +24,7 @@ const SignUpPage = () => {
                 variant="h1"
                 sx={{
                   typography: {
-                    sm: 'h1',
-                    xs: 'h3',
-                    whiteSpace: 'nowrap',
+                    whiteSpace: 'wrap',
                   },
                 }}
               >

@@ -1,6 +1,21 @@
-import { Box, Button, Divider, Link, Stack, TextField, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Divider,
+  IconButton,
+  InputAdornment,
+  Link,
+  Stack,
+  TextField,
+  Typography,
+} from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
+import { useState } from 'react';
 const RegisterForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
   return (
     <Box
       sx={{
@@ -9,7 +24,30 @@ const RegisterForm = () => {
     >
       <Stack spacing={3}>
         <TextField fullWidth variant="outlined" id="mail" type="text" label="Email" />
-        <TextField fullWidth variant="outlined" id="password" type="text" label="Password" />
+        <TextField
+          fullWidth
+          variant="outlined"
+          id="password"
+          label="Password"
+          type={showPassword ? 'text' : 'password'}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  edge="end"
+                >
+                  {showPassword ? (
+                    <IconifyIcon icon="el:eye-open" color="action.active" />
+                  ) : (
+                    <IconifyIcon icon="el:eye-close" color="action.focus" />
+                  )}
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
         <Button
           color="primary"
           variant="contained"
