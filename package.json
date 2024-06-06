@@ -2,7 +2,7 @@
   "name": "modernize-dashboard",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://themewagon.github.io/Modernize-Material-Admin",
+  "homepage": "https://themewagon.github.io/Modernize-Material-Admin/",
   "type": "module",
   "scripts": {
     "dev": "vite",
