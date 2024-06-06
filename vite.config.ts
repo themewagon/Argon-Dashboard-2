@@ -15,7 +15,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/Modernize-Material-Admin/',
+  base: '/Modernize-Material-Admin',
   preview: {
     port: 5000,
   },
