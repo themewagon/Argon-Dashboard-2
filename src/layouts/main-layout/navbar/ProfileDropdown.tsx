@@ -30,6 +30,7 @@ const ProfileDropdown = () => {
     <Box
       sx={{
         px: 0.75,
+        pr: 2,
       }}
     >
       <ButtonBase
@@ -64,7 +65,6 @@ const ProfileDropdown = () => {
           >
             X’eriya Ponald
           </Typography>
-          <IconifyIcon icon="iconamoon:arrow-down-2-light" width={24} height={24} />
         </Stack>
       </ButtonBase>
       <Menu

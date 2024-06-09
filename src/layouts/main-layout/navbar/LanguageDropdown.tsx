@@ -1,26 +1,27 @@
 import { MouseEvent, useState } from 'react';
 
-import { Box, MenuItem, Popover } from '@mui/material';
+import { MenuItem, Popover } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
+import IconifyIcon from 'components/base/IconifyIcon';
 
 // ----------------------------------------------------------------------
 
 const LANGS = [
   {
-    value: 'en-Us',
+    value: 'en-uk',
     label: 'English (Global)',
-    icon: '/Modernize-Material-Admin/flag-icons/gb.svg',
+    icon: 'flag:sh-4x3',
   },
   {
-    value: 'en-Uk',
+    value: 'en-us',
     label: 'English',
-    icon: '/Modernize-Material-Admin/flag-icons/us.svg',
+    icon: 'flag:us-4x3',
   },
 
   {
     value: 'bd',
     label: 'Bangla',
-    icon: '/Modernize-Material-Admin/flag-icons/bd.svg',
+    icon: 'flag:bd-4x3',
   },
 ];
 
@@ -47,15 +48,13 @@ const LanguageDropdown = () => {
           ...(open ? { bgcolor: 'primary.lighter' } : {}),
         }}
       >
-        <Box
-          component="img"
+        <IconifyIcon
+          icon="flag:sh-4x3"
           sx={{
             maxWidth: 1,
             borderRadius: 1,
             verticalAlign: 'middle',
           }}
-          src={LANGS[0].icon}
-          alt={LANGS[0].label}
         />
       </IconButton>
 
@@ -78,12 +77,7 @@ const LanguageDropdown = () => {
             onClick={handleClose}
             sx={{ typography: 'body2', py: 1 }}
           >
-            <Box
-              component="img"
-              alt={option.label}
-              src={option.icon}
-              sx={{ width: 28, height: 28, mr: 2 }}
-            />
+            <IconifyIcon icon={option.icon} sx={{ width: 28, height: 28, mr: 2 }} />
 
             {option.label}
           </MenuItem>

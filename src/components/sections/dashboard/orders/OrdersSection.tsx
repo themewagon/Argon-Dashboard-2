@@ -118,6 +118,7 @@ const OrdersSection = () => {
             sx={{
               gap: { xs: 2, sm: 4 },
               flexDirection: { xs: 'column', sm: 'row' },
+              alignItems: { xs: 'flex-end', sm: 'center' },
             }}
           >
             <div>
@@ -129,7 +130,7 @@ const OrdersSection = () => {
             <div>
               <Typography variant="h5">645</Typography>
               <Typography variant="subtitle1" color="text.secondary">
-                Orders on May 22
+                Orders on May 21
               </Typography>
             </div>
           </Stack>

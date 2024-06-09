@@ -1,89 +1,170 @@
-import { ButtonBase, Link, Stack, Typography } from '@mui/material';
+import { Box, ButtonBase, Container, Grid, Link, Stack, Typography } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 
-// links
+/* ----------------  Links Data  ------------------------------ */
 const data = [
-  { href: '/contact-us', title: 'Creative Team', key: 'team' },
-  { href: '/about-us', title: 'About Us', key: 'about' },
-  { href: '/blog', title: 'Blog ', key: 'blog' },
-  { href: '/license', title: 'License ', key: 'license' },
+  { href: '#!', title: 'Themewagon', key: 'team' },
+  { href: '#!', title: 'About Us', key: 'about' },
+  { href: '#!', title: 'Blog ', key: 'blog' },
+  { href: '#!', title: 'License ', key: 'license' },
 ];
+/* -------------------------------------------------------------------------- */
 const Footer = () => {
   return (
-    <Stack
-      direction={{ xs: 'column', lg: 'row' }}
-      justifyContent="space-between"
-      alignItems="center"
-      sx={{
-        px: 1.5,
-        spacing: 0,
-        pb: 2,
-      }}
-    >
-      <>
-        <Typography
-          variant="h6"
-          fontWeight={400}
-          textAlign="center"
-          sx={{
-            px: 1.5,
-          }}
-        >
-          &copy; {new Date().getFullYear()}, made with
-          <IconifyIcon
-            icon="ri:heart-fill"
-            sx={{
-              color: 'text.secondary',
-              mb: -0.5,
-              mx: 0.5,
-            }}
-          />
-          By
-          <Typography
-            component="span"
-            variant="h6"
-            color="text.primary"
-            sx={{
-              px: 1,
-            }}
-          >
-            Creative Tim
-          </Typography>
-          for a better web
-        </Typography>
-      </>
-      <Stack
-        flexDirection="row"
-        flexWrap="wrap"
-        alignItems="center"
-        justifyContent="center"
-        component="ul"
-        sx={{
-          listStyle: 'none',
-          mt: { xs: 3, lg: 0 },
-          mb: 0,
-          p: 0,
-        }}
-      >
-        {data?.map((link) => (
-          <ButtonBase
-            key={link.key}
-            component={Link}
-            href={link.href}
-            target="_blank"
-            sx={{
-              px: 2,
-              lineHeight: 1,
-            }}
-          >
-            <Typography variant="button" fontWeight="regular" color="text.secondary">
-              {link.title}
-            </Typography>
-          </ButtonBase>
-        ))}
-      </Stack>
-    </Stack>
+    <>
+      <Box component="section" textAlign="center" py={0}>
+        <Container>
+          <Box pb={3}>
+            <Grid container justifyContent="space-between" alignItems="center">
+              <Grid item xs={12} lg="auto">
+                <Stack
+                  alignItems="center"
+                  sx={{
+                    flexDirection: {
+                      xs: 'column',
+                      lg: 'row',
+                    },
+                    gap: 1,
+                  }}
+                >
+                  <Typography variant="h6" fontWeight="regular" mb={0}>
+                    &copy; {new Date().getFullYear()}, Your Company Inc.
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    mb={0}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    fontWeight="regular"
+                  >
+                    Made with
+                    <IconifyIcon icon="ri:heart-fill" sx={{ mx: 1, color: 'error.main' }} />
+                    by
+                    <Link
+                      href="https://themewagon.com/"
+                      target="_blank"
+                      color="inherit"
+                      sx={{ textDecoration: 'none', ml: 1, fontWeight: 'bold' }}
+                    >
+                      ThemeWagon
+                    </Link>
+                  </Typography>
+                </Stack>
+              </Grid>
+              <Grid item xs={12} lg="auto" mb={{ xs: 1, lg: 0 }} alignItems="center">
+                <Stack
+                  flexDirection="row"
+                  flexWrap="wrap"
+                  alignItems="center"
+                  justifyContent="center"
+                  component="ul"
+                  sx={{
+                    listStyle: 'none',
+                    mt: { xs: 3, lg: 0 },
+                    mb: 0,
+                    p: 0,
+                  }}
+                >
+                  {data?.map((link) => (
+                    <ButtonBase
+                      key={link.key}
+                      component={Link}
+                      href={`${link.href}`}
+                      sx={{
+                        px: 2,
+                        lineHeight: 1,
+                      }}
+                    >
+                      <Typography variant="button" fontWeight="regular" color="text.secondary">
+                        {link.title}
+                      </Typography>
+                    </ButtonBase>
+                  ))}
+                </Stack>
+              </Grid>
+            </Grid>
+          </Box>
+        </Container>
+      </Box>
+    </>
   );
 };
 
 export default Footer;
+
+{
+  /* <Stack
+        direction={{ xs: 'column', lg: 'row' }}
+        justifyContent="space-between"
+        alignItems="center"
+        sx={{
+          px: 1.5,
+          spacing: 0,
+          pb: 2,
+        }}
+      >
+        <>
+          <Typography
+            variant="h6"
+            fontWeight={400}
+            textAlign="center"
+            sx={{
+              px: 1.5,
+            }}
+          >
+            &copy; {new Date().getFullYear()}, made with
+            <IconifyIcon
+              icon="ri:heart-fill"
+              sx={{
+                color: 'text.secondary',
+                mb: -0.5,
+                mx: 0.5,
+              }}
+            />
+            By
+            <Typography
+              component="span"
+              variant="h6"
+              color="text.primary"
+              sx={{
+                px: 1,
+              }}
+            >
+              Creative Tim
+            </Typography>
+            for a better web
+          </Typography>
+        </>
+        <Stack
+          flexDirection="row"
+          flexWrap="wrap"
+          alignItems="center"
+          justifyContent="center"
+          component="ul"
+          sx={{
+            listStyle: 'none',
+            mt: { xs: 3, lg: 0 },
+            mb: 0,
+            p: 0,
+          }}
+        >
+          {data?.map((link) => (
+            <ButtonBase
+              key={link.key}
+              component={Link}
+              href={link.href}
+              target="_blank"
+              sx={{
+                px: 2,
+                lineHeight: 1,
+              }}
+            >
+              <Typography variant="button" fontWeight="regular" color="text.secondary">
+                {link.title}
+              </Typography>
+            </ButtonBase>
+          ))}
+        </Stack>
+      </Stack> */
+}

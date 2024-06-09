@@ -1,9 +1,9 @@
 import { AppBar, Box, IconButton, InputAdornment, Stack, TextField, Toolbar } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import LanguageDropdown from 'layouts/main-layout/navbar/LanguageDropdown';
-import MessageDropdown from './navbar/MessageDropdown';
 import NotificationDropdown from './navbar/NotificationDropdown';
 import ProfileDropdown from './navbar/ProfileDropdown';
+
 interface MainNavbarProps {
   onDrawerToggle: () => void;
 }
@@ -33,12 +33,22 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
               ),
             }}
             variant="standard"
+            sx={{
+              display: { xs: 'none', lg: 'block' },
+            }}
+          />
+          <IconifyIcon
+            icon="majesticons:search-line"
+            fontSize={28}
+            color="action.active"
+            sx={{
+              display: { xs: 'block', lg: 'none' },
+            }}
           />
         </Stack>
         <Box flexGrow={1} />
         <Stack spacing={0.5} direction="row" alignItems="center">
           <LanguageDropdown />
-          <MessageDropdown />
           <NotificationDropdown />
           <ProfileDropdown />
         </Stack>

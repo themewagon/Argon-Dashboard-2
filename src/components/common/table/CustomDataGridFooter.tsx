@@ -44,10 +44,11 @@ const CustomDataGridFooter = (props: CustomFooterProps) => {
         </>
       )}
       <Pagination
+        shape="rounded"
         color="primary"
         count={pageCount}
         page={page + 1}
-        onChange={(event, value) => apiRef.current.setPage(value - 1)}
+        onChange={(_event, value) => apiRef.current.setPage(value - 1)}
         renderItem={(item) => (
           <PaginationItem
             {...item}
@@ -58,7 +59,7 @@ const CustomDataGridFooter = (props: CustomFooterProps) => {
                 </Typography>
               ),
               next: () => (
-                <Typography fontWeight={400} variant="caption" sx={{ pr: 0 }}>
+                <Typography fontWeight="regular" variant="caption" sx={{ pr: 0 }}>
                   Next
                 </Typography>
               ),

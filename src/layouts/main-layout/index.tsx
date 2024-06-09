@@ -5,7 +5,7 @@ import Footer from './Footer';
 import MainNavbar from './MainNavbar';
 import Sidebar from './sidebar/Sidbar';
 
-const drawerHeight = 170;
+const drawerWidth = 270;
 
 const MainLayout = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -32,7 +32,6 @@ const MainLayout = () => {
         height: 1,
         position: 'relative',
         flexDirection: 'row',
-        minHeight: '100vh',
         width: 1,
         // maxWidth: 'calc(100% + 270px)',
       }}
@@ -49,12 +48,13 @@ const MainLayout = () => {
           display: 'flex',
           flexGrow: 1,
           width: 1,
+          maxWidth: { xs: 1, lg: `calc(100% - ${drawerWidth}px)` },
           justifyContent: 'space-between',
         }}
       >
         <MainNavbar onDrawerToggle={handleDrawerToggle} />
         <Container>
-          <Box sx={{ minHeight: `calc(100vh - ${drawerHeight}px)` }}>
+          <Box>
             <Outlet />
           </Box>
         </Container>

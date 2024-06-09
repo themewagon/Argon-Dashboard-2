@@ -1,4 +1,5 @@
 import { Box, Button, Container, Link, Typography } from '@mui/material';
+import Image from 'components/base/Image';
 
 const NotFoundPage = () => {
   return (
@@ -25,8 +26,8 @@ const NotFoundPage = () => {
           this may have caused. Thank you for your understanding!
         </Typography>
 
-        <Box
-          component="img"
+        <Image
+          alt="Not Found Image"
           src="/images/illustration_404.svg"
           sx={{
             mx: 'auto',

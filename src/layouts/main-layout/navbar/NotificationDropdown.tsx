@@ -48,7 +48,7 @@ const NotificationDropdown = () => {
         }}
       >
         <Badge color="primary" badgeContent={5}>
-          <NotificationIcon sx={{ marginLeft: -1 }} />
+          <NotificationIcon />
         </Badge>
       </IconButton>
       <Menu
