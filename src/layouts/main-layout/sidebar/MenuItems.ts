@@ -36,7 +36,7 @@ const Menuitems: IMenuitems[] = [
     id: uniqueId(),
     title: 'Dashboard',
     icon: HomeIcon,
-    href: '/dashboard/default',
+    href: '/',
     available: true,
   },
   {
