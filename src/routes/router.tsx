@@ -1,10 +1,9 @@
 import PageLoader from 'components/loading/PageLoader';
 import Splash from 'components/loading/Splash';
-
 import AuthLayout from 'layouts/auth-layout';
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-import { rootPaths } from './path';
+import paths, { rootPaths } from './path';
 
 /* ---------------- Lazy loads various components ------------------------- */
 const App = lazy(() => import('App'));
@@ -31,7 +30,7 @@ export const routes = [
     ),
     children: [
       {
-        path: rootPaths.root,
+        path: paths.default,
         element: (
           <Suspense fallback={<PageLoader />}>
             <MainLayout />
@@ -43,31 +42,31 @@ export const routes = [
             element: <Dashboard />,
           },
           {
-            path: 'categories',
+            path: paths.categories,
             element: <CategoriesPage />,
           },
           {
-            path: 'products',
+            path: paths.products,
             element: <ProductsPage />,
           },
           {
-            path: 'customers',
+            path: paths.customers,
             element: <CustomersPage />,
           },
           {
-            path: 'orders',
+            path: paths.orders,
             element: <OrdersPage />,
           },
           {
-            path: 'reports',
+            path: paths.reports,
             element: <ReportsPage />,
           },
           {
-            path: 'coupons',
+            path: paths.coupons,
             element: <CouponsPage />,
           },
           {
-            path: 'inbox',
+            path: paths.inbox,
             element: <InboxPage />,
           },
         ],
@@ -77,11 +76,11 @@ export const routes = [
         element: <AuthLayout />,
         children: [
           {
-            path: 'login',
+            path: paths.login,
             element: <LoginPage />,
           },
           {
-            path: 'sign-up',
+            path: paths.signup,
             element: <SignUpPage />,
           },
         ],
@@ -90,14 +89,14 @@ export const routes = [
         path: rootPaths.errorRoot,
         children: [
           {
-            path: '404',
+            path: paths.notFound,
             element: <NotFoundPage />,
           },
         ],
       },
       {
         path: '*',
-        element: <Navigate to={rootPaths.root} replace />,
+        element: <Navigate to={paths.notFound} replace />,
       },
     ],
   },
