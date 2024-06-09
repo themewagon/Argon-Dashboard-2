@@ -97,7 +97,7 @@ export const routes = [
       },
       {
         path: '*',
-        element: <Navigate to="/error/404" replace />,
+        element: <Navigate to={rootPaths.root} replace />,
       },
     ],
   },
@@ -106,4 +106,5 @@ export const routes = [
 const router = createBrowserRouter(routes, {
   basename: '/Modernize-Material-Admin',
 });
+
 export default router;
