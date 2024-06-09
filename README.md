@@ -100,7 +100,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <a name="readme-top">
-<div align="">
+<div align="center">
 <a align="center" href="https://github.com/themewagon/Argon-Dashboard-2/graphs/contributors">
 <img src="https://contrib.rocks/image?repo=themewagon/Argon-Dashboard-2" /><br />
 </a></a></div>

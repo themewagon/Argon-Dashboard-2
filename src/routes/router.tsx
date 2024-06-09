@@ -103,7 +103,7 @@ export const routes = [
 ];
 
 const router = createBrowserRouter(routes, {
-  basename: '/Modernize-Material-Admin',
+  basename: '/modernize-mui-admin',
 });
 
 export default router;

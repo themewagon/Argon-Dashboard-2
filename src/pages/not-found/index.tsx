@@ -28,7 +28,7 @@ const NotFoundPage = () => {
 
         <Image
           alt="Not Found Image"
-          src="/Modernize-Material-Admin/images/illustration_404.svg"
+          src="/modernize-mui-admin/images/illustration_404.svg"
           sx={{
             mx: 'auto',
             height: 260,
