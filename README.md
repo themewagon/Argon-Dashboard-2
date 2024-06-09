@@ -10,7 +10,7 @@
       </a>    
 </center>
 <center>
-       <h1 style="display: inline-block; margin-left: 10px;">Modernize-Material-Admin-</h1>
+       <h1 style="display: inline-block; margin-left: 10px;">Modernize Material Admin Dashboard</h1>
 </center>
 </div>
 <br />
