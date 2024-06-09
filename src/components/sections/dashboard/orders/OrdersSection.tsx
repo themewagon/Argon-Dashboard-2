@@ -85,6 +85,7 @@ const OrdersSection = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
             mb: 3,
+            gap: 1,
           }}
         >
           <Typography variant="h6">Orders Over Time</Typography>
@@ -97,7 +98,12 @@ const OrdersSection = () => {
                 value={1}
                 label="Age"
                 size="medium"
-                sx={{ height: 30, mt: 1, minWidth: 80, color: 'text.secondary' }}
+                sx={{
+                  mt: 1,
+                  minWidth: 80,
+                  color: 'text.secondary',
+                  alignItems: 'center',
+                }}
                 // onChange={handleChange}
               >
                 <MenuItem value={1} selected>
@@ -111,7 +117,7 @@ const OrdersSection = () => {
         </Stack>
         <Stack
           direction="row"
-          sx={{ justifyContent: 'space-between', alignItems: 'center', mt: 2, px: 1.5 }}
+          sx={{ justifyContent: 'space-between', alignItems: 'flex-end', mt: 2, px: 1.5 }}
         >
           <Stack
             spacing={{ xs: 0 }}

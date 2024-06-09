@@ -4,7 +4,7 @@ import Splash from 'components/loading/Splash';
 import AuthLayout from 'layouts/auth-layout';
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-import paths, { rootPaths } from './path';
+import { rootPaths } from './path';
 
 /* ---------------- Lazy loads various components ------------------------- */
 const App = lazy(() => import('App'));
@@ -21,6 +21,7 @@ const CouponsPage = lazy(() => import('pages/coupons'));
 const InboxPage = lazy(() => import('pages/inbox'));
 const NotFoundPage = lazy(() => import('pages/not-found'));
 /* -------------------------------------------------------------------------- */
+
 export const routes = [
   {
     element: (
@@ -30,11 +31,7 @@ export const routes = [
     ),
     children: [
       {
-        index: true,
-        element: <Navigate to={paths.default} />,
-      },
-      {
-        path: rootPaths.pagesRoot,
+        path: rootPaths.root,
         element: (
           <Suspense fallback={<PageLoader />}>
             <MainLayout />
@@ -43,38 +40,34 @@ export const routes = [
         children: [
           {
             index: true,
-            element: <Navigate to={paths.default} />,
-          },
-          {
-            path: paths.default,
             element: <Dashboard />,
           },
           {
-            path: paths.categories,
+            path: 'categories',
             element: <CategoriesPage />,
           },
           {
-            path: paths.products,
+            path: 'products',
             element: <ProductsPage />,
           },
           {
-            path: paths.customers,
+            path: 'customers',
             element: <CustomersPage />,
           },
           {
-            path: paths.orders,
+            path: 'orders',
             element: <OrdersPage />,
           },
           {
-            path: paths.customers,
+            path: 'reports',
             element: <ReportsPage />,
           },
           {
-            path: paths.coupons,
+            path: 'coupons',
             element: <CouponsPage />,
           },
           {
-            path: paths.inbox,
+            path: 'inbox',
             element: <InboxPage />,
           },
         ],
@@ -84,11 +77,11 @@ export const routes = [
         element: <AuthLayout />,
         children: [
           {
-            path: paths.login,
+            path: 'login',
             element: <LoginPage />,
           },
           {
-            path: paths.signup,
+            path: 'sign-up',
             element: <SignUpPage />,
           },
         ],
@@ -97,14 +90,14 @@ export const routes = [
         path: rootPaths.errorRoot,
         children: [
           {
-            path: paths[404],
+            path: '404',
             element: <NotFoundPage />,
           },
         ],
       },
       {
         path: '*',
-        element: <Navigate to={paths[404]} replace />,
+        element: <Navigate to="/error/404" replace />,
       },
     ],
   },

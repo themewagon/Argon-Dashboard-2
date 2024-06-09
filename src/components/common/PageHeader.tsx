@@ -17,7 +17,13 @@ const PageHeader = ({ children }: PageHeaderProps) => {
     >
       <Typography variant="h2">{children}</Typography>
       <Box flexGrow={1} />
-      <Button variant="outlined" color="primary" startIcon={<GlobalSettingsIcon />} size="large">
+      <Button
+        variant="outlined"
+        color="primary"
+        startIcon={<GlobalSettingsIcon />}
+        size="large"
+        sx={{ ml: 2 }}
+      >
         Manage
       </Button>
     </Stack>

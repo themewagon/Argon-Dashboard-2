@@ -28,11 +28,12 @@ const NotFoundPage = () => {
 
         <Image
           alt="Not Found Image"
-          src="/images/illustration_404.svg"
+          src="/Modernize-Material-Admin/images/illustration_404.svg"
           sx={{
             mx: 'auto',
             height: 260,
             my: { xs: 5, sm: 10 },
+            width: { xs: 1, sm: 340 },
           }}
         />
 

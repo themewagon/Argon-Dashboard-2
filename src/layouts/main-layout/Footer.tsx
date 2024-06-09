@@ -45,7 +45,13 @@ const Footer = () => {
                       href="https://themewagon.com/"
                       target="_blank"
                       color="inherit"
-                      sx={{ textDecoration: 'none', ml: 1, fontWeight: 'bold' }}
+                      sx={{
+                        textDecoration: 'none',
+                        transition: 'background 1s, color 0.5s',
+                        ml: 1,
+                        fontWeight: 'bold',
+                        '&:hover': { color: 'primary.main' },
+                      }}
                     >
                       ThemeWagon
                     </Link>
@@ -74,6 +80,7 @@ const Footer = () => {
                       sx={{
                         px: 2,
                         lineHeight: 1,
+                        '& :hover': { color: 'primary.main' },
                       }}
                     >
                       <Typography variant="button" fontWeight="regular" color="text.secondary">
