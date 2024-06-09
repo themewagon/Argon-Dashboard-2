@@ -2,10 +2,19 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="left">
-  <a href="public/favicon.ico">
-    <img src="public/favicon.ico" alt="Logo" width="50" height="50">
-  </a>
+<!-- PROJECT LOGO -->
+<div align="left" >
+<center>
+      <a href="public/favicon.ico" align="center">
+        <img src="public/favicon.ico" alt="Logo" width="50" height="50">
+      </a>    
+</center>
+<center>
+       <h1 style="display: inline-block; margin-left: 10px;">Modernize-Material-Admin-</h1>
+</center>
+</div>
+<br />
+
 <br />
 <br />
 <!-- TABLE OF CONTENTS -->
