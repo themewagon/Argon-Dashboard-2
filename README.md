@@ -2,9 +2,9 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
-  <a href="public/Logo-White.png">
-    <img src="public/Logo-White.png" alt="Logo" width="50" height="50">
+<div align="left">
+  <a href="public/favicon.ico">
+    <img src="public/favicon.ico" alt="Logo" width="50" height="50">
   </a>
 <br />
 <br />
@@ -24,13 +24,9 @@
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    </li>    
+    <li><a href="#license">License</a></li>    
+    <li><a href="#license">Acknowledgments</a></li>
   </ol>
 </details>
 <br />
@@ -43,7 +39,7 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+### <h3>Built Width :</h3>
 
 [![React][React.js]][React-url]
 [![Material][Material]][React-url]
@@ -57,27 +53,32 @@
 
 ### Prerequisites
 
+Before you begin, ensure you have met the following prerequisites:
+
+- [Node.js](https://nodejs.org/) installed on your local machine
+- npm or yarn package manager installed with Node.js
+
 ### Installation
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Follow these steps to get your project up and running:
 
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ROADMAP -->
-
-## Roadmap
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## Contributing
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/themewagon/Modernize-Material-Admin.git
+   ```
+2. **Navigate to the project directory**
+   ```sh
+   cd Modernize-Material-Admin
+   ```
+3. **Install dependencies**
+   ```sh
+   npm install
+   ```
+4. **Start the development server**
+   ```sh
+   npm run dev
+   ```
+   Open your web browser and navigate to http://localhost:3000 to view this application.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -86,12 +87,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTACT -->
-
-## Contact
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -116,7 +111,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: public/argon-db.png
+[product-screenshot]: public/db.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
@@ -132,4 +127,4 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 [Material]: https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white
-[Apache-chart]: https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.js&logoColor=white
+[Apache-chart]: https://img.shields.io/badge/echart-4.7.0-green
