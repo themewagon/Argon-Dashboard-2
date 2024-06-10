@@ -1,7 +1,7 @@
 const InboxPage = () => {
   return (
     <div>
-      <h1>InboxPage Page</h1>
+      <h1>Inbox Page</h1>
     </div>
   );
 };

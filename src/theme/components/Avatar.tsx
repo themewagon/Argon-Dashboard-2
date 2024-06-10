@@ -2,9 +2,6 @@ import { Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
 
 const AvatarComponent: Components<Omit<Theme, 'components'>>['MuiAvatar'] = {
-  defaultProps: {
-    // variant: 'rounded',
-  },
   styleOverrides: {
     root: ({ theme }) => ({
       boxShadow: theme.shadows[0],

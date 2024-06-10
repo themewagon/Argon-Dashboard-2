@@ -23,8 +23,6 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
         <Drawer
           anchor="left"
           open
-          // onMouseEnter={onHoverEnter}
-          // onMouseLeave={onHoverLeave}
           variant="permanent"
           sx={{
             flexShrink: 0,
@@ -53,14 +51,12 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
                 sx={{
                   borderRight: 1,
                   borderColor: 'text.disabled',
-                  //   height: 'calc(100vh + 68px)',
                 }}
               >
                 <SidebarItems />
                 <SidebarBanner />
               </Box>
             </SimpleBar>
-            {/* <SidebarItems /> */}
           </Box>
         </Drawer>
       </Box>

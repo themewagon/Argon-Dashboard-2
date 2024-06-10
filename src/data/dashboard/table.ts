@@ -17,7 +17,6 @@ export interface ItemType {
   image?: string;
 }
 
-// Define the TopProductsRowData interface using the Item type
 export interface TopProductsRowData {
   id: string;
   product: ItemType;

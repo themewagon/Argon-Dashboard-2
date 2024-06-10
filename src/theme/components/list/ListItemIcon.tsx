@@ -1,13 +1,12 @@
 import { Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
-import pxToRem from 'theme/functions/pxToRem';
 
 const ListItemIconComponent: Components<Omit<Theme, 'components'>>['MuiListItemIcon'] = {
   defaultProps: {},
   styleOverrides: {
     root: ({ theme }) => ({
       color: 'inherit',
-      minWidth: pxToRem(36),
+      //   minWidth: pxToRem(36),
       borderRadius: theme.shape.borderRadius * 2,
       //   display: 'grid',
       //   placeItems: 'center',
@@ -25,10 +24,3 @@ const ListItemIconComponent: Components<Omit<Theme, 'components'>>['MuiListItemI
 };
 
 export default ListItemIconComponent;
-//    sx={{
-//             p: '3px 0',
-//             color:
-//               level > 1 && pathDirect === item?.href
-//                 ? `${theme.palette.primary.main}!important`
-//                 : 'inherit',
-//           }}

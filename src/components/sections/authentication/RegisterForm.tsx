@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import { useState } from 'react';
+
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => {

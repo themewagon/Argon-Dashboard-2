@@ -16,14 +16,10 @@ const FilledInputComponent: Components<Omit<Theme, 'components'>>['MuiFilledInpu
 
     input: ({ theme }) => ({
       fontSize: theme.typography.pxToRem(14),
-      //   paddingTop: theme.spacing(0.75),
-      //   paddingBottom: theme.spacing(0.75),
-      //   paddingRight: 0,
       height: pxToRem(22),
       paddingTop: theme.spacing(1.5),
       paddingRight: 1,
       paddingBottom: theme.spacing(1.5),
-      //   height: theme.typography.pxToRem(24),
     }),
     inputSizeSmall: ({ theme }) => ({
       paddingTop: theme.spacing(0.75),

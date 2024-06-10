@@ -49,20 +49,6 @@ declare module '@mui/material/styles/createTypography' {
     fontWeightSemiBold: number;
   }
 }
-// type PxToRemFunction = (number: number, baseNumber?: number) => string;
-
-// declare module '@mui/material/styles/createTheme' {
-//   interface ThemeOptions {
-//     functions?: {
-//       [functionName: string]: PxToRemFunction;
-//     };
-//   }
-//   interface Theme {
-//     functions?: {
-//       [functionName: string]: PxToRemFunction;
-//     };
-//   }
-// }
 
 export const theme = createTheme({
   palette,

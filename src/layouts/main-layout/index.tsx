@@ -1,8 +1,8 @@
 import { Box, Container, Stack } from '@mui/material';
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import Footer from './Footer';
-import MainNavbar from './MainNavbar';
+import Footer from './footer/Footer';
+import MainNavbar from './navbar/MainNavbar';
 import Sidebar from './sidebar/Sidbar';
 
 const drawerWidth = 270;
@@ -33,7 +33,6 @@ const MainLayout = () => {
         position: 'relative',
         flexDirection: 'row',
         width: 1,
-        // maxWidth: 'calc(100% + 270px)',
       }}
     >
       <Sidebar

@@ -2,7 +2,6 @@ import { alpha, Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
 
 const CardComponent: Components<Omit<Theme, 'components'>>['MuiCard'] = {
-  defaultProps: {},
   styleOverrides: {
     root: ({ theme }) => ({
       display: 'flex',

@@ -59,12 +59,7 @@ export const orange = {
   800: '#933a20',
   900: '#622616',
 };
-export const yellow = {
-  500: '#fbb140',
-};
-export const pink = {
-  500: '#D63384',
-};
+
 export const silver = {
   500: '#d8d8d8',
 };
@@ -79,19 +74,6 @@ export const green = {
   700: '#06A561',
   800: '#09291b',
   900: '#04150e',
-};
-
-export const skyBlue = {
-  50: '#e7f1fd',
-  100: '#cfe3fc',
-  200: '#a0c6f9',
-  300: '#70aaf5',
-  400: '#418df2',
-  500: '#1171ef',
-  600: '#0f66d7',
-  700: '#0a448f',
-  800: '#072d60',
-  900: '#052248',
 };
 
 export const turquoise = {

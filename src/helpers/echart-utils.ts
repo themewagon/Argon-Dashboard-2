@@ -9,7 +9,6 @@ export const tooltipFormatterList = (params: CallbackDataParams[]) => {
       color: param.color,
     };
   });
-  // ${el.seriesName}, ${el.label}
   const tooltipItem = result
     .map((el, index: number) => {
       return `<h6 style="font-size: 12px; margin: 0; font-weight: 600;" ${

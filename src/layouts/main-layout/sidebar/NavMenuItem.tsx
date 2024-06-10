@@ -11,7 +11,6 @@ import { IMenuitems } from './MenuItems';
 
 interface NavMenuItemType {
   item: IMenuitems;
-  //   onClick: (event: React.MouseEvent<HTMLElement>) => void;
   pathTo: string;
 }
 const NavMenuItem = ({ item, pathTo }: NavMenuItemType) => {
@@ -24,7 +23,6 @@ const NavMenuItem = ({ item, pathTo }: NavMenuItemType) => {
         href={item?.href}
         disabled={item?.disabled}
         selected={pathTo === item?.href}
-        // onClick={onClick}
       >
         <ListItemIcon
           sx={{

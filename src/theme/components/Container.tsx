@@ -5,7 +5,6 @@ const ContainerComponent: Components<Omit<Theme, 'components'>>['MuiContainer'] 
   defaultProps: { maxWidth: false, disableGutters: true },
   styleOverrides: {
     root: ({ theme }) => ({
-      //   maxWidth: '100%!important',
       paddingLeft: theme.spacing(3),
       paddingRight: theme.spacing(3),
       [theme.breakpoints.up('lg')]: {

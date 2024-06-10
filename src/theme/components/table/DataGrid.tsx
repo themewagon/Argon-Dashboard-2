@@ -14,6 +14,9 @@ const DataGridComponent: DataGridComponents<Omit<Theme, 'components'>>['MuiDataG
       paddingBottom: theme.spacing(0),
       '--DataGrid-containerBackground': theme.palette.common.white,
       '--DataGrid-rowBorderColor': theme.palette.action.selected,
+      '& .MuiDataGrid-filler': {
+        flex: 0,
+      },
     }),
     overlayWrapper: {
       height: 'auto !important',
@@ -93,9 +96,9 @@ const DataGridComponent: DataGridComponents<Omit<Theme, 'components'>>['MuiDataG
       flex: 1,
     }),
     virtualScroller: {
-      minHeight: '3em',
       display: 'flex',
       flexDirection: 'column',
+      //   height: pxToRem(332),
     },
   },
 };

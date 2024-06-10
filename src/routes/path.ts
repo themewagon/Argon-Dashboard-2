@@ -5,6 +5,9 @@ export const rootPaths = {
   errorRoot: '/error',
 };
 
+/**
+ * Object containing various paths used in the application.
+ */
 const paths = {
   default: `${rootPaths.root}`,
   categories: `${rootPaths.pagesRoot}categories`,

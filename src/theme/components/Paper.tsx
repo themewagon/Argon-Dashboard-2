@@ -2,7 +2,6 @@ import { Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
 
 const PaperComponent: Components<Omit<Theme, 'components'>>['MuiPaper'] = {
-  defaultProps: {},
   styleOverrides: {
     root: {
       backgroundClip: 'border-box',

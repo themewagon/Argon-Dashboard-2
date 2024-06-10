@@ -7,7 +7,6 @@ const BadgeComponent: Components<Omit<Theme, 'components'>>['MuiBadge'] = {
       minWidth: theme.spacing(2),
       height: theme.spacing(2),
       padding: 0,
-      //   transform: 'scale(1) translate(30%, -20%)',
     }),
     anchorOriginTopRightRectangular: {
       transform: 'scale(1) translate(30%, -20%)',

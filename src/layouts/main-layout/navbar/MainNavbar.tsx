@@ -1,8 +1,8 @@
 import { AppBar, Box, IconButton, InputAdornment, Stack, TextField, Toolbar } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import LanguageDropdown from 'layouts/main-layout/navbar/LanguageDropdown';
-import NotificationDropdown from './navbar/NotificationDropdown';
-import ProfileDropdown from './navbar/ProfileDropdown';
+import NotificationDropdown from './NotificationDropdown';
+import ProfileDropdown from './ProfileDropdown';
 
 interface MainNavbarProps {
   onDrawerToggle: () => void;

@@ -1,10 +1,6 @@
 import { Components, Theme } from '@mui/material/styles';
 
 declare module '@mui/material/Button' {
-  //   interface ButtonPropsVariantOverrides {
-  //     dashed: true;
-  //   }
-
   interface ButtonPropsColorOverrides {
     neutral: true;
   }

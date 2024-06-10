@@ -3,7 +3,6 @@ import { Components } from '@mui/material/styles/components';
 import typography from 'theme/typography';
 
 const ChipComponent: Components<Omit<Theme, 'components'>>['MuiChip'] = {
-  defaultProps: {},
   styleOverrides: {
     root: ({ theme }) => ({
       ...typography.subtitle1,

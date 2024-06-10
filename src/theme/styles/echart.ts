@@ -1,7 +1,6 @@
 const echart = () => ({
   '.echarts-for-react': {
     overflow: 'hidden',
-    // width: ' auto!important',
     height: '100% !important',
 
     '&:not(&.echart-map)': {

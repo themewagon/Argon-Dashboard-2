@@ -7,11 +7,9 @@ const CheckboxComponent: Components<Omit<Theme, 'components'>>['MuiCheckbox'] = 
   defaultProps: {
     icon: <CheckboxIcon />,
     checkedIcon: <CheckboxCheckedIcon />,
-    // indeterminateIcon: <CheckBoxIndeterminateIcon viewBox="0 0 16 16" />,
   },
   styleOverrides: {
     root: ({ theme }) => ({
-      //   padding: 0,
       '&:hover': {
         backgroundColor: theme.palette.transparent.main,
       },

@@ -9,7 +9,6 @@ import {
   MenuItem,
   Stack,
   Typography,
-  useTheme,
 } from '@mui/material';
 import NotificationIcon from 'components/icons/NotificationIcon';
 import { notificationOptions } from 'data/navbar/menu-data';
@@ -29,7 +28,6 @@ function notificationsLabel(count: number) {
 const NotificationDropdown = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const open = Boolean(anchorEl);
-  const theme = useTheme();
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -65,7 +63,7 @@ const NotificationDropdown = () => {
         slotProps={{
           paper: {
             style: {
-              width: theme.spacing(42),
+              width: 326,
             },
           },
         }}
@@ -98,7 +96,7 @@ const NotificationDropdown = () => {
                     width: 200,
                   }}
                 >
-                  <Typography variant="subtitle2" color="textPrimary" fontWeight={600} noWrap>
+                  <Typography variant="subtitle2" color="textPrimary" fontWeight="medium" noWrap>
                     {notification.title}
                   </Typography>
                   <Typography color="textSecondary" variant="subtitle2" noWrap>

@@ -21,11 +21,6 @@ const OutlinedInputComponent: Components<Omit<Theme, 'components'>>['MuiOutlined
           borderColor: `${theme.palette[ownerState.color!]?.main}` || theme.palette.primary.main,
         },
       },
-      //   '&.Mui-focused fieldset': {
-      //     border: 1,
-
-      //     borderColor: 'primary.lighter',
-      //   },
     }),
     input: ({ theme }) => ({
       height: pxToRem(22),
@@ -38,7 +33,6 @@ const OutlinedInputComponent: Components<Omit<Theme, 'components'>>['MuiOutlined
       paddingBottom: theme.spacing(0.75),
     }),
     notchedOutline: ({ theme }) => ({
-      //   borderColor: 'transparent !important',
       borderColor: theme.palette.action.focus,
     }),
     colorSecondary: ({ theme }) => ({

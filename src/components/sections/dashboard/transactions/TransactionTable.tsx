@@ -1,4 +1,4 @@
-import { Box, Chip, LinearProgress, Typography } from '@mui/material';
+import { Chip, LinearProgress, Stack, Typography } from '@mui/material';
 import { DataGrid, GridApi, GridColDef, GridSlots, useGridApiRef } from '@mui/x-data-grid';
 import { ChangeEvent, useEffect, useState } from 'react';
 import SimpleBar from 'simplebar-react';
@@ -72,10 +72,10 @@ const TransactionTable = () => {
   };
 
   return (
-    <Box
+    <Stack
       sx={{
         overflow: 'auto',
-        minHeight: 0,
+        // minHeight: 0,
         position: 'relative',
         height: { xs: 'auto', sm: 1 },
         width: 1,
@@ -124,10 +124,11 @@ const TransactionTable = () => {
             borderColor: 'active.selected',
             height: 1,
             width: 1,
+            tableLayout: 'fixed',
           }}
         />
       </SimpleBar>
-    </Box>
+    </Stack>
   );
 };
 

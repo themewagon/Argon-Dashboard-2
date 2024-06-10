@@ -6,11 +6,8 @@ const MenuComponent: Components<Omit<Theme, 'components'>>['MuiMenu'] = {
     disableScrollLock: true,
   },
   styleOverrides: {
-    // root: { border: '1px solid red' },
     paper: ({ theme }) => ({
       margin: 'auto',
-      //   display: 'flex',
-      //   justifyContent: 'center',
       borderRadius: theme.spacing(0.75),
       marginTop: theme.spacing(1),
       color: theme.palette.text.secondary,

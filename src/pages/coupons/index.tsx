@@ -1,7 +1,7 @@
 const CouponsPage = () => {
   return (
     <div>
-      <h1>CouponsPage Page</h1>
+      <h1>Coupons Page</h1>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { Stack, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import NoDataIcon from 'components/icons/table/NoDataIcon';
+import NoDataIcon from 'components/icons/NoDataIcon';
 
 function CustomDataGridNoRows() {
   return (

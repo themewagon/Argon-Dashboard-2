@@ -8,7 +8,6 @@ import {
   MenuItem,
   Stack,
   Typography,
-  useTheme,
 } from '@mui/material';
 import AvatarImage from 'assets/images/avatar.svg';
 import IconifyIcon from 'components/base/IconifyIcon';
@@ -18,7 +17,6 @@ import { useState } from 'react';
 const ProfileDropdown = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const open = Boolean(anchorEl);
-  const theme = useTheme();
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -33,12 +31,7 @@ const ProfileDropdown = () => {
         pr: 2,
       }}
     >
-      <ButtonBase
-        aria-controls="msgs-menu"
-        aria-haspopup="true"
-        disableRipple={true}
-        onClick={handleClick}
-      >
+      <ButtonBase disableRipple={true} onClick={handleClick}>
         <Stack
           spacing={1.5}
           direction="row"
@@ -68,7 +61,6 @@ const ProfileDropdown = () => {
         </Stack>
       </ButtonBase>
       <Menu
-        id="long-menu"
         keepMounted
         anchorEl={anchorEl}
         open={open}
@@ -78,7 +70,9 @@ const ProfileDropdown = () => {
         slotProps={{
           paper: {
             style: {
-              paddingTop: theme.spacing(1),
+              paddingTop: '8px',
+              width: '100%',
+              maxWidth: 120,
             },
           },
         }}
@@ -92,10 +86,10 @@ const ProfileDropdown = () => {
             }}
             onClick={handleClose}
           >
-            <ListItemIcon>
-              <IconifyIcon width={18} height={18} icon={option.icon} />
+            <ListItemIcon sx={{ '&.MuiListItemIcon-root': { minWidth: 2, mr: 1 } }}>
+              <IconifyIcon width={16} height={16} icon={option.icon} />
             </ListItemIcon>
-            <Typography variant="subtitle1"> {option.title}</Typography>
+            <Typography variant="subtitle2"> {option.title}</Typography>
           </MenuItem>
         ))}
         <Stack direction="row" sx={{ width: 1, justifyContent: 'center' }}>
@@ -105,6 +99,7 @@ const ProfileDropdown = () => {
             sx={{
               mt: 1.5,
               width: '80%',
+              py: 0.5,
             }}
           >
             Logout

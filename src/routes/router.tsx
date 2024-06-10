@@ -21,6 +21,9 @@ const InboxPage = lazy(() => import('pages/inbox'));
 const NotFoundPage = lazy(() => import('pages/not-found'));
 /* -------------------------------------------------------------------------- */
 
+/**
+ * @Defines the routes for the application using React Router.
+ */
 export const routes = [
   {
     element: (

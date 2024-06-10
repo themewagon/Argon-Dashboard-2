@@ -1,16 +1,5 @@
 import { PaletteColorOptions, PaletteOptions } from '@mui/material';
-import {
-  blue,
-  green,
-  grey,
-  orange,
-  purple,
-  red,
-  silver,
-  skyBlue,
-  turquoise,
-  yellow,
-} from './colors';
+import { blue, green, grey, orange, purple, red, silver, turquoise } from './colors';
 
 declare module '@mui/material/styles' {
   interface PaletteOptions {
@@ -19,14 +8,6 @@ declare module '@mui/material/styles' {
     dark?: PaletteColorOptions;
     transparent?: PaletteColorOptions;
     black?: PaletteColorOptions;
-    gradients?: {
-      primary: PaletteColorOptions;
-      secondary: PaletteColorOptions;
-      info: PaletteColorOptions;
-      success: PaletteColorOptions;
-      warning: PaletteColorOptions;
-      error: PaletteColorOptions;
-    };
   }
 
   interface SimplePaletteColorOptions {
@@ -38,14 +19,6 @@ declare module '@mui/material/styles' {
     neutral: PaletteColor;
     dark: PaletteColor;
     transparent: PaletteColor;
-    gradients: {
-      primary: PaletteColor;
-      secondary: PaletteColor;
-      info: PaletteColor;
-      success: PaletteColor;
-      warning: PaletteColor;
-      error: PaletteColor;
-    };
   }
 
   interface PaletteColor {
@@ -128,37 +101,6 @@ const palette: PaletteOptions = {
   },
 
   grey: { ...grey },
-  gradients: {
-    primary: {
-      main: blue[800],
-      state: purple[500],
-    },
-
-    secondary: {
-      main: '#627594',
-      state: '#a8b8d8',
-    },
-
-    info: {
-      main: skyBlue[500],
-      state: turquoise[500],
-    },
-
-    success: {
-      main: green[500],
-      state: turquoise[400],
-    },
-
-    warning: {
-      main: orange[500],
-      state: yellow[500],
-    },
-
-    error: {
-      main: red[600],
-      state: orange[600],
-    },
-  },
 };
 
 export default palette;

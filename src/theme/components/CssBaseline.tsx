@@ -5,7 +5,6 @@ import echart from 'theme/styles/echart';
 import simplebar from 'theme/styles/simplebar';
 
 const CssBaseline: Components<Omit<Theme, 'components'>>['MuiCssBaseline'] = {
-  defaultProps: {},
   styleOverrides: (theme) => ({
     html: {
       scrollBehavior: 'smooth',
@@ -16,7 +15,6 @@ const CssBaseline: Components<Omit<Theme, 'components'>>['MuiCssBaseline'] = {
     },
     'a, a:link, a:visited': {
       textDecoration: 'none !important',
-      //   color: `${theme.palette.text.primary}`,
     },
     'a.link, .link, a.link:link, .link:link, a.link:visited, .link:visited': {
       color: `${theme.palette.dark.main} !important`,
@@ -33,8 +31,6 @@ const CssBaseline: Components<Omit<Theme, 'components'>>['MuiCssBaseline'] = {
     },
     body: {
       fontVariantLigatures: 'none',
-
-      //   ...scrollbar(theme),
     },
     ...echart(),
     ...simplebar(theme),

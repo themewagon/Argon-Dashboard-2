@@ -3,7 +3,6 @@ import { Components } from '@mui/material/styles/components';
 import pxToRem from 'theme/functions/pxToRem';
 
 const LinearProgressComponent: Components<Omit<Theme, 'components'>>['MuiLinearProgress'] = {
-  defaultProps: {},
   styleOverrides: {
     root: ({ ownerState, theme }) => ({
       ...(ownerState.variant === 'determinate' && {
@@ -15,11 +14,11 @@ const LinearProgressComponent: Components<Omit<Theme, 'components'>>['MuiLinearP
     }),
 
     colorPrimary: ({ theme }) => ({
-      backgroundColor: theme.palette.grey[200],
+      backgroundColor: theme.palette.action.selected,
     }),
 
     colorSecondary: ({ theme }) => ({
-      backgroundColor: theme.palette.grey[200],
+      backgroundColor: theme.palette.action.selected,
     }),
 
     bar: ({ theme }) => ({

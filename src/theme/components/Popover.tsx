@@ -2,7 +2,6 @@ import { Theme } from '@mui/material';
 import { Components } from '@mui/material/styles/components';
 
 const PopoverComponent: Components<Omit<Theme, 'components'>>['MuiPopover'] = {
-  defaultProps: {},
   styleOverrides: {
     paper: ({ theme }) => ({
       padding: 0,

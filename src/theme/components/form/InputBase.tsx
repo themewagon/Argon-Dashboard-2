@@ -3,7 +3,6 @@ import { Components } from '@mui/material/styles/components';
 import pxToRem from 'theme/functions/pxToRem';
 
 const InputBaseComponent: Components<Omit<Theme, 'components'>>['MuiInputBase'] = {
-  defaultProps: {},
   styleOverrides: {
     root: {
       '& .Mui-focused': {
@@ -12,12 +11,8 @@ const InputBaseComponent: Components<Omit<Theme, 'components'>>['MuiInputBase'] 
         borderStyle: 'solid',
         boxShadow: '',
       },
-      //   '& .Mui-disabled': {
-      //     '& > fieldset': {},
-      //   },
     },
     input: ({ theme }) => ({
-      //   width: '100%',
       height: pxToRem(22),
       paddingTop: theme.spacing(1.5),
       paddingRight: 1,
