@@ -11,6 +11,11 @@ interface BreakpointContextInterface {
 
 export const BreakpointContext = createContext({} as BreakpointContextInterface);
 
+/**
+ * A provider component that manages the current breakpoint based on the screen size.
+ * @param {PropsWithChildren} children - The child components to be wrapped by the provider.
+ * @returns JSX element that provides the current breakpoint and media query functions.
+ */
 const BreakpointsProvider = ({ children }: PropsWithChildren) => {
   const [currentBreakpoint, setCurrentBreakpoint] = useState<Breakpoint>('xs');
   const up = (key: Breakpoint | number) =>

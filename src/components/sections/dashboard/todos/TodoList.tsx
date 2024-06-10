@@ -7,12 +7,15 @@ const data = [
   { id: 2, title: 'Brunch Meeting', time: '11:00 AM', checked: false },
   { id: 3, title: 'Argon Dashboard Launch', time: '02:00 PM', checked: false },
   { id: 4, title: 'Winter Hackathon', time: '10:30 AM', checked: true },
+  { id: 5, title: 'Team Standup', time: '11:30 AM', checked: false },
 ];
 
 const TodoList = () => {
+  const lastItemId = data[data.length - 1].id;
+
   return (
     <Card sx={{ height: 1, overflow: 'hidden', color: 'dark.main' }}>
-      <Box sx={{ p: 3 }}>
+      <Box sx={{ p: 3, pb: 2.5 }}>
         <Typography variant="h5" textTransform="capitalize" fontWeight="medium">
           To Do List
         </Typography>
@@ -26,7 +29,7 @@ const TodoList = () => {
                 direction="row"
                 justifyContent="space-between"
                 alignItems="center"
-                sx={{ py: 1, width: '100%' }}
+                sx={{ py: 1, width: 1 }}
               >
                 <FormControlLabel
                   labelPlacement="start"
@@ -48,17 +51,17 @@ const TodoList = () => {
                   }
                   sx={{
                     margin: 0,
-                    width: '100%',
+                    width: 1,
                     display: 'flex',
                     justifyContent: 'space-between',
                   }}
                 />
               </Stack>
-              {id !== data.length - 1 && (
+              {id !== lastItemId && (
                 <Divider
                   sx={{
                     borderTop: 1,
-                    borderTopColor: 'grey.300',
+                    borderTopColor: 'text.disabled',
                     m: 0,
                     p: 0,
                     opacity: 0.5,

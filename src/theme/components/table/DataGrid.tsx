@@ -80,7 +80,8 @@ const DataGridComponent: DataGridComponents<Omit<Theme, 'components'>>['MuiDataG
       justifyContent: 'start !important',
     },
     footerContainer: ({ theme }) => ({
-      padding: theme.spacing(2),
+      paddingTop: theme.spacing(1.5),
+      paddingBottom: theme.spacing(2.5),
       border: 'none',
     }),
     sortIcon: ({ theme }) => ({

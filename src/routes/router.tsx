@@ -10,6 +10,7 @@ const App = lazy(() => import('App'));
 const MainLayout = lazy(() => import('layouts/main-layout'));
 const LoginPage = lazy(() => import('pages/authentication/login'));
 const SignUpPage = lazy(() => import('pages/authentication/register'));
+const PasswordResetPage = lazy(() => import('pages/authentication/forgot-password'));
 const CategoriesPage = lazy(() => import('pages/categories'));
 const OrdersPage = lazy(() => import('pages/orders'));
 const Dashboard = lazy(() => import('pages/dashboard/index'));
@@ -85,6 +86,10 @@ export const routes = [
           {
             path: paths.signup,
             element: <SignUpPage />,
+          },
+          {
+            path: paths.forgotPassword,
+            element: <PasswordResetPage />,
           },
         ],
       },

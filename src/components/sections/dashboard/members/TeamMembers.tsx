@@ -23,6 +23,8 @@ const data: TeamMember[] = [
 ];
 /* -------------------------------------------------------------------------- */
 const TeamMembers = () => {
+  const lastItemId = data[data.length - 1].id;
+
   return (
     <Card sx={{ height: 1, overflow: 'hidden', color: 'dark.main' }}>
       <Box sx={{ p: 3 }}>
@@ -32,10 +34,10 @@ const TeamMembers = () => {
       </Box>
       <Box sx={{ pb: 3, px: 3 }}>
         <Stack component="ul" direction="column" sx={{ listStyle: 'none', m: 0, p: 0 }}>
-          {data.map(({ id, img, name, badge }) => (
+          {data.map(({ id, img, name, badge, status }) => (
             <Fragment key={id}>
               <Box component="li" sx={{ py: 1 }}>
-                <Grid container spacing={3} alignItems="center">
+                <Grid container spacing={{ xs: 1.5, sm: 3 }} alignItems="center">
                   <Grid item alignItems="center">
                     <Avatar src={img} alt={name} />
                   </Grid>
@@ -44,7 +46,7 @@ const TeamMembers = () => {
                       {name}
                     </Typography>
                     <Chip
-                      label="primary"
+                      label={status}
                       sx={{ bgcolor: `${badge}.light`, color: `${badge}.dark` }}
                     />
                   </Grid>
@@ -55,11 +57,12 @@ const TeamMembers = () => {
                   </Grid>
                 </Grid>
               </Box>
-              {id !== data.length - 1 && (
+
+              {id !== lastItemId && (
                 <Divider
                   sx={{
                     borderTop: 1,
-                    borderTopColor: 'grey.300',
+                    borderTopColor: 'text.disabled',
                     m: 0,
                     p: 0,
                     opacity: 0.5,

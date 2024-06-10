@@ -70,7 +70,7 @@ const LoginForm = () => {
         fullWidth
         component={Link}
         href="#!"
-        //   type="submit"
+        type="submit"
       >
         Sign In
       </Button>
@@ -81,9 +81,11 @@ const LoginForm = () => {
           my: 3,
         }}
       >
-        <Typography color="primary" variant="subtitle1">
-          Forgot Your Password?
-        </Typography>
+        <Link href="/authentication/forgot-password">
+          <Typography color="primary" variant="subtitle1">
+            Forgot Your Password?
+          </Typography>
+        </Link>
       </Stack>
       <Divider
         sx={{

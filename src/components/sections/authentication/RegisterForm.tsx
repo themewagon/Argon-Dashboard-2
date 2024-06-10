@@ -56,9 +56,9 @@ const RegisterForm = () => {
           fullWidth
           component={Link}
           href="#!"
-          //   type="submit"
+          type="submit"
         >
-          Sign In
+          Sign Up
         </Button>
         <Stack
           spacing={0.5}
@@ -69,9 +69,11 @@ const RegisterForm = () => {
           }}
         >
           <Typography variant="subtitle1">By creating account, you agree to our</Typography>
-          <Typography color="primary" variant="subtitle1">
-            Terms of Service
-          </Typography>
+          <Link href="#!">
+            <Typography color="primary" variant="subtitle1">
+              Terms of Service
+            </Typography>
+          </Link>
         </Stack>
       </Stack>
       <Divider

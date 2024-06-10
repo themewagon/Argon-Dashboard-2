@@ -28,6 +28,7 @@ const CustomDataGridFooter = (props: CustomFooterProps) => {
       sx={{
         justifyContent: 'space-between',
         alignItems: 'center',
+        mt: 2.5,
       }}
     >
       {pageCount !== 0 ? (
