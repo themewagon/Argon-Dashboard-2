@@ -65,16 +65,16 @@ const SalesBarChart = ({ seriesData, chartRef, ...rest }: ReactEChartProps) => {
         show: false,
       },
       grid: {
-        left: '-2%',
+        left: '-5%',
         top: '1%',
-        right: '2%',
+        right: '4%',
         containLabel: true,
         bottom: '-1%',
       },
       xAxis: {
         type: 'category',
         data: xAxisData,
-        boundaryGap: false,
+        boundaryGap: true,
         nameGap: 0,
         axisLine: { show: false },
         axisTick: { show: false },
@@ -93,7 +93,7 @@ const SalesBarChart = ({ seriesData, chartRef, ...rest }: ReactEChartProps) => {
           data: seriesData?.orders,
           type: 'bar',
           barGap: '0%',
-          barCategoryGap: '0%',
+          //   barCategoryGap: '0%',
           emphasis: {
             itemStyle: {
               color: theme.palette.success.dark,
@@ -104,6 +104,9 @@ const SalesBarChart = ({ seriesData, chartRef, ...rest }: ReactEChartProps) => {
             color: theme.palette.success.main,
           },
           barWidth: 8,
+          barCategoryGap: '150%',
+
+          //   barMaxWidth: 8,
         },
       ],
     };

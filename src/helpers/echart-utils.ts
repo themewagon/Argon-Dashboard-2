@@ -11,10 +11,14 @@ export const tooltipFormatterList = (params: CallbackDataParams[]) => {
   });
   const tooltipItem = result
     .map((el, index: number) => {
+      const displayValue =
+        el.seriesName === 'orders' ? `$${el.value}` : `${el.seriesName}: ${el.value}`;
+
       return `<h6 style="font-size: 12px; margin: 0; font-weight: 600;" ${
         (result.length === 1 || index > 0) && 'mb-0'
       }">
-   ${el.seriesName}: ${el.value}</h6>`;
+
+   ${displayValue}</h6>`;
     })
     .join('');
 

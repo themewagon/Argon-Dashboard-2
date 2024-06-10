@@ -19,17 +19,18 @@ const PasswordResetPage = () => {
               sx={{
                 mb: 1,
                 textAlign: 'center',
+                gap: { xs: 1, sm: 0 },
               }}
             >
               <Typography
                 variant="h1"
                 sx={{
                   typography: {
-                    whiteSpace: 'nowrap',
+                    whiteSpace: 'wrap',
                   },
                 }}
               >
-                Password Reset
+                Forgot your password ?
               </Typography>
 
               <Typography variant="button" color="text.secondary">

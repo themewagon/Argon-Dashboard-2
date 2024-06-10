@@ -14,7 +14,7 @@ const Dashboard = () => {
   return (
     <Box
       sx={{
-        pb: 4,
+        pb: 1,
       }}
     >
       <PageHeader>Dashboard</PageHeader>

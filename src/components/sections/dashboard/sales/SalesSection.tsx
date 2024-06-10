@@ -46,7 +46,7 @@ const SalesSection = () => {
 
   return (
     <Card sx={{ height: 1 }}>
-      <CardContent sx={{ p: 3.5, flex: 1 }}>
+      <CardContent sx={{ p: 3.5, flex: 1, h: 1 }}>
         <Typography variant="h6">Last 7 Days Sales</Typography>
         <Stack spacing={2.5} sx={{ pt: 3 }}>
           <div>
@@ -63,7 +63,10 @@ const SalesSection = () => {
           </div>
           <Divider />
         </Stack>
-        <Stack direction="row" sx={{ height: 215, display: 'flex' }}>
+        <Stack
+          direction="row"
+          sx={{ height: 238, display: 'flex', justifyContent: 'center', width: 1 }}
+        >
           {chartData ? (
             <SalesBarChart
               seriesData={chartData}

@@ -49,12 +49,12 @@ export const ordersOverTimeData: ComparisonChartData = {
 
 export const salesData: SalesChartData = {
   revenue: [
-    { day: '12', orders: 20 },
-    { day: '13', orders: 12 },
-    { day: '14', orders: 16 },
-    { day: '15', orders: 14 },
-    { day: '16', orders: 26 },
-    { day: '17', orders: 16 },
-    { day: '18', orders: 17 },
+    { day: '12', orders: 2000 },
+    { day: '13', orders: 1200 },
+    { day: '14', orders: 1600 },
+    { day: '15', orders: 1400 },
+    { day: '16', orders: 2600 },
+    { day: '17', orders: 1600 },
+    { day: '18', orders: 1700 },
   ],
 };

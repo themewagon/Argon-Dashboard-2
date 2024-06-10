@@ -3,15 +3,16 @@ import { SvgIconProps } from '@mui/material';
 import CategoriesIcon from 'components/icons/menu-icons/CategoriesIcon';
 import CouponsIcon from 'components/icons/menu-icons/CouponsIcon';
 import CustomersIcon from 'components/icons/menu-icons/CustomersIcon';
+import ForgotPasswordIcon from 'components/icons/menu-icons/ForgotPasswordIcon';
 import GlobalSettingsIcon from 'components/icons/menu-icons/GlobalSettingsIcon';
 import HomeIcon from 'components/icons/menu-icons/HomeIcon';
 import InboxIcon from 'components/icons/menu-icons/InboxIcon';
-import KnowledgebaseIcon from 'components/icons/menu-icons/KnowledgebaseIcon';
 import OrderIcon from 'components/icons/menu-icons/OrderIcon';
 import PersonalSettingsIcon from 'components/icons/menu-icons/PersonalSettingsIcon';
 import ProductsIcon from 'components/icons/menu-icons/ProductsIcon';
-import ProductUpdateIcon from 'components/icons/menu-icons/ProductUpdateIcon';
 import ReportsIcon from 'components/icons/menu-icons/ReportsIcon';
+import SignInIcon from 'components/icons/menu-icons/SignInIcon';
+import SignUpIcon from 'components/icons/menu-icons/SignUpIcon';
 import { uniqueId } from 'lodash';
 
 export interface IMenuitems {
@@ -97,15 +98,22 @@ const Menuitems: IMenuitems[] = [
   {
     id: uniqueId(),
     title: 'Sign Up',
-    icon: KnowledgebaseIcon,
+    icon: SignUpIcon,
     href: '/authentication/sign-up',
     available: true,
   },
   {
     id: uniqueId(),
     title: 'Sign In',
-    icon: ProductUpdateIcon,
+    icon: SignInIcon,
     href: '/authentication/login',
+    available: true,
+  },
+  {
+    id: uniqueId(),
+    title: 'Forgot Password',
+    icon: ForgotPasswordIcon,
+    href: '/authentication/forgot-password',
     available: true,
   },
 
