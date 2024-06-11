@@ -20,6 +20,7 @@ const paths = {
   login: `${rootPaths.authRoot}/login`,
   signup: `${rootPaths.authRoot}/sign-up`,
   forgotPassword: `${rootPaths.authRoot}/forgot-password`,
+  resetPassword: `${rootPaths.authRoot}/reset-password`,
   notFound: `${rootPaths.errorRoot}/404`,
 };
 

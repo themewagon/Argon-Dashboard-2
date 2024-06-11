@@ -1,7 +1,7 @@
 import { Box, Card, Grid, Stack, Typography } from '@mui/material';
-import ForgotPasswordForm from 'components/sections/authentication/ForgotPasswordForm';
+import PasswordResetForm from 'components/sections/authentication/PasswordResetForm';
 
-const ForgotPasswordPage = () => {
+const PasswordResetPage = () => {
   return (
     <Box mx="auto" sx={{ mx: 'auto', p: 4, width: 1, height: 1 }}>
       <Grid container spacing={1} justifyContent="center" alignItems="center">
@@ -30,14 +30,14 @@ const ForgotPasswordPage = () => {
                   },
                 }}
               >
-                Forgot your password ?
+                Password Reset
               </Typography>
 
               <Typography variant="button" color="text.secondary">
                 We Will Help You Reset your Password
               </Typography>
             </Stack>
-            <ForgotPasswordForm />
+            <PasswordResetForm />
           </Card>
         </Grid>
       </Grid>
@@ -45,4 +45,4 @@ const ForgotPasswordPage = () => {
   );
 };
 
-export default ForgotPasswordPage;
+export default PasswordResetPage;

@@ -23,7 +23,7 @@ export const stats: IStatisticsCard[] = [
     id: 0,
     percentage: { color: 'success', count: '22.45%' },
     icon: DollarIcon,
-    title: '$10.540',
+    title: '10540',
     subtitle: 'Total Revenue',
   },
 
@@ -31,21 +31,21 @@ export const stats: IStatisticsCard[] = [
     id: 1,
     percentage: { color: 'success', count: '22.45%' },
     icon: CartIcon,
-    title: '$1,056',
+    title: '1056',
     subtitle: 'Orders',
   },
   {
     id: 2,
     percentage: { color: 'error', count: '02.45%' },
     icon: PersonalSettingsIcon,
-    title: '$0,056',
+    title: '0056',
     subtitle: 'Active Sessions',
   },
   {
     id: 3,
     percentage: { color: 'error', count: '00.45%' },
     icon: CustomersIcon,
-    title: '$0,056',
+    title: '0056',
     subtitle: 'Total Sessions',
   },
 ];

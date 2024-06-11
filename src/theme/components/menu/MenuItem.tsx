@@ -9,6 +9,9 @@ const MenuItemComponent: Components<Omit<Theme, 'components'>>['MuiMenuItem'] = 
       '&.Mui-selected': {
         backgroundColor: theme.palette.action.selected,
       },
+      '&.Mui-selected:hover': {
+        backgroundColor: theme.palette.action.selected,
+      },
     }),
   },
 };

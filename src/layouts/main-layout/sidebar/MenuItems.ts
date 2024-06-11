@@ -11,8 +11,10 @@ import OrderIcon from 'components/icons/menu-icons/OrderIcon';
 import PersonalSettingsIcon from 'components/icons/menu-icons/PersonalSettingsIcon';
 import ProductsIcon from 'components/icons/menu-icons/ProductsIcon';
 import ReportsIcon from 'components/icons/menu-icons/ReportsIcon';
-import SignInIcon from 'components/icons/menu-icons/SignInIcon';
-import SignUpIcon from 'components/icons/menu-icons/SignUpIcon';
+import ResetPasswordIcon from 'components/icons/menu-icons/ResetPasswordIcon';
+import SignUpIcon from 'components/icons/menu-icons/SignInIcon';
+import SignInIcon from 'components/icons/menu-icons/SignUpIcon';
+
 import { uniqueId } from 'lodash';
 
 export interface IMenuitems {
@@ -114,6 +116,13 @@ const Menuitems: IMenuitems[] = [
     title: 'Forgot Password',
     icon: ForgotPasswordIcon,
     href: '/authentication/forgot-password',
+    available: true,
+  },
+  {
+    id: uniqueId(),
+    title: 'Reset Password',
+    icon: ResetPasswordIcon,
+    href: '/authentication/reset-password',
     available: true,
   },
 

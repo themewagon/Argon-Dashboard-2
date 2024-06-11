@@ -22,7 +22,7 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
   return (
     <AppBar position="sticky">
       <Toolbar>
-        <Stack direction="row" spacing={{ xs: 1, sm: 2 }} alignItems="center">
+        <Stack direction="row" spacing={{ xs: 0, sm: 2 }} alignItems="center">
           <Link
             href="/"
             sx={{
@@ -32,7 +32,7 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
               gap: 1.5,
             }}
           >
-            <Logo fontSize={'small'} />
+            <Logo sx={{ fontSize: 40, p: 1 }} />
           </Link>
           <IconButton
             color="inherit"
@@ -40,9 +40,17 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
             onClick={onDrawerToggle}
             sx={{
               display: { xs: 'block', lg: 'none' },
+              width: 40,
+              height: 40,
             }}
           >
-            <IconifyIcon icon="oi:menu" color="primary.main" sx={{ fontSize: 18, mt: 0.5 }} />
+            <IconifyIcon
+              icon="oi:menu"
+              color="primary.main"
+              sx={{
+                fontSize: 18,
+              }}
+            />
           </IconButton>
           <TextField
             placeholder="Search..."
@@ -58,14 +66,15 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
               display: { xs: 'none', lg: 'block' },
             }}
           />
-          <IconifyIcon
-            icon="majesticons:search-line"
-            fontSize={24}
-            color="primary.main"
-            sx={{
-              display: { xs: 'block', lg: 'none' },
-            }}
-          />
+          <IconButton>
+            <IconifyIcon
+              icon="majesticons:search-line"
+              color="primary.main"
+              sx={{
+                display: { xs: 'block', lg: 'none' },
+              }}
+            />{' '}
+          </IconButton>
         </Stack>
         <Box flexGrow={1} />
         <Stack spacing={0.5} direction="row" alignItems="center">

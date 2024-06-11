@@ -92,15 +92,16 @@ const LoginForm = () => {
           my: 3,
         }}
       />
-      <Typography textAlign="center" color="text.secondary" variant="subtitle1">
-        Or sign in using:
-      </Typography>
+
       <Stack
         spacing={1.5}
         sx={{
-          mt: 3,
+          mt: 4,
         }}
       >
+        <Typography textAlign="center" color="text.secondary" variant="subtitle1">
+          Or sign in using:
+        </Typography>
         <Button
           startIcon={<IconifyIcon icon="flat-color-icons:google" />}
           variant="outlined"

@@ -1,6 +1,6 @@
 import { Box, Card, Grid, Stack, Typography } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
-import { percentageFormat } from 'helpers/utils';
+import { currencyFormat, percentageFormat } from 'helpers/utils';
 import { useBreakpoints } from 'providers/useBreakPoint';
 import { IStatisticsCard } from './StatisticCards';
 
@@ -51,7 +51,7 @@ const StatisticsCardItem = ({ cardData, index }: StatisticsCardProps) => {
             <Grid item xs={8}>
               <Box ml={0} lineHeight={1}>
                 <Typography variant="h5" textTransform="uppercase" color="text.primary">
-                  {title}
+                  {currencyFormat(parseFloat(title))}
                 </Typography>
                 <Typography variant="subtitle1" color="text.secondary" mb={1}>
                   {subtitle}

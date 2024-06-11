@@ -2,16 +2,17 @@
 
 <!-- PROJECT LOGO -->
 <br />
+<br />
+<br />
+<center><a href="https://themewagon.com/" target="_blank"><img src="public/favicon.ico" alt="Logo" width="50" height="50"></a></center>
+<h1 align="center">Modernize Material  
+ Admin Dashboard</h1>
+<div align="center">
+<img src="https://themewagon.com/wp-content/uploads/2021/03/Frame-172-1.png" alt="Awesome Badge" width="150" height="50"/>
+<br />
+<br />
 <!-- PROJECT LOGO -->
 <div align="left" >
-<center>
-      <a href="public/favicon.ico" align="center">
-        <img src="public/favicon.ico" alt="Logo" width="50" height="50">
-      </a>    
-</center>
-<center>
-       <h1 style="display: inline-block; margin-left: 10px;">Modernize Material Admin Dashboard</h1>
-</center>
 
 # Table of contents
 
