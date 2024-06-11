@@ -44,9 +44,9 @@ const LoginForm = () => {
                   edge="end"
                 >
                   {showPassword ? (
-                    <IconifyIcon icon="el:eye-open" color="action.active" />
+                    <IconifyIcon icon="el:eye-close" color="action.active" />
                   ) : (
-                    <IconifyIcon icon="el:eye-close" color="action.focus" />
+                    <IconifyIcon icon="el:eye-open" color="action.focus" />
                   )}
                 </IconButton>
               </InputAdornment>
