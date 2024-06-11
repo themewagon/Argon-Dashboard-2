@@ -34,7 +34,7 @@ const PasswordResetPage = () => {
               </Typography>
 
               <Typography variant="button" color="text.secondary">
-                We Will Help You Reset your Password
+                Enter your New Password
               </Typography>
             </Stack>
             <PasswordResetForm />

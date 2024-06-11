@@ -41,7 +41,7 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
             sx={{
               display: { xs: 'block', lg: 'none' },
               width: 40,
-              height: 40,
+              height: 42,
             }}
           >
             <IconifyIcon

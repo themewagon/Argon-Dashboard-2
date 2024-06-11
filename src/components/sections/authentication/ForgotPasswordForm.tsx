@@ -20,7 +20,7 @@ const ForgotPasswordForm = () => {
         type="submit"
         sx={{ mt: 3 }}
       >
-        Reset Link
+        Send Password Reset Link
       </Button>
       <Stack
         sx={{
