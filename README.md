@@ -4,8 +4,8 @@
 <br />
 <br />
 <br />
-<center><a href="https://themewagon.com/" target="_blank"><img src="public/favicon.ico" alt="Logo" width="50" height="50"></a></center>
-<h1 align="center">Modernize Material  
+<a href="https://themewagon.com/" target="_blank"><img src="public/favicon.ico" alt="Logo" width="50" height="50"></a>
+<h1>Modernize Material  
  Admin Dashboard</h1>
 <div align="center">
 <img src="https://themewagon.com/wp-content/uploads/2021/03/Frame-172-1.png" alt="Awesome Badge" width="150" height="50"/>
