@@ -99,7 +99,7 @@ const DataGridComponent: DataGridComponents<Omit<Theme, 'components'>>['MuiDataG
     virtualScroller: {
       display: 'flex',
       flexDirection: 'column',
-      //   height: pxToRem(332),
+      //   height: pxToRem(332), // to fix table height in data grid
     },
   },
 };

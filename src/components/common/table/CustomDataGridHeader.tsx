@@ -2,12 +2,6 @@ import { IconButton, Stack, TextField, Typography } from '@mui/material';
 import { GridSlotsComponentsProps } from '@mui/x-data-grid';
 import IconifyIcon from 'components/base/IconifyIcon';
 
-// declare module '@mui/x-data-grid' {
-//   interface ToolbarPropsOverrides {
-//     title: string;
-//   }
-// }
-
 const CustomDataGridHeader = (props: NonNullable<GridSlotsComponentsProps['toolbar']>) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (props.onChange) {
@@ -38,7 +32,6 @@ const CustomDataGridHeader = (props: NonNullable<GridSlotsComponentsProps['toolb
         onChange={handleChange}
         placeholder={`Search ${props.flag}...`}
         InputProps={{
-          //   startAdornment: <SearchIcon fontSize="small" />,
           endAdornment: (
             <IconButton
               title="Clear"

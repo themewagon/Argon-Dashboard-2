@@ -4,7 +4,6 @@ import CustomDataGridFooter from 'components/common/table/CustomDataGridFooter';
 import CustomDataGridHeader from 'components/common/table/CustomDataGridHeader';
 import CustomDataGridNoRows from 'components/common/table/CustomDataGridNoRows';
 import ProductCell from 'components/sections/dashboard/topProducts/ProductCell';
-// import { topProductsColumns } from 'components/sections/dashboard/topProducts/TopProductsTableColumn';
 import { ItemType, TopProductsRowData, topProductsTableData } from 'data/dashboard/table';
 import { currencyFormat } from 'helpers/utils';
 import { ChangeEvent, useEffect, useState } from 'react';

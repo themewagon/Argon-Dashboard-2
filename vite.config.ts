@@ -16,9 +16,7 @@ export default defineConfig({
     }),
   ],
   base: '/modernize-mui-admin',
-  //   preview: {
-  //     port: 5000,
-  //   },
+
   server: {
     host: '0.0.0.0',
     port: 3000,
